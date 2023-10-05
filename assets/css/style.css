@@ -1,0 +1,68 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f6f7ff;
+  background-image: url(../img/Artboard_1.png);
+  background-size: cover;
+  color: #f6f7ff;
+}
+
+.navbar {
+  background-color: transparent !important;
+  color: #f75600;
+}
+
+.container a {
+  color: #f6f7ff;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.4 s;
+}
+
+.container a:hover {
+  color: #f75600;
+}
+
+.nav-link:hover {
+  color: #f75600;
+}
+
+.nav-item {
+  padding-left: 20px;
+}
+
+.content-box {
+  margin: 15% 8%;
+  max-width: 700px;
+  text-align: left;
+}
+
+.content-box h1 {
+  font-size: 72px;
+  color: #f75600;
+}
+
+.content-box p {
+  font-size: 18px;
+}
+
+.btn-primary {
+  background-color: #f75600;
+  border-color: #f75600;
+  border-radius: 8px;
+  width: 150px;
+  height: 50px;
+}
+
+.btn-primary:hover {
+  background-color: #252422;
+  border-color: #252422;
+}
