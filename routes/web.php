@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 Route::controller(AuthController::class)->group(function () {
-    Route::get('/login', 'showLoginForm')->name('login');
-    Route::post('/login', 'login');
+    Route::get('/login', 'showLoginForm')->name('tampilkan.login');
+    Route::post('/login', 'login')->name('login');
     Route::get('/register', 'showRegisterForm')->name('register');
     Route::post('/register', 'register');
     Route::post('/logout', 'logout')->name('logout');
@@ -35,3 +35,5 @@ Route::controller(UserController::class)->group(function(){
     Route::put('/users/{id}', 'update')->name('users.update');
     Route::delete('/users/{id}', 'destroy')->name('users.destroy');
 });
+
+Route::view('/dashboard', 'dashboard')->name('dashboard');

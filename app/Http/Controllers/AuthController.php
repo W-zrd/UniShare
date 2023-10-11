@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -21,6 +23,59 @@ class AuthController extends Controller
     public function showLoginForm(){
         return view('auth.login');
     }
+
+    public function login(Request $request)
+{
+    $user = User::where('username', $request->username)->where('password', $request->password)->first();
+    if ($user) {
+        $token = $user->createToken('auth_token')->plainTextToken;
+        $data = [
+            'signature' => $user->createToken('JWT_SECRET')->accessToken,
+            'user' => $user,
+            'token' => $token,
+        ];
+
+        // Jika Anda ingin mengembalikan tampilan
+        if ($request->wantsJson()) {
+            return response()->json([
+                'message' => 'success',
+                'data' => $data,
+            ]);
+        } else {
+            if ($user) {
+                $token = $user->createToken('auth_token')->plainTextToken;
+                $data = [
+                    'signature' => $user->createToken('JWT_SECRET')->accessToken,
+                    'user' => $user,
+                    'token' => $token,
+                ];
+
+                // Jika Anda ingin mengembalikan tampilan
+                if ($request->wantsJson()) {
+                    return response()->json([
+                        'message' => 'success',
+                        'data' => $data,
+                    ]);
+                } else {
+
+                    return redirect()->route('dashboard')->with('success', 'Login successful. Welcome back, ' . $user->name)->with('user', $user)->with('data', $data);
+                }
+            } else {
+        // Jika Anda ingin mengembalikan tampilan
+        if ($request->wantsJson()) {
+            return response()->json([
+                'message' => 'Invalid credentials'
+            ], 401);
+        } else {
+            return view('tampilan_login_error');
+        }
+    }
+       
+    }
+    }
+}
+
+
 
     /**
      * Show the form for creating a new resource.
