@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class AuthController extends Controller
@@ -22,6 +21,10 @@ class AuthController extends Controller
      */
     public function showLoginForm(){
         return view('auth.login');
+    }
+
+    public function showRegisterForm(){
+        return view('auth.register');
     }
 
     public function login(Request $request)
@@ -75,6 +78,55 @@ class AuthController extends Controller
     }
 }
 
+public function register(Request $request){
+
+    if ($request->password != $request->password_confirmation) {
+        // Jika Anda ingin mengembalikan tampilan
+        if ($request->wantsJson()) {
+            return response()->json([
+                'message' => 'Password confirmation does not match'
+            ], 401);
+        } else {
+            return view('tampilan_login_error');
+        }
+    }
+    $encryptedPassword = bcrypt($request->password);
+    $user = User::create([
+        'nama_lengkap' => $request->name,
+        'username' => $request->username,
+        'password' => $request->password,
+        'email' => $request->email,
+        
+    ]);
+
+    if ($user) {
+        $token = $user->createToken('auth_token')->plainTextToken;
+        $data = [
+            'signature' => $user->createToken('JWT_SECRET')->accessToken,
+            'user' => $user,
+            'token' => $token,
+        ];
+
+        // Jika Anda ingin mengembalikan tampilan
+        if ($request->wantsJson()) {
+            return response()->json([
+                'message' => 'success',
+                'data' => $data,
+            ]);
+        } else {
+            return redirect()->route('dashboard')->with('success', 'Register successful. Welcome, ' . $user->name)->with('user', $user)->with('data', $data);
+        }
+    } else {
+        // Jika Anda ingin mengembalikan tampilan
+        if ($request->wantsJson()) {
+            return response()->json([
+                'message' => 'Invalid credentials'
+            ], 401);
+        } else {
+            return view('tampilan_login_error');
+        }
+    }
+}
 
 
     /**
