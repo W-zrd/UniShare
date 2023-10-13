@@ -40,9 +40,6 @@
 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav justify-content-end ms-auto">
-               <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
               </li>
@@ -64,7 +61,7 @@
             <h1 class="fw-bold">UniShare.</h1>
             <h3 class="fw-semibold">Unlock Your Opportunities Boost Your Career</h3>
             <p>Daftarkan dirimu sekarang dan temukan peluang menggapai cita-cita!</p>
-            <button type="button" class="btn btn-primary fw-medium">Get Started!</button>
+            <a href="/login" class="btn btn-primary fw-medium">Get Started!</a>
           </div>
         </div>
 

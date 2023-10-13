@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->string('email')->unique();
-            $table->string('telepon');
-            $table->string('alamat');
-            $table->string('jenis_kelamin');
-            $table->string('universitas');
-            $table->string('program_studi');
+            $table->string('telepon')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('jenis_kelamin')->nullable();
+            $table->string('universitas')->nullable();
+            $table->string('program_studi')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

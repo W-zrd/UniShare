@@ -40,12 +40,6 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav justify-content-end ms-auto">
-                         <li class="nav-item">
-                            <a class="nav-link" href="/register">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/login">Login</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Home</a>
                         </li>
@@ -69,7 +63,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" required>
+                            <input type="text" class="form-control id="username" name="username" aria-describedby="usernameHelp" required>
                             <div id="usernameHelp" class="form-text">We'll never share your username with anyone else.</div>
                         </div>
                         <div class="mb-3">
@@ -82,6 +76,9 @@
                         </div>
                         <button type="submit" class="btn btn-primary fw-medium">Login</button>
                     </form>
+                    <div class="mt-3">
+                        Don't have an account? <a href="{{ route('tampilkan.register') }}" style="color: orange;">Register here</a>
+                    </div>
                 </div>
             </div>
 
