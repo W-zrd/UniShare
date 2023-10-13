@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kegiatan_kemahasiswaan', function (Blueprint $table) {
+        Schema::create('magang', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_kegiatan');
-            $table->string('jenis_kegiatan');
-            $table->dateTime('waktu_kegiatan');
-            $table->point('lokasi_kegiatan');
-            $table->text('deskripsi_kegiatan');
+            $table->string('nama_magang');
+            $table->string('posisi_magang');
+            $table->dateTime('waktu_registrasi_magang');
+            $table->string('kantor_magang');
+            $table->text('deskripsi_magang');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_kegiatan_kemahasiswaan');
+        Schema::dropIfExists('magang');
     }
 };
