@@ -19,7 +19,7 @@ ul {
 
 .page-title {
     background-color: #121415;
-    height: 700px;
+    height: 708px;
     position: relative;
     overflow: hidden;
 }
@@ -149,4 +149,13 @@ ul {
     background-color: #252422;
     padding: 10px;
     border-radius: 30px;
+}
+
+.mb-3{
+    color: #f6f7ff;
+    width: 400px;
+}
+
+#usernameHelp{
+    color: #7c7974;
 }
