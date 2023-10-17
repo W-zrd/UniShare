@@ -61,10 +61,11 @@
             <h1 class="fw-bold">UniShare.</h1>
             <h3 class="fw-semibold">Unlock Your Opportunities Boost Your Career</h3>
             <p>Daftarkan dirimu sekarang dan temukan peluang menggapai cita-cita!</p>
+
             <a href="/login">
               <button type="button" class="btn btn-primary fw-medium">Get Started!</button>
             </a>
-            
+
           </div>
         </div>
 

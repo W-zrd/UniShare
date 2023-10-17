@@ -63,8 +63,10 @@
                         @csrf
                         <div class="mb-3 mt-3">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" required>
+
+                            <input type="text" class="form-control id="username" name="username" aria-describedby="usernameHelp" required>
                             <div id="usernameHelp" class="form-text">We'll never share your username with anyone else.</div>
+
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
@@ -76,6 +78,9 @@
                         </div>
                         <button type="submit" class="btn btn-primary fw-medium">Login</button>
                     </form>
+                    <div class="mt-3">
+                        Don't have an account? <a href="{{ route('tampilkan.register') }}" style="color: orange;">Register here</a>
+                    </div>
                 </div>
             </div>
 

@@ -187,3 +187,13 @@ ul {
 .form-check-label {
     color: #f6f7ff;
 }
+
+.mb-3{
+    color: #f6f7ff;
+    width: 400px;
+}
+
+#usernameHelp{
+    color: #7c7974;
+}
+
