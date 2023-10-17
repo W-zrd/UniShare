@@ -19,7 +19,7 @@ ul {
 
 .page-title {
     background-color: #121415;
-    height: 708px;
+    height: 800px;
     position: relative;
     overflow: hidden;
 }
@@ -38,12 +38,43 @@ ul {
     background-color: #121415;
     color: #f6f7ff;
     margin: 0;
-    padding: 0;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+.footer img {
+    display: flex;
+    align-items: start;
+    width: 160px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
 }
 
 .footer p {
     color: #7c7974;
     font-size: 14px;
+}
+
+.footer li {
+    color: #7c7974;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer ul li::marker {
+    color: #f75600;
+}
+
+.footer-line {
+    border-top-width: 2px;
+    border-top-style: outset;
+    border-color: #403d39;
+    margin-top: 50px;
+}
+
+.footer-line p {
+    color: #f6f7ff;
 }
 
 .navbar {
@@ -151,6 +182,12 @@ ul {
     border-radius: 30px;
 }
 
+.form-label,
+.form-text,
+.form-check-label {
+    color: #f6f7ff;
+}
+
 .mb-3{
     color: #f6f7ff;
     width: 400px;
@@ -159,3 +196,4 @@ ul {
 #usernameHelp{
     color: #7c7974;
 }
+

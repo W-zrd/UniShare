@@ -41,7 +41,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav justify-content-end ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
@@ -58,10 +58,10 @@
         <div class="row m-2 justify-content-center">
             <div class="col-7 mt-5">
                 <div class="content-box">
-                    <h1 class="fw-bold" style="font-size:65px">Login to UniShare.</h1>
+                    <h2 class="fw-bold fs-1" style="color: #f75600;">Login to UniShare.</h2>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <div class="mb-3">
+                        <div class="mb-3 mt-3">
                             <label for="username" class="form-label">Username</label>
 
                             <input type="text" class="form-control id="username" name="username" aria-describedby="usernameHelp" required>
