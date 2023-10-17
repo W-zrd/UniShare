@@ -47,7 +47,7 @@
                 <a class="nav-link" href="#">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Services</a>
               </li>
             </ul>
           </div>
@@ -61,7 +61,11 @@
             <h1 class="fw-bold">UniShare.</h1>
             <h3 class="fw-semibold">Unlock Your Opportunities Boost Your Career</h3>
             <p>Daftarkan dirimu sekarang dan temukan peluang menggapai cita-cita!</p>
-            <button type="button" class="btn btn-primary fw-medium">Get Started!</button>
+
+            <a href="/login">
+              <button type="button" class="btn btn-primary fw-medium">Get Started!</button>
+            </a>
+
           </div>
         </div>
 
@@ -78,25 +82,117 @@
       </div>
     </section>
 
-    <!-- WAVES -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path
-        fill="#121415"
-        fill-opacity="1"
-        d="M0,160L24,144C48,128,96,96,144,85.3C192,75,240,85,288,117.3C336,149,384,203,432,229.3C480,256,528,256,576,240C624,224,672,192,720,160C768,128,816,96,864,106.7C912,117,960,171,1008,197.3C1056,224,1104,224,1152,224C1200,224,1248,224,1296,208C1344,192,1392,160,1416,144L1440,128L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"
-      ></path>
-    </svg>
-
     <!-- ABOUT -->
     <section class="about">
       <div class="container text-center">
         <div class="row">
+
+          <!-- IMAGE -->
+          <div class="col-lg-6 col-md-5 col-sm-12">
+            <img src="/assets/img/study2.png" alt="x" class="img-fluid m-3">
+          </div>
+  
+  
+          <!-- TEXT -->
+          <div class="col-lg-6 col-md-6 col-sm-12 p-4 mt-5">
+              <h6 class="text-start fs-6 fw-medium text-primary">Tentang Kami</h6>
+              <h3 class="text-start fs-2 fw-semibold">Who We Are</h3>
+              <p class="text-start pt-2">Kami adalah sahabat belajar yang akan membantu Anda dalam meraih keberhasilan cita-cita. Bergabunglah dengan UniShare dan tingkatkan wawasan untuk mencapai tujuan karier yang luar biasa!</p>
+
+              <ul class="text-start ms-2" style="list-style: url(/assets/img/check.svg);">
+                <li class="m-2">Dapatkan sumber terpercaya tentang informasi magang</li>
+                <li class="m-2">Belajar dengan mentor yang sudah ahli dan terpercaya</li>
+                <li class="m-2">Perluas wawasan dengan fasilitas belajar terbaik</li>
+                <li class="m-2">Perluas jaringan karir dengan para profesional</li>
+              </ul>
+          </div>
+        </div>
+      </section>
+      </div>
+      
+    <!-- KATEGORI SKILL -->
+    <section>
+      <div class="container text-center">
+        <div class="row">
+          
+          <!-- TEXT -->
+          <div class="col-lg-6 col-md-6 col-sm-12 p-4 mt-5">
+            <h6 class="text-start fs-6 fw-medium text-primary">Fitur</h6>  
+              <h3 class="text-start fs-2 fw-semibold">Temukan lebih dalam potensimu!</h3>
+              <p class="text-start pt-2">Gali potensi diri bersama UniShare. Beragam kategori mentoring, magang, dan soft skill lainnya tersedia di UniShare</p>
+              
+              <div class="row mt-3 text-start">
+                <div class="col-md">
+                  <div class="shadow p-4 mb-5 rounded mx-auto">
+                    <img src="/assets/img/science.png" class="img-thumb2 mx-auto" alt="...">
+                    <h5 class="mt-3 text-center">Science</h5>
+                    
+                  </div>
+                </div>
+  
+                <div class="col-md">
+                  <div class="shadow p-4 mb-5 rounded mx-auto">
+                    <img src="/assets/img/tech.png" class="img-thumb2 mx-auto" alt="...">
+                    <h5 class="mt-3 text-center">Technology</h5>
+                    
+                  </div>
+                </div>
+  
+                <div class="col-md">
+                  <div class="shadow p-4 mb-5 rounded mx-auto">
+                    <img src="/assets/img/business.png" class="img-thumb2 mx-auto" alt="...">
+                    <h5 class="mt-3 text-center">Business</h5>
+                    
+                  </div>
+                </div>
+  
+                <div class="col-md">
+                  <div class="shadow p-4 mb-5 rounded mx-auto">
+                    <img src="/assets/img/design.png" class="img-thumb2 mx-auto" alt="...">
+                    <h5 class="mt-3 text-center">Design</h5>
+                    
+                  </div>
+                </div>
+  
+                <div class="col-md">
+                  <div class="shadow p-4 mb-5 rounded mx-auto">
+                    <img src="/assets/img/photo.png" class="img-thumb2 mx-auto" alt="...">
+                    <h5 class="mt-3 text-center">Photography</h5>
+                    
+                  </div>
+                </div>
+  
+                <div class="col-md">
+                  <div class="shadow p-4 mb-5 rounded mx-auto">
+                    <img src="/assets/img/management.png" class="img-thumb2 mx-auto" alt="...">
+                    <h5 class="mt-3 text-center">Management</h5>
+                    
+                  </div>
+                </div>
+  
+              </div>
+          </div>
+  
+          <!-- IMAGE -->
+          <div class="col-lg-6 col-md-5 col-sm-12 ">
+            <img src="/assets/img/edu.png" alt="x" class="img-fluid m-3 p-4">
+          </div>
+        </div>
+        
+      <!--END-->
+    </section>
+   
+    <!-- SERVICES -->
+    <section class="services">
+      <div class="container text-center">
+        <div class="row">
           <div class="col-12">
-            <h3 class="text-center fs-2 fw-semibold">Features</h3>
+            <h6 class="text-center fs-6 fw-medium text-primary">Layanan</h6>
+              <h3 class="text-center fs-2 fw-semibold">What We Offer</h3>
           </div>
         </div>
 
-        <div class="row m-4 text-start">
+        <div class="row m-5 text-start">
           <!-- CONTENT 1-->
           <div class="col-md">
             <div class="shadow p-4 mb-5 rounded mx-auto">
@@ -123,6 +219,45 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="footer">
+
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <div class="col-lg-4 m-0 p-0">
+            <img src="/assets/img/logo-verti.png" alt="" class="img-fluid">
+            <p class="text-start mt-2 fs-6 ">Unlock your Opportunities, Boost your career</p>
+            
+          </div>
+
+          <div class="col-lg-3 ms-3">
+            <h5>Contact Info</h5>
+            <ul class="mt-2" style="marker: red;">
+              <li>+62 812 9201 8207</li>
+              <li>admin@unishare.com</li>
+              <li>Bojongsoang, Bandung, Jawa Barat</li>
+            </ul>
+          </div>
+
+          <div class="col-2 ms-3">
+            <h5>Follow Us</h5>
+            <ul class="mt-2">
+              <li >Twitter</li>
+              <li>Instagram</li>
+              <li>Facebook</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="footer-line">
+          <p class="mt-4 text-center">UniShare Copyright © 2023. All Rights Reserved.</p>
+        </div>
+      </div>
+
     </section>
 
     <!-- JAVASCRIPT -->
