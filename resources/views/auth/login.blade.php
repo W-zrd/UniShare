@@ -23,12 +23,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
+
   </head>
 
-<body>
+<body style="min-height:800px">
+    
     <section class="page-title">
         <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary mt-3 border-danger" data-bs-theme="light">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mt-3 border-danger" data-bs-theme="light" >
             <div class="container" data-bs-theme="light">
                 <a class="navbar-brand fs-4 fw-semibold" href="#">
                     <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
@@ -56,37 +58,37 @@
 
         <!-- TITLE -->
         <div class="row m-2 justify-content-center">
-            <div class="col-7 mt-5">
-                <div class="content-box">
-                    <h1 class="fw-bold" style="font-size:65px">Login to UniShare.</h1>
+            <div class="col-5 mt-5">
+                <div class="content-box-sign border p-5 border-dark rounded shadow" style="background-color:#f6f7ff">
+                    <h1 class="fw-bold mb-3 text-center" style="font-size:35px" >Login</h1>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
+                            <label for="username" class="form-label text-secondary">Username</label>
 
                             <input type="text" class="form-control id="username" name="username" aria-describedby="usernameHelp" required>
-                            <div id="usernameHelp" class="form-text">We'll never share your username with anyone else.</div>
+
 
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label text-secondary">Password</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="remember" name="remember">
-                            <label class="form-check-label" for="remember">Remember me</label>
+                            <label class="form-check-label text-secondary" for="remember">Remember me</label>
                         </div>
-                        <button type="submit" class="btn btn-primary fw-medium">Login</button>
+                        <button type="submit" class="btn btn-primary fw-medium mb-3">Login</button>
                     </form>
-                    <div class="mt-3">
-                        Don't have an account? <a href="{{ route('tampilkan.register') }}" style="color: orange;">Register here</a>
+                    <div class="mt-1 text-secondary">
+                        Don't have an account? <a href="{{ route('tampilkan.register') }}" style="color: #f75600;">Register here</a>
                     </div>
                 </div>
             </div>
-
+            
             <!-- IMAGE -->
-            <div class="col-5">
-                <img src="/assets/img/book2.png" class="img-fluid p-0" alt="s">
+            <div class="col-4 ms-1">
+                <img src="/assets/img/UniShare-with-Text-2.png" class="img-fluid p-0" alt="s" style="transform:scale(0.7) ">
             </div>
         </div>
     </section>

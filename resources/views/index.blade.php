@@ -23,12 +23,31 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
+
+  <style>
+    .page-title {
+    background-color: #121415;
+    position: relative;
+    overflow: hidden;
+    }
+
+    .container a {
+    color: #f6f7ff;
+    }
+
+    .btn-primary:hover {
+    color: #252422;
+    background-color: #f6f7ff;
+    border-color: #f6f7ff;
+    }
+  </style>
+
   </head>
 
   <body>
     <section class="page-title">
       <!-- NAVBAR -->
-      <nav class="navbar navbar-expand-lg bg-body-tertiary mt-3 border-danger" data-bs-theme="light">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary mt-3 border-danger" data-bs-theme="light" >
         <div class="container" data-bs-theme="light">
           <a class="navbar-brand fs-4 fw-semibold" href="#">
             <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />

@@ -7,9 +7,7 @@
 }
 
 body {
-    background: #f6f7ff;
-    background-size: cover;
-    color: #252422;
+    background: #e0e1ea;
 }
 
 p,
@@ -17,12 +15,12 @@ ul {
     color: #403d39;
 }
 
-.page-title {
+/* .page-title {
     background-color: #121415;
     height: 708px;
     position: relative;
     overflow: hidden;
-}
+} */
 
 .services {
     margin-bottom: 30px;
@@ -52,7 +50,7 @@ ul {
 }
 
 .container a {
-    color: #f6f7ff;
+    color: #121415;
     font-size: 18px;
     font-weight: 500;
     transition: 0.4 s;
@@ -77,7 +75,14 @@ ul {
     text-align: left;
 }
 
-.content-box h1 {
+.content-box-sign {
+    margin: 5% 8%;
+    max-width: 700px;
+    text-align: left;
+}
+
+.content-box h1,
+.content-box-sign h1 {
     font-size: 72px;
     color: #f75600;
 }
@@ -100,9 +105,9 @@ ul {
 }
 
 .btn-primary:hover {
-    color: #252422;
-    background-color: #f6f7ff;
-    border-color: #f6f7ff;
+    color: #f6f7ff;
+    background-color: #252422;
+    border-color: #252422;
 }
 
 #icon-list {
@@ -151,11 +156,14 @@ ul {
     border-radius: 30px;
 }
 
-.mb-3{
+.mb-3 {
     color: #f6f7ff;
     width: 400px;
 }
-
-#usernameHelp{
-    color: #7c7974;
-}
+/* 
+.col-5{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%); 
+} */
