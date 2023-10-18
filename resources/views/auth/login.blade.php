@@ -28,7 +28,7 @@
 
 <body style="min-height:800px">
     
-    <section class="page-title">
+    <section class="page-input">
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary mt-3 border-danger" data-bs-theme="light" >
             <div class="container" data-bs-theme="light">

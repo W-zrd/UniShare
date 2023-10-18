@@ -25,11 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
 
   <style>
-    .page-title {
-    background-color: #121415;
-    position: relative;
-    overflow: hidden;
-    }
+
 
     .container a {
     color: #f6f7ff;
