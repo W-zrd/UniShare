@@ -207,3 +207,27 @@ ul {
 #usernameHelp {
     color: #7c7974;
 }
+
+/*FAHRYAN NAMBAH DISINI BUAT DASHBOARD*/
+.navbar_dashboard{
+    background-color: #ffffff;
+    padding-top: 16px;
+    height: 100px;
+    position: relative;
+    overflow: visible;
+}
+
+.card{
+    background-color: #252422;
+}
+.card-body h5{
+    color: #f6f7ff;
+    text-align: center;
+}
+.card-title{
+    color: #f6f7ff;
+    text-align: center;
+}
+.card-text{
+    color: #f6f7ff;
+}
