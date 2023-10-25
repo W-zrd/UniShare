@@ -31,7 +31,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary border-danger" data-bs-theme="light">
             <div class="container" data-bs-theme="light">
                 <a class="navbar-brand fs-4 fw-semibold" href="#" style="color: #121415;">
-                    <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
+                    <img src="/assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
                     UniShare
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@
                             <a class="nav-link" href="#">Beasiswa</a>
                         </li>
                         <li class="nav-item">
-                            <img src="assets/img/pp.png">
+                            <img src="/assets/img/pp.png">
                         </li>                             
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -89,7 +89,7 @@
           </div>
           <div class="col-3">
             <div class="card" style="width: 18rem; display: flex; flex-direction: column; align-items: center;">
-                <img class="card-img-top" src="assets/img/Bullseye.png" alt="Card image cap" style="width: 140px; height: auto;">
+                <img class="card-img-top" src="/assets/img/Bullseye.png" alt="Card image cap" style="width: 140px; height: auto;">
                 <div class="card-body">
                   <h5 class="card-title">Capaian Belajar</h5>
                 </div>
@@ -97,7 +97,7 @@
           </div>
           <div class="col-3">
             <div class="card" style="width: 18rem; display: flex; flex-direction: column; align-items: center;">
-                <img class="card-img-top" src="assets/img/Bullseye.png" alt="Card image cap" style="width: 140px; height: auto;">
+                <img class="card-img-top" src="/assets/img/Bullseye.png" alt="Card image cap" style="width: 140px; height: auto;">
                 <div class="card-body">
                   <h5 class="card-title">Capaian Belajar</h5>
                 </div>
