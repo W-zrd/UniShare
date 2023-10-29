@@ -75,7 +75,7 @@ ul {
     color: #f6f7ff;
 }
 
-.navbar {
+.navbar-login {
     background-color: transparent !important;
     color: #f75600;
 }
@@ -217,17 +217,14 @@ ul {
     overflow: visible;
 }
 
-.card {
-    background-color: #252422;
-}
-.card-body h5 {
-    color: #f6f7ff;
-    text-align: center;
-}
 .card-title {
-    color: #f6f7ff;
     text-align: center;
 }
-.card-text {
+.card-atas {
+    background-color: #121415;
     color: #f6f7ff;
+}
+.card-bawah {
+    background-color: #f6f7ff;
+    color: #121415;
 }

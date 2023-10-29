@@ -26,135 +26,133 @@
   </head>
 
 <body>
-    <section class="navbar_dashboard">
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary border-danger" data-bs-theme="light">
-            <div class="container" data-bs-theme="light">
-                <a class="navbar-brand fs-4 fw-semibold" href="#" style="color: #121415;">
-                    <img src="/assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
-                    UniShare
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-light navbar-light border-danger navbar_dashboard" data-bs-theme="light" style="box-shadow: 0 2px 4px rgba(0.3,0.3,0.3,0.3);">
+        <div class="container" data-bs-theme="light">
+            <a class="navbar-brand fs-4 fw-semibold" href="#" style="color: #121415;">
+                <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
+                UniShare
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav justify-content-end ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="dashboard.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Karir</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Acara</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Beasiswa</a>
-                        </li>
-                        <li class="nav-item">
-                            <img src="/assets/img/pp.png">
-                        </li>                             
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Rafidhia Haikal
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/catalog/department1">Profile</a>
-                                <a class="dropdown-item" href="/catalog/department2">Log Out</a>
-                            </div>
-                        </li>  
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav justify-content-end ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Karir</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acara</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Beasiswa</a>
+                    </li>
+                    <li class="nav-item">
+                        <img src="assets/img/pp.png">
+                    </li>                             
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Rafidhia Haikal
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/catalog/department1">Profile</a>
+                            <a class="dropdown-item" href="/catalog/department2">Log Out</a>
+                        </div>
+                    </li>  
+                </ul>
             </div>
-        </nav>
-    </section>
+        </div>
+    </nav>
     <!-- SEARCH, CAPAIAN BELAJAR, dan NOTIFIKASI-->
     <div class="container mt-5">
         <div class="row">
-          <div class="col-6">
-            <div class="card" style="width: 36rem; height: 13rem;">
-                <div class="card-body">
-                  <h4 class="card-title">Temukan peluang yang tepat untuk mewujudkan impianmu bersama UniShare!</h4>
-                  <div class="container mt-4">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Cari sesuatu...">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">Cari</button>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body card-atas">
+                        <h4 class="card-title">Temukan peluang yang tepat untuk mewujudkan impianmu bersama UniShare!</h4>
+                        <div class="container mt-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Cari sesuatu...">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">Cari</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card d-flex justify-content-center align-items-center card-atas">
+                    <img class="card-img-top img-fluid" src="assets/img/Bullseye.png" alt="Card image cap" style="width: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title ">Capaian Belajar</h5>
+                    </div>
                 </div>
-              </div>
-          </div>
-          <div class="col-3">
-            <div class="card" style="width: 18rem; display: flex; flex-direction: column; align-items: center;">
-                <img class="card-img-top" src="/assets/img/Bullseye.png" alt="Card image cap" style="width: 140px; height: auto;">
-                <div class="card-body">
-                  <h5 class="card-title">Capaian Belajar</h5>
+            </div>
+            <div class="col-lg-3">
+                <div class="card d-flex justify-content-center align-items-center card-atas">
+                    <img class="card-img-top img-fluid" src="assets/img/Bullseye.png" alt="Card image cap" style="width: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Capaian Belajar</h5>
+                    </div>
                 </div>
-              </div>
-          </div>
-          <div class="col-3">
-            <div class="card" style="width: 18rem; display: flex; flex-direction: column; align-items: center;">
-                <img class="card-img-top" src="/assets/img/Bullseye.png" alt="Card image cap" style="width: 140px; height: auto;">
-                <div class="card-body">
-                  <h5 class="card-title">Capaian Belajar</h5>
-                </div>
-              </div>
-          </div>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <!-- EXPLORE-->
-      <div class="container mt-5">
+    <!-- EXPLORE-->
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-11">
+            <div class="col-lg-11">
                 <h2>Explore</h2>
             </div>
-            <div class="col-1">
+            <div class="col-lg-1">
                 <h6>More  <span style="font-size: 24px;">&#8594;</span></h6>
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
-                <div class="card" style="width: 18rem;">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-                    <div class="card-body">
-                      <h5 class="card-title">Nama Pekerjaan/Job [Max 2 Baris]</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="col-lg-3">
+                <div class="card h-100 d-flex align-items-center">
+                    <svg class="bd-placeholder-img flex-fill" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+                    <div class="card-body flex-fill card-bawah">
+                        <h5 class="card-title">Nama Acara [Max 2 Baris]</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-3">
-                <div class="card" style="width: 18rem;">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-                    <div class="card-body">
-                      <h5 class="card-title">Nama Beasiswa [Max 2 Baris]</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>            
+            <div class="col-lg-3">
+                <div class="card h-100 d-flex align-items-center">
+                    <svg class="bd-placeholder-img flex-fill" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+                    <div class="card-body flex-fill card-bawah">
+                        <h5 class="card-title">Nama Acara [Max 2 Baris]</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-3">
-                <div class="card" style="width: 18rem;">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-                    <div class="card-body">
-                      <h5 class="card-title">Nama Acara [Max 2 Baris]</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>            
+            <div class="col-lg-3">
+                <div class="card h-100 d-flex align-items-center">
+                    <svg class="bd-placeholder-img flex-fill" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+                    <div class="card-body flex-fill card-bawah">
+                        <h5 class="card-title">Nama Acara [Max 2 Baris]</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-3">
-                <div class="card" style="width: 18rem;">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-                    <div class="card-body">
-                      <h5 class="card-title">Nama Pekerjaan/Job [Max 2 Baris]</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>            
+            <div class="col-lg-3">
+                <div class="card h-100 d-flex align-items-center">
+                    <svg class="bd-placeholder-img flex-fill" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+                    <div class="card-body flex-fill card-bawah">
+                        <h5 class="card-title">Nama Acara [Max 2 Baris]</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                 </div>
-            </div>
+            </div>            
         </div>
-    
+    </div>    
 
     <!-- JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
