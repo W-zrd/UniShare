@@ -209,7 +209,7 @@ ul {
 }
 
 /*FAHRYAN NAMBAH DISINI BUAT DASHBOARD*/
-.navbar_dashboard{
+.navbar_dashboard {
     background-color: #ffffff;
     padding-top: 16px;
     height: 100px;
@@ -217,17 +217,17 @@ ul {
     overflow: visible;
 }
 
-.card{
+.card {
     background-color: #252422;
 }
-.card-body h5{
+.card-body h5 {
     color: #f6f7ff;
     text-align: center;
 }
-.card-title{
+.card-title {
     color: #f6f7ff;
     text-align: center;
 }
-.card-text{
+.card-text {
     color: #f6f7ff;
 }

@@ -37,3 +37,5 @@ Route::controller(UserController::class)->group(function(){
 });
 
 Route::view('/dashboard', 'dashboard')->name('dashboard');
+
+Route::view('/editprof', 'editprof')->name('editprof');
