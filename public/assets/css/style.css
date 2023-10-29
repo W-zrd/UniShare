@@ -217,17 +217,15 @@ ul {
     overflow: visible;
 }
 
-.card{
-    background-color: #252422;
-}
-.card-body h5{
-    color: #f6f7ff;
-    text-align: center;
-}
 .card-title{
-    color: #f6f7ff;
     text-align: center;
 }
-.card-text{
-    color: #f6f7ff;
+.card-atas{
+    background-color: #121415;
+    color:#f6f7ff;
 }
+.card-bawah{
+    background-color: #f6f7ff;
+    color:#121415;
+}
+
