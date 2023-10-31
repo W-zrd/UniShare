@@ -32,17 +32,14 @@ body {
     height: 45px;
 }
 
-.card {
-    width: 1200px;
-    height: 210px;
+.card,
+.list-group-item {
     border-style: none;
 }
 
-.card img {
-    padding: 20px;
-    display: flex;
-    height: 210px;
-    width: auto;
+.list-group-item input[type="checkbox"]:checked {
+    background-color: #f75600;
+    border-color: #f75600;
 }
 
 #header-thumbnail {
@@ -68,4 +65,23 @@ body {
     margin-left: 15px;
     font-weight: 500;
     color: #252422;
+}
+
+.btn-primary {
+    background-color: #f75600;
+    border-color: #f75600;
+    border-radius: 20px;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    border-color: #f75600;
+    border-width: 2px;
+    color: #f75600;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        overflow-x: hidden;
+    }
 }

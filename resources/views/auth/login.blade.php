@@ -77,7 +77,15 @@
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="remember" name="remember">
                             <label class="form-check-label text-secondary" for="remember">Remember me</label>
+                            
+
                         </div>
+
+                        @if (session('error'))
+                            <div class="alert alert-danger me-3 pb-0">
+                                <p class="text-center">Incorrect Username or Password</p>
+                            </div>
+                        @endif
                         <button type="submit" class="btn btn-primary fw-medium mb-3">Login</button>
                     </form>
                     <div class="mt-1 text-secondary">

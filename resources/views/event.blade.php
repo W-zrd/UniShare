@@ -7,7 +7,8 @@
     <title>Acara</title>
 
     <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link href="{{ asset('/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('/assets/bootstrap/js/bootstrap.min.js') }}" rel="stylesheet" />
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="assets/img/favicon.png" />
@@ -102,29 +103,76 @@
     </section>
 
     <section>
-      <div class="card m-5 justify-content-center mx-auto shadow">
-        <div class="row g-0">
-          <div class="col-md-3">
-            <img src="assets/img/01.jpg" class="img-fluid rounded" alt="...">
+      <div class="container-fluid mx-auto">
+        <div class="row mx-auto">
+
+          <!-- FILTERS -->
+          <div class="col-lg-3 m-3 mt-5 mx-auto" style="background-color: white">
+            <ul class="list-group" style="max-width: 400px;">
+              <h5 class="ms-3 mt-4">Filter</h5>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox1">
+                <label class="form-check-label" for="firstCheckbox">Sains</label>
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox2">
+                <label class="form-check-label" for="secondCheckbox">Teknologi</label>
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                <label class="form-check-label" for="thirdCheckbox">Bisnis</label>
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                <label class="form-check-label" for="thirdCheckbox">Desain</label>
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                <label class="form-check-label" for="thirdCheckbox">Fotografi</label>
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                <label class="form-check-label" for="thirdCheckbox">Manajemen</label>
+              </li>
+            </ul>
+            
+            <div class="justify-items-center mx-auto">
+              <button type="button" class="btn btn-primary m-3 p-2 ps-5 pe-5">Apply!</button>
+            </div>
+            
+
           </div>
-          <div class="col mt-3">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+
+          <!-- CARDS -->
+
+          <div class="col-lg-8 m-3 mt-5 mx-auto">
+            <div class="card" style="max-width: 1000px;">
+              <div class="row g-0">
+                <div class="col-lg-4">
+                  <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
+                </div>
+                <div class="col-lg-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
+
       </div>
+
+
+
     </section>
+
     
 
     <!-- JAVASCRIPT -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1/dist/es-module-shims.min.js" crossorigin="anonymous"></script>
     <script type="importmap">
     {
       "imports": {
