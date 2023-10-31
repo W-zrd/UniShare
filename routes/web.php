@@ -37,5 +37,6 @@ Route::controller(UserController::class)->group(function(){
 });
 
 Route::view('/dashboard', 'dashboard')->name('dashboard');
+Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
 Route::view('/event', 'event')->name('event');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
