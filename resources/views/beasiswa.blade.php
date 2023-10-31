@@ -40,16 +40,16 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav justify-content-end ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="dashboard.html">Home</a>
+                <a class="nav-link" href="dashboard">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Karir</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Acara</a>
+                <a class="nav-link" href="event">Acara</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Beasiswa</a>
+                <a class="nav-link" href="beasiswa">Beasiswa</a>
               </li>
               <li class="nav-item">
                 <img src="assets/img/pp.png" />
@@ -57,8 +57,8 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Rafidhia Haikal </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/catalog/department1">Profile</a>
-                  <a class="dropdown-item" href="/catalog/department2">Log Out</a>
+                  <a class="dropdown-item" href="editprof">Profile</a>
+                  <a class="dropdown-item" href="/">Log Out</a>
                 </div>
               </li>
             </ul>
@@ -111,7 +111,7 @@
           <button class="btn btn-dark" style="border-radius: 3px">Info Selengkapnya</button>
         </div>
         <div class="col-3">
-          <img src="..." style="height: 200px" />
+          <img src="assets/img/image 6.png" style="height: 200px" />
         </div>
       </div>
     </section>

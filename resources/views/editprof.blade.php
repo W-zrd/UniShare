@@ -69,16 +69,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav justify-content-end ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboard.html">Home</a>
+                            <a class="nav-link" href="dashboard">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Karir</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Acara</a>
+                            <a class="nav-link" href="event">Acara</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Beasiswa</a>
+                            <a class="nav-link" href="beasiswa">Beasiswa</a>
                         </li>
                         <li class="nav-item">
                             <img src="/assets/img/pp.png">
@@ -88,8 +88,8 @@
                                 Rafidhia Haikal
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/catalog/department1">Profile</a>
-                                <a class="dropdown-item" href="/catalog/department2">Log Out</a>
+                                <a class="dropdown-item" href="editprof">Profile</a>
+                                <a class="dropdown-item" href="/">Log Out</a>
                             </div>
                         </li>  
                     </ul>
@@ -147,7 +147,7 @@
                     <div class="cell  justify-content-center text-center rounded bg-light cell__big">
                         <div class="row">
                             <div class="m-3 cell-content">
-                                <img src="{{ asset('assets/img/profilepic.png') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 35%">
+                                <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 15%">
                                 <h3 class="mb-5">Rafidhia Haikal Pasya</h3>
                             </div>
                         </div>

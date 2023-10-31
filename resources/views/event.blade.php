@@ -34,16 +34,16 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav justify-content-end ms-auto">
                   <li class="nav-item" id="navbar-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="dashboard">Home</a>
                   </li>
                   <li class="nav-item" id="navbar-item">
                     <a class="nav-link" href="#">Karir</a>
                   </li>
                   <li class="nav-item" id="navbar-item">
-                    <a class="nav-link" href="#">Acara</a>
+                    <a class="nav-link" href="event">Acara</a>
                   </li>
                   <li class="nav-item" id="navbar-item">
-                    <a class="nav-link" href="#">Beasiswa</a>
+                    <a class="nav-link" href="beasiswa">Beasiswa</a>
                   </li>
 
                   <li class="dropdown navbar-item">
@@ -51,8 +51,8 @@
                       Rafidhia Haikal
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Profile</a></li>
-                      <li><a class="dropdown-item" href="#">Log Out</a></li>
+                      <li><a class="dropdown-item" href="editprof">Profile</a></li>
+                      <li><a class="dropdown-item" href="/">Log Out</a></li>
                     </ul>
                   </li>
           
