@@ -39,7 +39,7 @@
 
 .cell {
   min-height: 100px;
-  border: 2px solid green;
+  border: 2px solid lightblue;
   margin: 1rem;
 }
 .cell__big {
@@ -53,7 +53,7 @@
 
   </head>
 
-  <body>
+<body>
     <!-- NAVBAR -->
     <section class="navbar_dashboard">
         <nav class="navbar navbar-expand-lg bg-body-tertiary border-danger" data-bs-theme="light">
@@ -98,59 +98,62 @@
         </nav>
     </section>
 
+    <!-- EDIT PROF -->
     <section class="editprof-content">
-    <div class="container">
-    <div class="row no-gutters">
-        <div class="col-3">
+        <div class="container">
             <div class="row no-gutters">
-                <div class="col">
-                    <div class="cell">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
+                <div class="col-3">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <div class="cell">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold text-primary">Profile</h5>
+                                        <p class="card-text text-secondary mb-0 small">Username </p>
+                                        <p class="card-text text-dark">rfdhaikal47 </p>
+                                        <p class="card-text text-secondary mb-0 small">Email</p>
+                                        <p class="card-text">admin@unishare.com</p>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <div class="cell">
+                                <ul class="nav flex-column bg-light p-2">
+                                    <li class="nav-item px-1">
+                                        <a class="nav-link active" aria-current="page" href="#">Profil</a>
+                                    </li>
+                                    <li class="nav-item px-1">
+                                        <a class="nav-link" href="#">Privasi</a>
+                                    </li>
+                                    <li class="nav-item px-1">
+                                        <a class="nav-link" href="#">Riwayat</a>
+                                    </li>
+                                    <li class="nav-item px-1">
+                                        {{-- <img src="{{ asset('assets/img/Vector (1).png') }}" alt="" class="m-0 p-0"> --}}
+                                        <a class="nav-link" href="#">Notifikasi</a>
+                                    </li>
+                                    <li class="nav-item px-1">
+                                        <a class="nav-link" href="#">Log Out</a>
+                                    </li>
+                                </ul>
                             </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row no-gutters">
                 <div class="col">
-                    <div class="cell">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Active</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                            </li>
-                        </ul>
+                    <div class="cell  justify-content-center text-center rounded bg-light cell__big">
+                        <div class="row">
+                            <div class="m-3 cell-content">
+                                <img src="{{ asset('assets/img/profilepic.png') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 35%">
+                                <h3 class="mb-5">Rafidhia Haikal Pasya</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-            <div class="col">
-                <div class="cell  justify-content-center text-center rounded cell__big">
-                    <div class="m-2 cell-content">
-                        <img src="{{ asset('assets/img/Bullseye.png') }}" class="rounded-circle m-1" alt="Profile Picture">
-                        <h3 class="mb-5">Rafidhia Haikal Pasya</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        
     </section>
-
-    
-  </body>
+</body>
