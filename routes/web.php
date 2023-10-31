@@ -37,3 +37,4 @@ Route::controller(UserController::class)->group(function(){
 });
 
 Route::view('/dashboard', 'dashboard')->name('dashboard');
+Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
