@@ -8,7 +8,6 @@
 
     <!-- BOOTSTRAP -->
     <link href="{{ asset('/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/assets/bootstrap/js/bootstrap.min.js') }}" rel="stylesheet" />
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="assets/img/favicon.png" />
@@ -16,6 +15,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/event.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
+
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
 </head>
 
 <body>
@@ -149,8 +151,13 @@
             <div class="card" style="max-width: 1000px;">
               <div class="row g-0">
                 <div class="col-lg-4">
-                  <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
+                           
+                  <a class="image-popup-no-margins" href="assets/img/01.jpg" title="Caption. Can be aligned to any side and contain any HTML.">
+                    <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
+                  </a>
+ 
                 </div>
+
                 <div class="col-lg-8">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -164,6 +171,7 @@
 
         </div>
 
+
       </div>
 
 
@@ -173,6 +181,14 @@
     
 
     <!-- JAVASCRIPT -->
+
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Magnific Popup core JS file -->
+    <script src="/assets/js/jquery-plugin/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+    
     <script type="importmap">
     {
       "imports": {
@@ -186,6 +202,7 @@
 
       new bootstrap.Popover(document.getElementById('popoverButton'))
     </script>
+
 
   </body>
 </html>
