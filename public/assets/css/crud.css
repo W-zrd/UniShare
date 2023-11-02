@@ -1,0 +1,37 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: #121415;
+    float: left;
+}
+
+.sidebar a {
+    color: #f75600;
+}
+
+.sidebar a:hover {
+    color: white;
+}
+
+.sidebar a:focus {
+    background-color: #1f1f1e;
+    border-radius: 12px;
+    padding: 10px;
+    color: #f75600;
+    font-weight: bold;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    text-decoration: none;
+}
+
+#delete-icon {
+    color: red;
+}

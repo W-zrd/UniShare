@@ -22,6 +22,7 @@ class AuthController extends Controller
      * Show the form for creating a new resource.
      */
     public function showLoginForm(){
+    
         return view('auth.login');
     }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>UniShare@Wzrd</title>
+    <title>Dashboard</title>
 
     <!-- METADATA -->
     <meta charset="UTF-8" />
