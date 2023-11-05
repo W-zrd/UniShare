@@ -47,7 +47,7 @@
     border-color: red;
     height: auto;
     display: flex;
-    height: calc(100% - 2rem);
+    /* height: calc(100% - 2rem); */
 }
     </style>
 
@@ -123,20 +123,19 @@
                             <div class="cell">
                                 <ul class="nav flex-column bg-light p-2">
                                     <li class="nav-item px-1">
-                                        <a class="nav-link active" aria-current="page" href="#">Profil</a>
+                                        <a class="nav-link active" aria-current="page" href="#" data-tab="profil">Profil</a>
                                     </li>
                                     <li class="nav-item px-1">
-                                        <a class="nav-link" href="#">Privasi</a>
+                                        <a class="nav-link" href="#" data-tab="privasiii">Privasi</a>
                                     </li>
                                     <li class="nav-item px-1">
-                                        <a class="nav-link" href="#">Riwayat</a>
+                                        <a class="nav-link" href="#" data-tab="riwayat">Riwayat</a>
                                     </li>
                                     <li class="nav-item px-1">
-                                        {{-- <img src="{{ asset('assets/img/Vector (1).png') }}" alt="" class="m-0 p-0"> --}}
-                                        <a class="nav-link" href="#">Notifikasi</a>
+                                        <a class="nav-link" href="#" data-tab="notifikasi">Notifikasi</a>
                                     </li>
                                     <li class="nav-item px-1">
-                                        <a class="nav-link" href="#">Log Out</a>
+                                        <a class="nav-link text-danger" href="#" data-tab="logout">Log Out</a>
                                     </li>
                                 </ul>
                             </div>
@@ -144,11 +143,39 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="cell  justify-content-center text-center rounded bg-light cell__big">
-                        <div class="row">
-                            <div class="m-3 cell-content">
-                                <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 15%">
-                                <h3 class="mb-5">Rafidhia Haikal Pasya</h3>
+                    <div id="profil" class="tab-content">
+                        <div class="cell justify-content-center text-center rounded bg-light"> 
+                            <div class="m-3 h-25 ">
+                                <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 125px">
+                                <h3 >Rafidhia Haikal Pasya</h3>
+                                <hr>
+                            </div>
+                            <div>
+                                <p>bdwha</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="privasiii" class="tab-content">
+                        <div class="cell justify-content-center text-center rounded bg-light"> 
+                            <div class="m-3 h-25 ">
+                                <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 125px">
+                                <h3 >Rafidhia Haikal Pasya</h3>
+                                <hr>
+                            </div>
+                            <div>
+                                <p>privasi data haikal pecah</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="riwayat" class="tab-content">
+                        <div class="cell justify-content-center text-center rounded bg-light"> 
+                            <div class="m-3 h-25 ">
+                                <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 125px">
+                                <h3 >Rafidhia Haikal Pasya</h3>
+                                <hr>
+                            </div>
+                            <div>
+                                <p>riwayat</p>
                             </div>
                         </div>
                     </div>
@@ -156,4 +183,32 @@
             </div>
         </div>
     </section>
+    <script>
+        const tabs = document.querySelectorAll('.nav-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const tabName = tab.getAttribute('data-tab');
+                tabContents.forEach(content => content.style.display = 'none');
+                document.getElementById(tabName).style.display = 'block';
+            });
+        });
+        // Remove active class from all tabs except the first one (Profil)
+        tabs.forEach((tab, index) => {
+            if (index !== 0) {
+                tab.classList.remove('active');
+            }
+        });
+        // Hide all tab contents except the first one (Profil)
+        tabContents.forEach((content, index) => {
+            if (index !== 0) {
+                content.style.display = 'none';
+            }
+        });
+    </script>
+    
+    
 </body>
