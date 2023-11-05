@@ -37,18 +37,23 @@
 } */
 
 
-.cell {
-  min-height: 100px;
-  border: 2px solid lightblue;
-  margin: 1rem;
-}
-.cell__big {
-    background-color: #f6f7ff;
-    border-color: red;
-    height: auto;
-    display: flex;
-    /* height: calc(100% - 2rem); */
-}
+    .cell {
+    min-height: 100px;
+    border: 2px solid lightgray;
+    margin: 1rem;
+    }
+    .cell__big {
+        background-color: #f6f7ff;
+        border-color: red;
+        height: auto;
+        display: flex;
+        /* height: calc(100% - 2rem); */
+    }
+
+    .activecolor:focus{
+        border-color: #f75600; /* Change this to your desired color */
+        box-shadow: 0 0 2px #f75600;
+    }
     </style>
 
   </head>
@@ -144,26 +149,76 @@
                 </div>
                 <div class="col">
                     <div id="profil" class="tab-content">
-                        <div class="cell justify-content-center text-center rounded bg-light"> 
-                            <div class="m-3 h-25 ">
+                        <div class="cell justify-content-center rounded bg-light"> 
+                            <div class="m-3 h-25 text-center">
                                 <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 125px">
                                 <h3 >Rafidhia Haikal Pasya</h3>
                                 <hr>
                             </div>
                             <div>
-                                <p>bdwha</p>
+                                <form>
+                                    <div class="row p-3 pt-0">
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">Example label</label>
+                                            <input type="text" class="form-control activecolor" placeholder="First name">
+                                        </div>
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">Example label</label>
+                                            <input type="text" class="form-control activecolor" placeholder="Last name">
+                                        </div>
+                                    </div>
+                                    <div class="row p-3 pt-0">
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">Example label</label>
+                                            <input type="text" class="form-control activecolor" placeholder="First name">
+                                        </div>
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">Example label</label>
+                                            <input type="text" class="form-control activecolor" placeholder="Last name">
+                                        </div>
+                                    </div>
+                                    <div class="row p-3 pt-0">
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">Example label</label>
+                                            <input type="text" class="form-control w-50 activecolor" placeholder="First name">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary m-3 mt-0 float-right">Apply</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                     <div id="privasiii" class="tab-content">
-                        <div class="cell justify-content-center text-center rounded bg-light"> 
-                            <div class="m-3 h-25 ">
+                        <div class="cell justify-content-center rounded bg-light"> 
+                            <div class="m-3 h-25 text-center">
                                 <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 125px">
                                 <h3 >Rafidhia Haikal Pasya</h3>
                                 <hr>
                             </div>
                             <div>
-                                <p>privasi data haikal pecah</p>
+                                <form>
+                                    <div class="row p-3 pt-0">
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">Example label</label>
+                                            <input type="text" class="form-control activecolor" placeholder="First name">
+                                        </div>
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">Example label</label>
+                                            <input type="text" class="form-control activecolor" placeholder="Last name">
+                                        </div>
+                                    </div>
+                                    <div class="row p-3 pt-0">
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">Example label</label>
+                                            <input type="text" class="form-control activecolor" placeholder="First name">
+                                        </div>
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">Example label</label>
+                                            <input type="text" class="form-control activecolor" placeholder="Last name">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary m-3 mt-0 float-right">Apply</button>
+                                </form>
                             </div>
                         </div>
                     </div>
