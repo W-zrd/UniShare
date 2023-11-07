@@ -60,48 +60,47 @@
 
 <body>
     <!-- NAVBAR -->
-    <section class="navbar_dashboard">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary border-danger" data-bs-theme="light">
-            <div class="container" data-bs-theme="light">
-                <a class="navbar-brand fs-4 fw-semibold" href="#" style="color: #121415;">
-                    <img src="/assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
-                    UniShare
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-light navbar-light border-danger navbar_dashboard" data-bs-theme="light" style="box-shadow: 0 2px 4px rgba(0.3,0.3,0.3,0.3);">
+        <div class="container" data-bs-theme="light">
+            <a class="navbar-brand fs-4 fw-semibold" href="#" style="color: #121415;">
+                <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
+                UniShare
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav justify-content-end ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="dashboard">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Karir</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="event">Acara</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="beasiswa">Beasiswa</a>
-                        </li>
-                        <li class="nav-item">
-                            <img src="/assets/img/pp.png">
-                        </li>                             
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Rafidhia Haikal
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="editprof">Profile</a>
-                                <a class="dropdown-item" href="/">Log Out</a>
-                            </div>
-                        </li>  
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav justify-content-end ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Karir</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="event">Acara</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="beasiswa">Beasiswa</a>
+                    </li>
+                    <li class="nav-item">
+                        <img src="assets/img/pp.png">
+                    </li>                             
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Rafidhia Haikal
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="editprof">Profile</a>
+                            <a class="dropdown-item" href="/">Log Out</a>
+                        </div>
+                    </li>  
+                </ul>
             </div>
-        </nav>
-    </section>
+        </div>
+    </nav>
 
     <!-- EDIT PROF -->
     <section class="editprof-content">
@@ -133,14 +132,11 @@
                                     <li class="nav-item px-1">
                                         <a class="nav-link" href="#" data-tab="privasiii">Privasi</a>
                                     </li>
-                                    <li class="nav-item px-1">
-                                        <a class="nav-link" href="#" data-tab="riwayat">Riwayat</a>
+                                    <li class="nav-item px-1 mb-5">
+                                        <a class="nav-link disabled " aria-disabled >Riwayat</a>
                                     </li>
-                                    <li class="nav-item px-1">
-                                        <a class="nav-link" href="#" data-tab="notifikasi">Notifikasi</a>
-                                    </li>
-                                    <li class="nav-item px-1">
-                                        <a class="nav-link text-danger" href="#" data-tab="logout">Log Out</a>
+                                    <li class="nav-item px-1 mt-5">
+                                        <a class="nav-link text-danger" href="/">Log Out</a>
                                     </li>
                                 </ul>
                             </div>
@@ -159,28 +155,28 @@
                                 <form>
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Example label</label>
-                                            <input type="text" class="form-control activecolor" placeholder="First name">
+                                            <label for="formGroupExampleInput">First Name</label>
+                                            <input type="text" class="form-control activecolor">
                                         </div>
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Example label</label>
-                                            <input type="text" class="form-control activecolor" placeholder="Last name">
-                                        </div>
-                                    </div>
-                                    <div class="row p-3 pt-0">
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Example label</label>
-                                            <input type="text" class="form-control activecolor" placeholder="First name">
-                                        </div>
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Example label</label>
-                                            <input type="text" class="form-control activecolor" placeholder="Last name">
+                                            <label for="formGroupExampleInput">Last Name</label>
+                                            <input type="text" class="form-control activecolor">
                                         </div>
                                     </div>
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Example label</label>
-                                            <input type="text" class="form-control w-50 activecolor" placeholder="First name">
+                                            <label for="formGroupExampleInput">Username</label>
+                                            <input type="text" class="form-control activecolor">
+                                        </div>
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">Alamat</label>
+                                            <input type="text" class="form-control activecolor">
+                                        </div>
+                                    </div>
+                                    <div class="row p-3 pt-0">
+                                        <div class="col">
+                                            <label for="formGroupExampleInput">Jenis Kelamin</label>
+                                            <input type="text" class="form-control w-50 activecolor" placeholder="Laki-Laki">
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary m-3 mt-0 float-right">Apply</button>
@@ -199,38 +195,26 @@
                                 <form>
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Example label</label>
-                                            <input type="text" class="form-control activecolor" placeholder="First name">
+                                            <label for="formGroupExampleInput">Username</label>
+                                            <input type="text" class="form-control activecolor">
                                         </div>
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Example label</label>
-                                            <input type="text" class="form-control activecolor" placeholder="Last name">
+                                            <label for="formGroupExampleInput">Email</label>
+                                            <input type="text" class="form-control activecolor">
                                         </div>
                                     </div>
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Example label</label>
-                                            <input type="text" class="form-control activecolor" placeholder="First name">
+                                            <label for="formGroupExampleInput">Password</label>
+                                            <input type="text" class="form-control activecolor">
                                         </div>
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Example label</label>
-                                            <input type="text" class="form-control activecolor" placeholder="Last name">
+                                            <label for="formGroupExampleInput">No Telp</label>
+                                            <input type="text" class="form-control activecolor">
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary m-3 mt-0 float-right">Apply</button>
                                 </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="riwayat" class="tab-content">
-                        <div class="cell justify-content-center text-center rounded bg-light"> 
-                            <div class="m-3 h-25 ">
-                                <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 125px">
-                                <h3 >Rafidhia Haikal Pasya</h3>
-                                <hr>
-                            </div>
-                            <div>
-                                <p>riwayat</p>
                             </div>
                         </div>
                     </div>
@@ -263,6 +247,7 @@
                 content.style.display = 'none';
             }
         });
+
     </script>
     
     
