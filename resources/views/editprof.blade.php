@@ -35,21 +35,11 @@
     padding-left: 0;
   }
 } */
-
-
     .cell {
     min-height: 100px;
     border: 2px solid lightgray;
     margin: 1rem;
     }
-    .cell__big {
-        background-color: #f6f7ff;
-        border-color: red;
-        height: auto;
-        display: flex;
-        /* height: calc(100% - 2rem); */
-    }
-
     .activecolor:focus{
         border-color: #f75600; /* Change this to your desired color */
         box-shadow: 0 0 2px #f75600;
@@ -59,7 +49,6 @@
   </head>
 
 <body>
-    <!-- NAVBAR -->
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-light navbar-light border-danger navbar_dashboard" data-bs-theme="light" style="box-shadow: 0 2px 4px rgba(0.3,0.3,0.3,0.3);">
         <div class="container" data-bs-theme="light">
@@ -127,13 +116,13 @@
                             <div class="cell">
                                 <ul class="nav flex-column bg-light p-2">
                                     <li class="nav-item px-1">
-                                        <a class="nav-link active" aria-current="page" href="#" data-tab="profil">Profil</a>
+                                        <a class="nav-link active nav-JS" aria-current="page" href="#" data-tab="profil">Profil</a>
                                     </li>
                                     <li class="nav-item px-1">
-                                        <a class="nav-link" href="#" data-tab="privasiii">Privasi</a>
+                                        <a class="nav-link nav-JS" href="#" data-tab="privasiii">Privasi</a>
                                     </li>
                                     <li class="nav-item px-1 mb-5">
-                                        <a class="nav-link disabled " aria-disabled >Riwayat</a>
+                                        <a class="nav-link disabled nav-JS" aria-disabled >Riwayat</a>
                                     </li>
                                     <li class="nav-item px-1 mt-5">
                                         <a class="nav-link text-danger" href="/">Log Out</a>
@@ -155,28 +144,32 @@
                                 <form>
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label for="formGroupExampleInput">First Name</label>
+                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Nama Lengkap</label>
                                             <input type="text" class="form-control activecolor">
                                         </div>
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Last Name</label>
-                                            <input type="text" class="form-control activecolor">
-                                        </div>
-                                    </div>
-                                    <div class="row p-3 pt-0">
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Username</label>
-                                            <input type="text" class="form-control activecolor">
-                                        </div>
-                                        <div class="col">
-                                            <label for="formGroupExampleInput">Alamat</label>
+                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Nama Belakang</label>
                                             <input type="text" class="form-control activecolor">
                                         </div>
                                     </div>
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Jenis Kelamin</label>
-                                            <input type="text" class="form-control w-50 activecolor" placeholder="Laki-Laki">
+                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Username</label>
+                                            <input type="text" class="form-control activecolor">
+                                        </div>
+                                        <div class="col">
+                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Alamat</label>
+                                            <input type="text" class="form-control activecolor">
+                                        </div>
+                                    </div>
+                                    <div class="row p-3 pt-0">
+                                        <div class="col">
+                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Jenis Kelamin</label>
+                                            <select class="form-select w-50 activecolor" aria-label="Default select example">
+                                                <option selected value="1">Laki-Laki</option>
+                                                <option value="2">Perempuan</option>
+                                                <option value="3">Rather not say</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary m-3 mt-0 float-right">Apply</button>
@@ -195,21 +188,21 @@
                                 <form>
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Username</label>
+                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Username</label>
                                             <input type="text" class="form-control activecolor">
                                         </div>
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Email</label>
+                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Email</label>
                                             <input type="text" class="form-control activecolor">
                                         </div>
                                     </div>
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label for="formGroupExampleInput">Password</label>
-                                            <input type="text" class="form-control activecolor">
+                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Password</label>
+                                            <input type="password" class="form-control activecolor">
                                         </div>
                                         <div class="col">
-                                            <label for="formGroupExampleInput">No Telp</label>
+                                            <label class="ps-1 pb-1" for="formGroupExampleInput">No Telp</label>
                                             <input type="text" class="form-control activecolor">
                                         </div>
                                     </div>
@@ -223,7 +216,7 @@
         </div>
     </section>
     <script>
-        const tabs = document.querySelectorAll('.nav-link');
+        const tabs = document.querySelectorAll('.nav-JS');
         const tabContents = document.querySelectorAll('.tab-content');
         tabs.forEach(tab => {
             tab.addEventListener('click', (e) => {
@@ -249,6 +242,4 @@
         });
 
     </script>
-    
-    
 </body>
