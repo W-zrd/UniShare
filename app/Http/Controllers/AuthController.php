@@ -32,7 +32,7 @@ class AuthController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function authenticate(Request $request)
+    public function authenticate(Request $request) 
     {
         $credentials = $request->only('username', 'password');
         $user = User::where('username', $credentials['username'])->first();
