@@ -37,7 +37,7 @@ Route::controller(UserController::class)->group(function(){
 });
 
 Route::view('/dashboard', 'dashboard')->name('dashboard');
-
+Route::view('/karir', 'karir')->name('karir');
 Route::view('/editprof', 'editprof')->name('editprof');
 Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
 Route::view('/event', 'event')->name('event');

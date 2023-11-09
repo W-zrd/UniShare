@@ -42,7 +42,7 @@
                       <a class="nav-link fs-6" href="dashboard">Home</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link fs-6" href="#">Karir</a>
+                      <a class="nav-link fs-6" href="karir">Karir</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link fs-6" href="event">Acara</a>
