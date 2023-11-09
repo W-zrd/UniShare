@@ -32,43 +32,38 @@
             </ul>
       </div>
 
-      <div class="col-10">
-        <h1 class="mt-4 mb-5 text-center"> CRUD TABLE </h1>
-        <div class="container table-users">
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nama Lengkap</th>
-                <th scope="col">Username</th>
-                <th scope="col">Email</th>
-                <th scope="col">Alamat</th>
-                <th scope="col">Universitas</th>
-                <th scope="col">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-
-              @foreach ($data as $item)
-                <tr>
-                  <th scope="row">{{ $item->id }}</th>
-                  <td>{{ $item->nama_lengkap }}</td>
-                  <td>{{ $item->username }}</td>
-                  <td>{{ $item->email }}</td>
-                  <td>{{ $item->alamat }}</td>
-                  <td>{{ $item->universitas }}</td>
-                  
-                  <td> 
-                    <a href="/user/{{$item->id}}" class="material-symbols-outlined me-2" href="">edit</a>
-                    <a class="material-symbols-outlined"  id="delete-icon">delete_forever</a>
-                  </td>
-                </tr>
-              @endforeach
-
-            </tbody>
-          </table>
-        </div>
+      <!-- INPUT FORMS -->
+      <div class="col-9 mx-auto mt-5">
+        <form action="/update/user/{{$data->id}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="mb-3">
+          <label for="nama_lengkap" class="form-label text-secondary">Nama Lengkap</label>
+          <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="{{ $data->nama_lengkap }}">
       </div>
+      <div class="mb-3">
+          <label for="username" class="form-label text-secondary">Username</label>
+          <input type="text" class="form-control" id="username" name="username" value="{{ $data->username }}">
+      </div>
+      <div class="mb-3">
+          <label for="email" class="form-label text-secondary">Email</label>
+          <input type="email" class="form-control" id="email" name="email" value="{{ $data->email }}">
+      </div>
+      <div class="mb-3">
+          <label for="alamat" class="form-label text-secondary">Alamat</label>
+          <input type="text" class="form-control" id="alamat" name="alamat" value="{{ $data->alamat }}">
+      </div>
+      <div class="mb-3">
+          <label for="universitas" class="form-label text-secondary">Universitas</label>
+          <input type="text" class="form-control" id="universitas" name="universitas" value="{{ $data->universitas }}">
+      </div>
+      
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+        
+
+      </div>
+
 
     </div>
   </div>

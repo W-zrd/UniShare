@@ -66,7 +66,7 @@
                         <div class="mb-3">
                             <label for="username" class="form-label text-secondary">Username</label>
 
-                            <input type="text" class="form-control id="username" name="username" aria-describedby="usernameHelp" required>
+                            <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" required>
 
 
                         </div>

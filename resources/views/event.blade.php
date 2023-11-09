@@ -74,7 +74,7 @@
                 </div>
 
 
-                <div class="col me-xl-5">
+                <div class="col-7">
                     <h2 class="text-wrap" id="title-thumbnail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </h2>
                     <h6 class="text-wrap text-white fw-normal mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo</h6>
                     <form class="d-flex search-bar mt-3" role="search">
@@ -147,8 +147,31 @@
 
           <!-- CARDS -->
 
-          <div class="col-lg-8 m-3 mt-5 mx-auto">
-            <div class="card" style="max-width: 1000px;">
+          <div class="col-lg-8 mt-5 mx-auto">
+
+            <!-- POST 1 -->
+            <div class="card mb-4" style="max-width: 1000px;">
+              <div class="row g-0">
+                <div class="col-lg-4">
+                           
+                  <a class="image-popup-no-margins" href="assets/img/01.jpg" title="Caption. Can be aligned to any side and contain any HTML.">
+                    <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
+                  </a>
+ 
+                </div>
+
+                <div class="col-lg-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- POST 2 -->
+            <div class="card mb-4" style="max-width: 1000px;">
               <div class="row g-0">
                 <div class="col-lg-4">
                            
@@ -168,6 +191,8 @@
               </div>
             </div>
           </div>
+
+          
 
         </div>
 
