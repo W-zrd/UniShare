@@ -23,32 +23,35 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
+
   </head>
 
 <body>
-    <section class="page-title">
+    
+    <section class="page-input">
         <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary mt-3 border-danger" data-bs-theme="light">
-            <div class="container" data-bs-theme="light">
-                <a class="navbar-brand fs-4 fw-semibold" href="#">
+        <nav class="navbar navbar-expand-lg navbar-light border-danger navbar_dashboard h-25 shadow-sm" data-bs-theme="light" style="background-color:#f6f7ff">
+            <div class="container" data-bs-theme="light" >
+                <a class="navbar-brand fs-4 fw-semibold" href="#" style="color: #121415;">
                     <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
                     UniShare
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+    
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav justify-content-end ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link fs-6" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link fs-6" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link fs-6" href="#">Features</a>
                         </li>
+                         
                     </ul>
                 </div>
             </div>
@@ -56,37 +59,40 @@
 
         <!-- TITLE -->
         <div class="row m-2 justify-content-center">
-            <div class="col-7 mt-5">
-                <div class="content-box">
-                    <h1 class="fw-bold" style="font-size:65px">Login to UniShare.</h1>
+            <div class="col-5 mt-5">
+                <div class="content-box-sign border p-5 border-dark rounded shadow" style="background-color:#f6f7ff">
+                    <h1 class="fw-bold pb-3 text-center" style="font-size:35px" >Login</h1>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-
+                        <div class="pb-3">
+                            <label for="username" class="form-label text-secondary">Username</label>
                             <input type="text" class="form-control id="username" name="username" aria-describedby="usernameHelp" required>
-                            <div id="usernameHelp" class="form-text">We'll never share your username with anyone else.</div>
-
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
+                        <div class="pb-3">
+                            <label for="password" class="form-label text-secondary">Password</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-                        <div class="mb-3 form-check">
+                        <div class="pb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="remember" name="remember">
-                            <label class="form-check-label" for="remember">Remember me</label>
+                            <label class="form-check-label text-secondary" for="remember">Remember me</label>
                         </div>
-                        <button type="submit" class="btn btn-primary fw-medium">Login</button>
+
+                        @if (session('error'))
+                            <div class="alert alert-danger me-3 pb-0">
+                                <p class="text-center">Incorrect Username or Password</p>
+                            </div>
+                        @endif
+                        <button type="submit" class="btn btn-primary w-100 fw-medium pb-2">Login</button>
                     </form>
-                    <div class="mt-3" style="color: white">
-                        Don't have an account? <a href="{{ route('tampilkan.register') }}" style="color: orange;">Register here</a>
+                    <div class="mt-1 text-secondary">
+                        Don't have an account? <a href="{{ route('tampilkan.register') }}" style="color: #f75600;">Register here</a>
                     </div>
                 </div>
             </div>
-
+            
             <!-- IMAGE -->
-            <div class="col-5">
-                <img src="/assets/img/book2.png" class="img-fluid p-0" alt="s">
+            <div class="col-4 ms-1">
+                <img src="/assets/img/UniShare-with-Text-2.png" class="img-fluid p-0" alt="s" style="transform:scale(0.7) ">
             </div>
         </div>
     </section>

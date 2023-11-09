@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Acara</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="{{ asset('/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('/assets/bootstrap/js/bootstrap.min.js') }}" rel="stylesheet" />
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/event.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
+</head>
+
+<body>
+
+    <section>
+        <nav class="navbar navbar-expand-lg" data-bs-theme="light">
+            <div class="container" data-bs-theme="light">
+              <a class="navbar-brand fs-4 fw-semibold" href="#">
+                <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
+                UniShare
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav justify-content-end ms-auto">
+                  <li class="nav-item" id="navbar-item">
+                    <a class="nav-link" href="dashboard">Home</a>
+                  </li>
+                  <li class="nav-item" id="navbar-item">
+                    <a class="nav-link" href="#">Karir</a>
+                  </li>
+                  <li class="nav-item" id="navbar-item">
+                    <a class="nav-link" href="event">Acara</a>
+                  </li>
+                  <li class="nav-item" id="navbar-item">
+                    <a class="nav-link" href="beasiswa">Beasiswa</a>
+                  </li>
+
+                  <li class="dropdown navbar-item">
+                    <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Rafidhia Haikal
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="editprof">Profile</a></li>
+                      <li><a class="dropdown-item" href="/">Log Out</a></li>
+                    </ul>
+                  </li>
+          
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </section>   
+
+    <section>
+        <div class="banner" style="background-image: url('assets/img/event-banner2.png')">
+
+            <div class="row">
+
+                <div class="col-4" id="header-thumbnail">
+                    <img src="assets/img/acara-logo.svg" alt="" class="img-fluid">
+                </div>
+
+
+                <div class="col me-xl-5">
+                    <h2 class="text-wrap" id="title-thumbnail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </h2>
+                    <h6 class="text-wrap text-white fw-normal mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo</h6>
+                    <form class="d-flex search-bar mt-3" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+              
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="second-navbar pt-3 pb-3">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Semua</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Kompetisi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Workshop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Seminar</a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="container-fluid mx-auto">
+        <div class="row mx-auto">
+
+          <!-- FILTERS -->
+          <div class="col-lg-3 m-3 mt-5 mx-auto" style="background-color: white">
+            <ul class="list-group" style="max-width: 400px;">
+              <h5 class="ms-3 mt-4">Filter</h5>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox1">
+                <label class="form-check-label" for="firstCheckbox">Sains</label>
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox2">
+                <label class="form-check-label" for="secondCheckbox">Teknologi</label>
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                <label class="form-check-label" for="thirdCheckbox">Bisnis</label>
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                <label class="form-check-label" for="thirdCheckbox">Desain</label>
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                <label class="form-check-label" for="thirdCheckbox">Fotografi</label>
+              </li>
+              <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                <label class="form-check-label" for="thirdCheckbox">Manajemen</label>
+              </li>
+            </ul>
+            
+            <div class="justify-items-center mx-auto">
+              <button type="button" class="btn btn-primary m-3 p-2 ps-5 pe-5">Apply!</button>
+            </div>
+            
+
+          </div>
+
+          <!-- CARDS -->
+
+          <div class="col-lg-8 m-3 mt-5 mx-auto">
+            <div class="card" style="max-width: 1000px;">
+              <div class="row g-0">
+                <div class="col-lg-4">
+                  <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
+                </div>
+                <div class="col-lg-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </section>
+
+    
+
+    <!-- JAVASCRIPT -->
+    <script type="importmap">
+    {
+      "imports": {
+        "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
+        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.esm.min.js"
+      }
+    }
+    </script>
+    <script type="module">
+      import * as bootstrap from 'bootstrap'
+
+      new bootstrap.Popover(document.getElementById('popoverButton'))
+    </script>
+
+  </body>
+</html>
