@@ -43,7 +43,7 @@
                 <a class="nav-link" href="dashboard">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Karir</a>
+                <a class="nav-link" href="karir">Karir</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="event">Acara</a>
