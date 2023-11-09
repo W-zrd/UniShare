@@ -30,27 +30,28 @@
     
     <section class="page-input">
         <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary mt-3 border-danger navbar-login" data-bs-theme="light" >
-            <div class="container" data-bs-theme="light">
-                <a class="navbar-brand fs-4 fw-semibold" href="#">
+        <nav class="navbar navbar-expand-lg navbar-light border-danger navbar_dashboard h-25 shadow-sm" data-bs-theme="light" style="background-color:#f6f7ff">
+            <div class="container" data-bs-theme="light" >
+                <a class="navbar-brand fs-4 fw-semibold" href="#" style="color: #121415;">
                     <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
                     UniShare
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+    
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav justify-content-end ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link fs-6" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link fs-6" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link fs-6" href="#">Features</a>
                         </li>
+                         
                     </ul>
                 </div>
             </div>

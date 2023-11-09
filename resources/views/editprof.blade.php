@@ -25,23 +25,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
 
     <style>
-        /* .no-gutters {
-  margin-right: 0;
-  margin-left: 0;
-
-  > .col,
-  > [class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
-  }
-} */
     .cell {
     min-height: 100px;
     border: 2px solid lightgray;
     margin: 1rem;
     }
     .activecolor:focus{
-        border-color: #f75600; /* Change this to your desired color */
+        border-color: #f75600;
         box-shadow: 0 0 2px #f75600;
     }
     </style>
@@ -50,7 +40,7 @@
 
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-light navbar-light border-danger navbar_dashboard" data-bs-theme="light" style="box-shadow: 0 2px 4px rgba(0.3,0.3,0.3,0.3);">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light border-danger navbar_dashboard h-25 shadow-sm" data-bs-theme="light" >
         <div class="container" data-bs-theme="light">
             <a class="navbar-brand fs-4 fw-semibold" href="#" style="color: #121415;">
                 <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
@@ -63,29 +53,29 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav justify-content-end ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard">Home</a>
+                        <a class="nav-link fs-6" href="dashboard">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Karir</a>
+                        <a class="nav-link fs-6" href="#">Karir</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="event">Acara</a>
+                        <a class="nav-link fs-6" href="event">Acara</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="beasiswa">Beasiswa</a>
+                        <a class="nav-link fs-6" href="beasiswa">Beasiswa</a>
                     </li>
                     <li class="nav-item">
                         <img src="assets/img/pp.png">
                     </li>                             
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle fs-6" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Rafidhia Haikal
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="editprof">Profile</a>
-                            <a class="dropdown-item" href="/">Log Out</a>
+                            <a class="dropdown-item fs-6" href="editprof">Profile</a>
+                            <a class="dropdown-item fs-6" href="/">Log Out</a>
                         </div>
-                    </li>  
+                    </li> 
                 </ul>
             </div>
         </div>
@@ -242,4 +232,10 @@
         });
 
     </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="assets/js/"></script>
 </body>
