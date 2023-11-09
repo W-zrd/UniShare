@@ -78,7 +78,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary fw-medium">Login</button>
                     </form>
-                    <div class="mt-3">
+                    <div class="mt-3" style="color: white">
                         Don't have an account? <a href="{{ route('tampilkan.register') }}" style="color: orange;">Register here</a>
                     </div>
                 </div>
