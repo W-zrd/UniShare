@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -22,6 +24,27 @@ class AuthController extends Controller
     public function showLoginForm(){
         return view('auth.login');
     }
+
+    
+    /**
+     * Handle authentication of the user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->only('username', 'password');
+        $user = User::where('username', $credentials['username'])->first();
+
+        if ($user && Hash::check($credentials['password'], $user->password)) {
+            Auth::login($user);
+            return redirect()->route('event');
+        } else {
+            return back()->with('error', 'Incorrect username or password');
+        }
+    }
+
 
     public function showRegisterForm(){
         return view('auth.register');
@@ -127,6 +150,7 @@ public function register(Request $request){
         }
     }
 }
+
 
 
     /**
