@@ -79,6 +79,19 @@ body {
     border-width: 2px;
     color: #f75600;
 }
+/* padding-bottom and top for image */
+.mfp-no-margins img.mfp-img {
+    padding: 0;
+}
+/* position of shadow behind the image */
+.mfp-no-margins .mfp-figure:after {
+    top: 0;
+    bottom: 0;
+}
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+    padding: 0;
+}
 
 @media only screen and (max-width: 800px) {
     body {
