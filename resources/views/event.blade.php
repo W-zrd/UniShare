@@ -75,8 +75,8 @@
 
 
                 <div class="col-7">
-                    <h2 class="text-wrap" id="title-thumbnail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </h2>
-                    <h6 class="text-wrap text-white fw-normal mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo</h6>
+                    <h2 class="text-wrap" id="title-thumbnail">Eksplorasi peluang karir dan pendidikan yang sesuai dengan minatmu.</h2>
+                    <h6 class="text-wrap text-white fw-normal mt-2">Temukan berbagai program pendidikan yang dapat membantu mengembangkan keterampilanmu!</h6>
                     <form class="d-flex search-bar mt-3" role="search">
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     </form>

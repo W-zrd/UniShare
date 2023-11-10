@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,11 +38,9 @@ Route::controller(UserController::class)->group(function(){
     Route::delete('/users/{id}', 'destroy')->name('users.destroy');
 });
 
-Route::view('/dashboard', 'dashboard')->name('dashboard');
-Route::view('/admin', 'admin')->name('admin');
+Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
 Route::view('/karir', 'karir')->name('karir');
 Route::view('/editprof', 'editprof')->name('editprof');
-Route::view('/tes', 'tes')->name('tes');
 Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
 Route::view('/event', 'event')->name('event');
 Route::view('/edit/user', 'edit-user')->name('edit-user');
@@ -50,3 +49,4 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 Route::get('/user/{id}', [AdminController::class, 'showdata'])->name('showdata');
 Route::post('/update/user/{id}', [AdminController::class, 'updatedata'])->name('updatedata');
+Route::get('/delete/user/{id}', [AdminController::class, 'delete'])->name('delete');
