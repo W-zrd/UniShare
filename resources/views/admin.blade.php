@@ -60,7 +60,7 @@
                   
                   <td> 
                     <a href="/user/{{$item->id}}" class="material-symbols-outlined me-2" href="">edit</a>
-                    <a class="material-symbols-outlined"  id="delete-icon">delete_forever</a>
+                    <a href="/delete/user/{{$item->id}}" class="material-symbols-outlined"  id="delete-icon">delete_forever</a>
                   </td>
                 </tr>
               @endforeach
