@@ -27,10 +27,17 @@
     </head>
 
     <body pt-4 >
-    
-        @include('layouts.parts.navbar')
-       
 
+        <header>
+            @include('layouts.parts.navbar')
+        </header>
+
+        <div class="container-fluid">
+            @yield('banner')
+        </div>
+        <div class="container-fluid">
+            @yield('content')
+        </div>
         <!-- JAVASCRIPT -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script> 
@@ -39,5 +46,14 @@
         <script src="assets/js/autocomplete.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha384-GLhlTQ8iKd00UH9FqcTb8GGNEeLJwMz5UZlFmVH+9aL2eg+pjOqQbuEDdjO0D5I" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-Y3V2Nq8G6m9K/6ucuA7Ht3tkjsK5tId0vZ81ZSHb01HHA4pNJHAKeVa9Q+JMvb6H" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN6EdT1uraqJYj1oMDRMGgiunwfmhL2a6" crossorigin="anonymous"></script>
+        <!-- JAVASCRIPT -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/"></script>
     </body>
 </html>

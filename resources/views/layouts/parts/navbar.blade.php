@@ -1,5 +1,5 @@
-<header>
-    <nav class="navbar navbar-expand-lg bg-light navbar-light border-danger navbar_dashboard h-25 shadow-sm" data-bs-theme="light" >
+
+    <nav class="navbar fixed-top navbar-expand-lg bg-light navbar-light border-danger h-21 shadow-sm" data-bs-theme="light" >
         <div class="container-fluid" data-bs-theme="light">
             <a class="navbar-brand fs-4 fw-semibold" href="#" style="color: #121415;">
                 <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
@@ -39,4 +39,3 @@
             </div>
         </div>
     </nav>
-</header>

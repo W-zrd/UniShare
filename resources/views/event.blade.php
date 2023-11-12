@@ -21,7 +21,7 @@
 <body>
 
     <section>
-        <nav class="navbar navbar-expand-lg" data-bs-theme="light">
+        <nav class="navbar fixed-top navbar-expand-lg" data-bs-theme="light">
             <div class="container" data-bs-theme="light">
               <a class="navbar-brand fs-4 fw-semibold" href="#">
                 <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />

@@ -11,17 +11,10 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function showLoginForm(){
+
         return view('auth.login');
     }
 
@@ -61,7 +54,7 @@ class AuthController extends Controller
             'token' => $token,
         ];
 
-        // Jika Anda ingin mengembalikan tampilan
+        // Jika Anda tidak ingin mengembalikan tampilan
         if ($request->wantsJson()) {
             return response()->json([
                 'message' => 'success',

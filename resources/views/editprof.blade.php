@@ -1,4 +1,4 @@
-@extends('layouts.gemerocs')
+@extends('layouts.generics')
     <!-- EDIT PROF -->
     <section class="editprof-content">
         <div class="container">
