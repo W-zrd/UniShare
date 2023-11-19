@@ -94,13 +94,16 @@
                 <div class="mb-3">
                   <label for="tema" class="form-label">Tema</label>
                   <select class="form-select" name="tema" aria-label="tema" style="border-radius: 20px">
-                    <option value="1">Teknologi</option>
-                    <option value="2">Sains</option>
-                    <option value="3">Bisnis</option>
-                    <option value="4">Desain</option>
-                    <option value="5">Fotografi</option>
-                    <option value="6">Manajemen</option>
+                    <option value="Teknologi">Teknologi</option>
+                    <option value="Sains">Sains</option>
+                    <option value="Bisnis">Bisnis</option>
+                    <option value="Desain">Desain</option>
+                    <option value="Fotografi">Fotografi</option>
+                    <option value="Manajemen">Manajemen</option>
                   </select>
+                  @error('tema')
+                    <p class="alert alert-danger shadow-sm">{{$message}}</p>
+                  @enderror
                 </div>
               </div>
   
@@ -109,10 +112,13 @@
                 <div class="mb-3">
                   <label for="kategori" class="form-label">Kategori</label>
                   <select class="form-select" name="kategori" aria-label="kategori" style="border-radius: 20px">
-                    <option value="1">Kompetisi</option>
-                    <option value="2">Workshop</option>
-                    <option value="3">Seminar</option>
+                    <option value="Kompetisi">Kompetisi</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Seminar">Seminar</option>
                   </select>
+                  @error('kategori')
+                    <p class="alert alert-danger shadow-sm">{{$message}}</p>
+                  @enderror
                 </div>
               </div>
             </div>
@@ -155,39 +161,9 @@
         
       </div>
 
-      <!-- FORM 
-      <div class="col-10 mb-1">
-        <form action="/admin/event/add" method="POST">
-          @csrf
-          <div class="m-4">
-            <label for="title" class="form-label">Judul Acara</label>
-            <input value="{{old('title')}}" type="text" class="form-control" id="title" name="title">
-            @error('title')
-              <p class="aler alert-danger shadow-sm">{{$message}}</p>
-            @enderror
-          </div>
-          <div class="m-4">
-            <label for="content" class="form-label">Konten</label>
-            <textarea class="form-control" id="content" name="content" rows="3">{{old('content')}}</textarea>
-            @error('content')
-              <p class="aler alert-danger shadow-sm">{{$message}}</p>
-            @enderror
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div> -->
-
 
     </div>
   </div>
-    
-    
-
-
-      
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

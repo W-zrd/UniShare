@@ -68,28 +68,28 @@
       <!-- Breadcumb -->
       <nav aria-label="breadcrumb" class="mb-5">
           <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
-              <li class="breadcrumb-item"><a href="event">Event</a></li>
-              <li class="breadcrumb-item active" aria-current="page">POST_ID</li>
+              <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+              <li class="breadcrumb-item"><a href="/event">Event</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{$post -> title}}</li>
             </ol>
       </nav>
 
       <!-- Content -->
       <div class="header-info ">
-          <h1 class="mb-3">{{$event -> title}}</h1>
+          <h1 class="mb-3">{{$post -> title}}</h1>
           <div class="organizer">
             <img src="{{ asset('/assets/img/demonzz.jpg') }}" alt="Profile Picture" class="rounded-circle" width="50" height="50">
             <div class="organizer-info">
-                <p>Universitas Indonesia</p>
-                <p style="font-size: small">{{$event->formatted_date}}</p>
+                <p>{{$post -> author}}</p>
+                <p style="font-size: small">{{$post->formatted_date}}</p>
             </div>
           </div>
 
           <!-- Tags -->
           <div class="tags mt-4">
             <p class="me-2">Tags: </p>
-            <span class="badge text-bg-primary me-1 fw-medium">Webinar</span>
-            <span class="badge text-bg-primary me-1 fw-medium">Teknologi</span>
+            <span style="background-color: #F75600" class="badge me-1 fw-medium">{{$post -> kategori}}</span>
+            <span style="background-color: #F75600" class="badge me-1 fw-medium">{{$post -> tema}}</span>
           </div>
           
           <div class="thumbnail-container" style="background-color: antiquewhite">
@@ -97,13 +97,19 @@
           </div>
 
           {{-- Paragraph --}}
-          <p class="mt-3">{{$event -> content}}</p>
+          <p class="mt-3">{!! nl2br(e($post->content)) !!}</p>
 
           {{-- Attachment --}}
-          <h5>Attachment</h5>
+          <h5 class="mt-5 mb-3">Attachment</h5>
           <div class="tags mt-2">
-            <button type="button" class="btn btn-primary me-2" style="width: 200px">Link Pendaftaran</button>
-            <button type="button" class="btn btn-primary me-2" style="width: 200px">Guidebook</button>
+            <a href="{{$post -> url_event}}">
+              <button type="button" class="btn btn-primary me-2" style="width: 200px">Link Pendaftaran</button>
+            </a>
+            
+            <a href="{{$post -> guidebook}}">
+              <button type="button" class="btn btn-primary me-2" style="width: 200px">Guidebook</button>
+            </a>
+            
           </div>
           
 
@@ -120,7 +126,6 @@
 
     <!-- Magnific Popup core JS file -->
     <script src="/assets/js/jquery-plugin/jquery.magnific-popup.min.js"></script>
-    <script src="/assets/js/script.js"></script>
     
     <script type="importmap">
     {

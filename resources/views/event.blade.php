@@ -66,20 +66,17 @@
 
     <section>
         <div class="banner" style="background-image: url({{ asset('assets/img/event-banner2.png') }})">
-
             <div class="row">
 
-                <div class="col-4" id="header-thumbnail">
-                    <img src="{{ asset('assets/img/acara-logo.svg') }}" alt="" class="img-fluid">
+                <div class="col-3" id="header-thumbnail">
+                    <img src="{{ asset('assets/img/acara-logo.svg') }}" alt="" class="img-fluid mt-4">
                 </div>
 
 
-                <div class="col-7">
+                <div class="col-7 mt-4">
                     <h2 class="text-wrap" id="title-thumbnail">Eksplorasi peluang karir dan pendidikan yang sesuai dengan minatmu.</h2>
                     <h6 class="text-wrap text-white fw-normal mt-2">Temukan berbagai program pendidikan yang dapat membantu mengembangkan keterampilanmu!</h6>
-                    <form class="d-flex search-bar mt-3" role="search">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
+                    
               
                 </div>
 
@@ -163,8 +160,9 @@
                 <div class="col-lg-8">
                   <div class="card-body">
                     <h5 class="card-title">{{$item->title}}</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text">{{ substr($item->content, 0, 185) . " ..." }}</p>
                     <p class="card-text"><small class="text-body-secondary">Last updated {{$item->formatted_date}}</small></p>
+                    
                   </div>
                 </div>
               </div>

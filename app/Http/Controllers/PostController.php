@@ -55,6 +55,6 @@ class PostController extends Controller
 
     public function viewPost(Post $id){
         $id->formatted_date = $id->updated_at->format('d F Y');
-        return view('event-post', ["event" => $id]);
+        return view('event-post', ["post" => $id]);
     }
 }

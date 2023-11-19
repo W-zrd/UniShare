@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('author');
             $table->string('kategori');
             $table->string('tema');
-            $table->string('content');
+            $table->text('content');
             $table->string('url_event');
             $table->string('guidebook')->nullable();
             $table->string('banner_img')->nullable();
