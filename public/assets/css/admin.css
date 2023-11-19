@@ -3,10 +3,11 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #f6f7ff !important;
 }
 
 .sidebar {
-    height: 100vh;
+    height: 1000px;
     background-color: #121415;
     float: left;
 }
@@ -25,6 +26,23 @@ body {
     padding: 10px;
     color: #f75600;
     font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%; /* Adjust the margin as needed */
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-form {
+    background-color: white;
+    box-shadow: 0px 8px 30px 0px rgba(37, 36, 34, 0.07);
+    border-radius: 20px;
 }
 
 .material-symbols-outlined {

@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function index()
     {
         $data = User::all();
-        return view('admin', compact('data'));
+        return view('admin.admin', compact('data'));
     }
 
     public function showdata($id){

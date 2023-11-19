@@ -10,14 +10,14 @@
     <link href="{{ asset('/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="assets/img/favicon.png" />
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/event.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/event.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
 
     <!-- Magnific Popup core CSS file -->
-    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="{{ asset('/assets/css/magnific-popup.css') }}">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-lg" data-bs-theme="light">
             <div class="container" data-bs-theme="light">
               <a class="navbar-brand fs-4 fw-semibold" href="#">
-                <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
+                <img src="{{ asset('assets/img/UniShare-logo.png') }}" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
                 UniShare
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,12 +65,12 @@
     </section>   
 
     <section>
-        <div class="banner" style="background-image: url('assets/img/event-banner2.png')">
+        <div class="banner" style="background-image: url({{ asset('assets/img/event-banner2.png') }})">
 
             <div class="row">
 
                 <div class="col-4" id="header-thumbnail">
-                    <img src="assets/img/acara-logo.svg" alt="" class="img-fluid">
+                    <img src="{{ asset('assets/img/acara-logo.svg') }}" alt="" class="img-fluid">
                 </div>
 
 
@@ -148,52 +148,31 @@
           <!-- CARDS -->
 
           <div class="col-lg-8 mt-5 mx-auto">
-
-            <!-- POST 1 -->
+            @foreach ($data as $item)
+            <!-- USER POST -->
             <div class="card mb-4" style="max-width: 1000px;">
               <div class="row g-0">
                 <div class="col-lg-4">
                            
-                  <a class="image-popup-no-margins" href="assets/img/01.jpg" title="Caption. Can be aligned to any side and contain any HTML.">
-                    <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
+                  <a class="image-popup-no-margins" href="{{ asset('assets/img/01.jpg') }}" title="Caption. Can be aligned to any side and contain any HTML.">
+                    <img src="{{ asset('assets/img/01.jpg') }}" class="img-fluid rounded" alt="thumbnail">
                   </a>
  
                 </div>
 
                 <div class="col-lg-8">
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{$item->title}}</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated {{$item->formatted_date}}</small></p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- POST 2 -->
-            <div class="card mb-4" style="max-width: 1000px;">
-              <div class="row g-0">
-                <div class="col-lg-4">
-                           
-                  <a class="image-popup-no-margins" href="assets/img/01.jpg" title="Caption. Can be aligned to any side and contain any HTML.">
-                    <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
-                  </a>
- 
-                </div>
-
-                <div class="col-lg-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
-
           
-
+          
         </div>
 
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('/assets/css/crud.css') }}" rel="stylesheet" />
+    <link href="{{ asset('/assets/css/admin.css') }}" rel="stylesheet" />
     <!-- BOOTSTRAP -->
     <link href="{{ asset('/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
 

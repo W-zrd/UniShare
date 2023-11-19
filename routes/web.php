@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,7 +43,6 @@ Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
 Route::view('/karir', 'karir')->name('karir');
 Route::view('/editprof', 'editprof')->name('editprof');
 Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
-Route::view('/event', 'event')->name('event');
 Route::view('/edit/user', 'edit-user')->name('edit-user');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
@@ -50,3 +50,12 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/user/{id}', [AdminController::class, 'showdata'])->name('showdata');
 Route::post('/update/user/{id}', [AdminController::class, 'updatedata'])->name('updatedata');
 Route::get('/delete/user/{id}', [AdminController::class, 'delete'])->name('delete');
+
+// EVENT PAGE
+Route::view('admin/event', 'admin.admin-event');
+Route::get('/admin/event/add', [EventController::class, 'showCreateForm']);
+Route::post('/admin/event/add', [EventController::class, 'storeNewPost']);
+
+
+Route::get('/event/{id}', [EventController::class, 'viewPost']);
+Route::get('/event', [EventController::class, 'index']);
