@@ -12,15 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('post', function (Blueprint $table) {
-            $table->id();
+            $table->id('post_id');
             $table->string('title');
+            $table->string('author');
+            $table->string('kategori');
+            $table->string('tema');
             $table->string('content');
             $table->string('url_event');
-            $table->binary('img_poster')->nullable();
+            $table->string('guidebook')->nullable();
+            $table->string('banner_img')->nullable();
             $table->unsignedBigInteger('admin_id');
             $table->timestamps();
-            
-            $table->foreign('admin_id')->references('id')->on('admin')->onDelete('cascade');
+            $table->foreign('admin_id')->references('admin_id')->on('admin')->onDelete('cascade');
         });
     }
 

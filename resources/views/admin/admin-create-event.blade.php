@@ -46,7 +46,7 @@
         </div>
 
         <section class="event-form p-5 me-5 ms-5 mt-4">
-          <form action="/admin/event/add" method="POST">
+          <form action="/admin/event/add" method="POST" enctype="multipart/form-data">
             @csrf
             {{-- ROW 1 --}}
             <div class="row ">
@@ -93,7 +93,7 @@
               <div class="col">
                 <div class="mb-3">
                   <label for="tema" class="form-label">Tema</label>
-                  <select class="form-select" aria-label="tema" style="border-radius: 20px">
+                  <select class="form-select" name="tema" aria-label="tema" style="border-radius: 20px">
                     <option value="1">Teknologi</option>
                     <option value="2">Sains</option>
                     <option value="3">Bisnis</option>
@@ -108,7 +108,7 @@
               <div class="col">
                 <div class="mb-3">
                   <label for="kategori" class="form-label">Kategori</label>
-                  <select class="form-select" aria-label="kategori" style="border-radius: 20px">
+                  <select class="form-select" name="kategori" aria-label="kategori" style="border-radius: 20px">
                     <option value="1">Kompetisi</option>
                     <option value="2">Workshop</option>
                     <option value="3">Seminar</option>
@@ -148,9 +148,7 @@
               </div>
             </div>
 
-            <div class="d-grid gap-2 mt-3">
-              <button class="btn btn-primary" type="submit" style="background-color: #f75600; border-color: #f75600">Submit</button>
-            </div>
+            <button class="btn btn-primary" type="submit" style="background-color: #f75600; border-color: #f75600">Submit</button>
   
           </form>
         </section>

@@ -3,7 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\EventController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,9 +53,9 @@ Route::get('/delete/user/{id}', [AdminController::class, 'delete'])->name('delet
 
 // EVENT PAGE
 Route::view('admin/event', 'admin.admin-event');
-Route::get('/admin/event/add', [EventController::class, 'showCreateForm']);
-Route::post('/admin/event/add', [EventController::class, 'storeNewPost']);
+Route::get('/admin/event/add', [PostController::class, 'showCreateForm']);
+Route::post('/admin/event/add', [PostController::class, 'storeNewPost']);
 
 
-Route::get('/event/{id}', [EventController::class, 'viewPost']);
-Route::get('/event', [EventController::class, 'index']);
+Route::get('/event/{id}', [PostController::class, 'viewPost']);
+Route::get('/event', [PostController::class, 'index']);
