@@ -1,5 +1,4 @@
 @extends('layouts.generics')
-
 @section('content')
     <div class="row m-2 justify-content-center">
         <div class="col-5 mt-5">

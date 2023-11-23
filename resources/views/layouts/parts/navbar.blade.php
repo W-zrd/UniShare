@@ -23,17 +23,22 @@
                     <li class="nav-item">
                         <a class="nav-link fs-6" href="beasiswa">Beasiswa</a>
                     </li>
-                    <li class="nav-item">
-                        <img src="assets/img/pp.png">
-                    </li>                             
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fs-6" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Rafidhia Haikal
-                        </a>
+                    @auth
+                        @if(isset($user))
+                            <a class="nav-link dropdown-toggle fs-6" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <li class="nav-item">
+                                    <img src="assets/img/pp.png">
+                                </li>  
+                            </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item fs-6" href="editprof">Profile</a>
                             <a class="dropdown-item fs-6" href="/">Log Out</a>
-                        </div>
+                        </div> 
+                        @else
+                        @endif
+                    @endauth
+                        
                     </li>  
                 </ul>
             </div>

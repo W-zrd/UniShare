@@ -27,7 +27,7 @@
     </head>
 
     <body pt-4 >
-
+       
         <header>
             @include('layouts.parts.navbar')
         </header>

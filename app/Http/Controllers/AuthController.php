@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\View;
 
 class AuthController extends Controller
 {
@@ -25,75 +26,27 @@ class AuthController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function authenticate(Request $request) 
-    {
-        $credentials = $request->only('username', 'password');
-        $user = User::where('username', $credentials['username'])->first();
-
-        if ($user && Hash::check($credentials['password'], $user->password)) {
-            Auth::login($user);
-            return redirect()->route('event');
-        } else {
-            return back()->with('error', 'Incorrect username or password');
-        }
-    }
+   
 
 
     public function showRegisterForm(){
-        return view('auth.register');
+        return response()->view('auth.register');
     }
 
     public function login(Request $request)
 {
-    $user = User::where('username', $request->username)->where('password', $request->password)->first();
-    if ($user) {
+    $user = User::where('username', $request->username)->first();
+    if ($user && password_verify($request->password, $user->password)) {
+        Auth::login($user);
         $token = $user->createToken('auth_token')->plainTextToken;
         $data = [
             'signature' => $user->createToken('JWT_SECRET')->accessToken,
             'user' => $user,
             'token' => $token,
         ];
-
-        // Jika Anda tidak ingin mengembalikan tampilan
-        if ($request->wantsJson()) {
-            return response()->json([
-                'message' => 'success',
-                'data' => $data,
-            ]);
-        } else {
-            if ($user) {
-                $token = $user->createToken('auth_token')->plainTextToken;
-                $data = [
-                    'signature' => $user->createToken('JWT_SECRET')->accessToken,
-                    'user' => $user,
-                    'token' => $token,
-                ];
-
-                // Jika Anda ingin mengembalikan tampilan
-                if ($request->wantsJson()) {
-                    return response()->json([
-                        'message' => 'success',
-                        'data' => $data,
-                    ]);
-                } else {
-
-                    return redirect()->route('dashboard')->with('success', 'Login successful. Welcome back, ' . $user->name)->with('user', $user)->with('data', $data);
-                }
-            } else {
-        // Jika Anda ingin mengembalikan tampilan
-        if ($request->wantsJson()) {
-            return response()->json([
-                'message' => 'Invalid credentials'
-            ], 401);
-        } else {
-            return view('tampilan_login_error');
-        }
-    }
-       
-    }
+        return redirect()->route('dashboard')->with('success', 'Login successful. Welcome back, '. $user->name)->with('user', $user)->with('data', $data)->with('refresh', true);
     }
 }
-
 public function register(Request $request){
 
     if ($request->password != $request->password_confirmation) {
@@ -110,7 +63,7 @@ public function register(Request $request){
     $user = User::create([
         'nama_lengkap' => $request->name,
         'username' => $request->username,
-        'password' => $request->password,
+        'password' => $encryptedPassword,
         'email' => $request->email,
         
     ]);
@@ -122,7 +75,7 @@ public function register(Request $request){
             'user' => $user,
             'token' => $token,
         ];
-
+        session(['user_data' => $data]);
         // Jika Anda ingin mengembalikan tampilan
         if ($request->wantsJson()) {
             return response()->json([
@@ -143,54 +96,4 @@ public function register(Request $request){
         }
     }
 }
-
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

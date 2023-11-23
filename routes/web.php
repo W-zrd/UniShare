@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\AuthCheck;
+use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\ShareUserData;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,25 +24,14 @@ Route::get('/', function () {
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'showLoginForm')->name('tampilkan.login');
-    Route::post('/login', 'login')->name('login');
+    Route::post('/login', 'login')->name('login')->middleware(ShareUserData::class);
     Route::get('/register', 'showRegisterForm')->name('tampilkan.register');
-    Route::post('/register', 'register')->name('register');
+    Route::post('/register', 'register')->name('register')->middleware(Authenticate::class);
     Route::post('/logout', 'logout')->name('logout');
 });
 
-Route::controller(UserController::class)->group(function(){
-    Route::get('/users', 'index')->name('users');
-    Route::get('/users/create', 'create')->name('users.create');
-    Route::post('/users', 'store')->name('users.store');
-    Route::get('/users/{id}', 'show')->name('users.show');
-    Route::get('/users/{id}/edit', 'edit')->name('users.edit');
-    Route::put('/users/{id}', 'update')->name('users.update');
-    Route::delete('/users/{id}', 'destroy')->name('users.destroy');
-});
-
-Route::view('/dashboard', 'dashboard')->name('dashboard');
-Route::view('/karir', 'karir')->name('karir');
-Route::view('/editprof', 'editprof')->name('editprof');
-Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
-Route::view('/event', 'event')->name('event');
-Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
+Route::view('/dashboard', 'dashboard')->name('dashboard')->middleware(AuthCheck::class);
+Route::view('/karir', 'karir')->name('karir')->middleware(AuthCheck::class);
+Route::view('/editprof', 'editprof')->name('editprof')->middleware(AuthCheck::class);
+Route::view('/beasiswa', 'beasiswa')->name('beasiswa')->middleware(AuthCheck::class);
+Route::view('/event', 'event')->name('event')->middleware(AuthCheck::class);
