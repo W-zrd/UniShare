@@ -35,6 +35,11 @@ body {
 .card,
 .list-group-item {
     border-style: none;
+    text-align: left;
+}
+
+.card-body {
+    text-decoration: none;
 }
 
 .list-group-item input[type="checkbox"]:checked {

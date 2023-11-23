@@ -147,7 +147,7 @@
           <div class="col-lg-8 mt-5 mx-auto">
             @foreach ($data as $item)
             <!-- USER POST -->
-            <div class="card mb-4" style="max-width: 1000px;">
+            <div class="card mb-4" style="max-width: 1000px;" >
               <div class="row g-0">
                 <div class="col-lg-4">
                            
@@ -158,12 +158,12 @@
                 </div>
 
                 <div class="col-lg-8">
-                  <div class="card-body">
-                    <h5 class="card-title">{{$item->title}}</h5>
-                    <p class="card-text">{{ substr($item->content, 0, 185) . " ..." }}</p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated {{$item->formatted_date}}</small></p>
+                  <a class="card-body ms-2" href="{{ url('/event/' . $item->post_id) }}">
+                    <h5 class="card-title ms-3">{{$item->title}}</h5>
+                    <p class="card-text ms-3">{{ substr($item->content, 0, 185) . " ..." }}</p>
+                    <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{$item->formatted_date}}</small></p>
                     
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -204,6 +204,7 @@
 
       new bootstrap.Popover(document.getElementById('popoverButton'))
     </script>
+    
 
 
   </body>
