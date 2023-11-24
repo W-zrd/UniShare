@@ -227,7 +227,10 @@
               <div class="col">
                 <div class="mb-3">
                   <label for="guidebook" class="form-label">Guidebook</label>
-                  <input value="{{old('guidebook')}}" type="file" class="form-control" id="guidebook" name="guidebook" aria-describedby="guidebookHelp" style="border-radius: 20px">
+                  <input type="file" class="form-control @error('guidebook') is-invalid @enderror" id="guidebook" name="guidebook" aria-describedby="guidebookHelp" style="border-radius: 20px">
+                  @error('guidebook')
+                    <p class="alert alert-danger shadow-sm">{{$message}}</p>
+                  @enderror
                 </div>
               </div>
 
@@ -235,7 +238,10 @@
               <div class="col">
                 <div class="mb-3">
                   <label for="banner_img" class="form-label">Banner Acara</label>
-                  <input value="{{old('banner_img')}}" type="file" class="form-control" name="banner_img" id="banner_img" aria-describedby="urlHelp" style="border-radius: 20px">
+                  <input type="file" class="form-control @error('banner_img') is-invalid @enderror" name="banner_img" \ id="banner_img" aria-describedby="urlHelp" style="border-radius: 20px">
+                  @error('banner_img')
+                    <p class="alert alert-danger shadow-sm">{{$message}}</p>
+                  @enderror
                 </div>
               </div>
             </div>

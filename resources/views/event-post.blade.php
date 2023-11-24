@@ -93,7 +93,7 @@
           </div>
           
           <div class="thumbnail-container" style="background-color: antiquewhite">
-            <img src="{{ asset('assets/img/01.jpg') }}" class="img-fluid" alt="">
+            <img src="{{ asset('/storage/' . $post->banner_img) }}" class="img-fluid " alt="">
           </div>
 
           {{-- Paragraph --}}
@@ -106,7 +106,7 @@
               <button type="button" class="btn btn-primary me-2" style="width: 200px">Link Pendaftaran</button>
             </a>
             
-            <a href="{{$post -> guidebook}}">
+            <a href="{{ asset('/storage/' . $post -> guidebook) }} ">
               <button type="button" class="btn btn-primary me-2" style="width: 200px">Guidebook</button>
             </a>
             
