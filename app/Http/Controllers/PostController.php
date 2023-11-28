@@ -8,11 +8,18 @@ use App\Models\Post;
 class PostController extends Controller
 {
     public function index(){
-        $data = Post::all();
+        $data = Post::latest();
+        if (request('search')) {
+            $data->where('title', 'like', '%' . request('search') . '%');
+        }
+
+
         foreach ($data as $event) {
             $event->formatted_date = $event->updated_at->format('d F Y');
         }
-        return view('event', compact('data'));
+        return view('event', [
+            "data" => $data->get()
+        ]);
     }
 
     public function showCreateForm()

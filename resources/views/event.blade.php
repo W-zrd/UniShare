@@ -138,21 +138,30 @@
             <div class="justify-items-center mx-auto">
               <button type="button" class="btn btn-primary m-3 p-2 ps-5 pe-5">Apply!</button>
             </div>
-            
 
           </div>
-
-          <!-- CARDS -->
-
+          
           <div class="col-lg-8 mt-5 mx-auto">
+            <!-- Search Bar -->
+            <form action=/event method="GET" class="row g-3 search-bar mb-3">
+              <div class="mb-3 search-bar">
+                <label for="exampleFormControlInput1" class="form-label">Search</label>
+                <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini ">
+                <button type="submit" class="btn btn-primary ms-4 ps-3 pe-3">Submit</button>
+              </div>
+              
+            </form>
+
+
+            <!-- CARDS -->
             @foreach ($data as $item)
             <!-- USER POST -->
             <div class="card mb-4" style="max-width: 1000px;" >
               <div class="row g-0">
                 <div class="col-lg-4">
                            
-                  <a class="image-popup-no-margins" href="{{ asset('assets/img/01.jpg') }}" title="Caption. Can be aligned to any side and contain any HTML.">
-                    <img src="{{ asset('assets/img/01.jpg') }}" class="img-fluid rounded" alt="thumbnail">
+                  <a class="image-popup-no-margins" href="{{ asset('/storage/' . $item->banner_img) }}" title="Caption. Can be aligned to any side and contain any HTML.">
+                    <img src="{{ asset('/storage/' . $item->banner_img) }}"  alt="thumbnail" style="width: 100%; height: 100%;" class="img-fluid rounded">
                   </a>
  
                 </div>
