@@ -26,15 +26,24 @@
                     <li class="nav-item">
                         <img src= {{ asset('assets/img/pp.png') }} >
                     </li>                             
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fs-6" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            OSDFGHJKL
+                    {{-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            OSDFGHJKLOSDFGHJKLOSDFGHJKLOSDFGHJKL
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item fs-6" href="/editprof">Profile</a>
                             <a class="dropdown-item fs-6" href="/">Log Out</a>
                         </div>
-                    </li>  
+                    </li>   --}}
+                    <div class="btn-group">
+                        <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Wzrd.
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li> <a class="dropdown-item fs-6" href="/editprof">Profile</a> </li>
+                          <li> <a class="dropdown-item fs-6" href="/">Log Out</a> </li>
+                        </ul>
+                      </div>
                 </ul>
             </div>
         </div>

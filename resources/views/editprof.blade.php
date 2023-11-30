@@ -15,9 +15,9 @@
                                     <div class="card-body">
                                         <h5 class="card-title fw-bold text-primary">Profile</h5>
                                         <p class="card-text text-secondary mb-0 small">Username </p>
-                                        <p class="card-text text-dark">{{auth()->user()->username}} </p>
+                                        <p class="card-text text-dark">Username </p>
                                         <p class="card-text text-secondary mb-0 small">Email</p>
-                                        <p class="card-text">{{auth()->user()->email}}</p>
+                                        <p class="card-text">Email</p>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                         <div class="cell justify-content-center rounded bg-light"> 
                             <div class="m-3 h-25 text-center">
                                 <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 125px">
-                                <h3 >{{auth()->user()->nama_lengkap}}</h3>
+                                <h3 >Nama lengkap</h3>
                                 <hr>
                             </div>
                             <div>
@@ -57,7 +57,7 @@
                                     <div class="row p-3 pt-0">
                                         <div class="col">
                                             <label class="ps-1 pb-1" for="formGroupExampleInput">Nama Lengkap</label>
-                                            <input type="text" class="form-control activecolor"value={{auth()->user()->nama_lengkap}}>
+                                            <input type="text" class="form-control activecolor"value=Nama Lengkap>
                                         </div>
                                         <div class="col">
                                             <label class="ps-1 pb-1" for="formGroupExampleInput">Nama Belakang</label>
@@ -67,11 +67,11 @@
                                     <div class="row p-3 pt-0">
                                         <div class="col">
                                             <label class="ps-1 pb-1" for="formGroupExampleInput">Username</label>
-                                            <input type="text" class="form-control activecolor"value={{auth()->user()->username}}>
+                                            <input type="text" class="form-control activecolor"value=Username>
                                         </div>
                                         <div class="col">
                                             <label class="ps-1 pb-1" for="formGroupExampleInput">Alamat</label>
-                                            <input type="text" class="form-control activecolor" value={{auth()->user()->alamat}}>
+                                            <input type="text" class="form-control activecolor" value=Alamat>
                                         </div>
                                     </div>
                                     <div class="row p-3 pt-0">
@@ -93,7 +93,7 @@
                         <div class="cell justify-content-center rounded bg-light"> 
                             <div class="m-3 h-25 text-center">
                                 <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1" alt="Profile Picture" style="width: 125px">
-                                <h3 >{{auth()->user()->nama_lengkap}}</h3>
+                                <h3 >Nama lengkap</h3>
                                 <hr>
                             </div>
                             <div>
@@ -101,11 +101,11 @@
                                     <div class="row p-3 pt-0">
                                         <div class="col">
                                             <label class="ps-1 pb-1" for="formGroupExampleInput">Username</label>
-                                            <input type="text" class="form-control activecolor" value={{auth()->user()->username}}>
+                                            <input type="text" class="form-control activecolor" value=Username>
                                         </div>
                                         <div class="col">
                                             <label class="ps-1 pb-1" for="formGroupExampleInput">Email</label>
-                                            <input type="text"value={{auth()->user()->email}} class="form-control activecolor" >
+                                            <input type="text"value= Email class="form-control activecolor" >
                                         </div>
                                     </div>
                                     <div class="row p-3 pt-0">
@@ -115,7 +115,7 @@
                                         </div>
                                         <div class="col">
                                             <label class="ps-1 pb-1" for="formGroupExampleInput">No Telp</label>
-                                            <input type="text" class="form-control activecolor" value={{auth()->user()->telepon}}>
+                                            <input type="text" class="form-control activecolor" value=No Telp>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary m-3 mt-0 float-right">Apply</button>

@@ -4,6 +4,7 @@
 @endsection
 @section('content')
     <!-- Lowongan Kerja-->
+    <br><br>
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-11">

@@ -4,6 +4,7 @@
 @endsection
 @section('content')
     <!--content-->
+    <br><br>
     <div class="row" style="margin-top: 15px">
       <div class="col-2" style="text-align: right"></div>
       <div class="col">

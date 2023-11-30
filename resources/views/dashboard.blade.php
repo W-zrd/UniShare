@@ -4,6 +4,7 @@
 @endsection
 @section('content')   
     <!-- SEARCH, CAPAIAN BELAJAR, dan NOTIFIKASI-->
+    <br><br>
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-6">

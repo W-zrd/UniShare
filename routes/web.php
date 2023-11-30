@@ -27,9 +27,9 @@ Route::get('/', function () {
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'showLoginForm')->name('tampilkan.login');
-    Route::post('/login', 'login')->name('login')->middleware(ShareUserData::class);
+    Route::post('/login', 'login')->name('login');
     Route::get('/register', 'showRegisterForm')->name('tampilkan.register');
-    Route::post('/register', 'register')->name('register')->middleware(Authenticate::class);
+    Route::post('/register', 'register')->name('register');
     Route::post('/logout', 'logout')->name('logout');
 });
 

@@ -4,19 +4,18 @@
 @endsection
 @section('banner')
     <section>
-        <div class="banner" style="background-image: url({{ asset('assets/img/event-banner2.png') }})">
+        <div class="banner container-flex" style="background-image: url({{ asset('assets/img/event-banner2.png') }});">
             <div class="row">
 
                 <div class="col-3" id="header-thumbnail">
-                    <img src="{{ asset('assets/img/acara-logo.svg') }}" alt="" class="img-fluid mt-4">
+                    <img src="{{ asset('assets/img/acara-logo.svg') }}" alt="" class="img-fluid mt-5">
                 </div>
 
 
-                <div class="col-7 mt-4">
+                <div class="col-7 mt-5">
                     <h2 class="text-wrap" id="title-thumbnail">Eksplorasi peluang karir dan pendidikan yang sesuai dengan minatmu.</h2>
                     <h6 class="text-wrap text-white fw-normal mt-2">Temukan berbagai program pendidikan yang dapat membantu mengembangkan keterampilanmu!</h6>
-                    
-              
+    
                 </div>
 
             </div>
@@ -40,12 +39,12 @@
       </ul>
     </section>
 
-    <section>
+    <section style="height: 1000px">
       <div class="container-fluid mx-auto">
         <div class="row mx-auto">
 
           <!-- FILTERS -->
-          <div class="col-lg-3 m-3 mt-5 mx-auto" style="background-color: white">
+          <div class="col-lg-3 m-3 mt-5 mx-auto filter-box">
             <ul class="list-group" style="max-width: 400px;">
               <h5 class="ms-3 mt-4">Filter</h5>
               <li class="list-group-item">
@@ -75,21 +74,23 @@
             </ul>
             
             <div class="justify-items-center mx-auto">
-              <button type="button" class="btn btn-primary m-3 p-2 ps-5 pe-5">Apply!</button>
+              <button type="button" class="btn btn-custom1 m-3 mb-5 p-2 ps-5 pe-5">Apply!</button>
             </div>
 
           </div>
           
           <div class="col-lg-8 mt-5 mx-auto">
             <!-- Search Bar -->
-            <form action=/event method="GET" class="row g-3 search-bar mb-3">
-              <div class="mb-3 search-bar">
-                <label for="exampleFormControlInput1" class="form-label">Search</label>
-                <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini ">
-                <button type="submit" class="btn btn-primary ms-4 ps-3 pe-3">Submit</button>
-              </div>
-              
-            </form>
+            <div class="container-flex">
+              <form action=/event method="GET" class="row g-3 search-bar mb-3">
+                <div class="mb-3 search-bar">
+                  <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini" value="{{request('search')}}" >
+                  <button type="submit" class="btn btn-custom1 ms-4 ps-3 pe-3">Search!</button>
+                </div>
+                
+              </form>
+            </div>
+
 
 
             <!-- CARDS -->
@@ -100,7 +101,7 @@
                 <div class="col-lg-4">
                            
                   <a class="image-popup-no-margins" href="{{ asset('/storage/' . $item->banner_img) }}" title="Caption. Can be aligned to any side and contain any HTML.">
-                    <img src="{{ asset('/storage/' . $item->banner_img) }}"  alt="thumbnail" style="width: 100%; height: 100%;" class="img-fluid rounded">
+                    <img src="{{ asset('/storage/' . $item->banner_img) }}"  alt="thumbnail" style="width: 100%; height: 100%; object-fit: cover;" class="img-fluid rounded">
                   </a>
  
                 </div>
@@ -109,7 +110,7 @@
                   <a class="card-body ms-2" href="{{ url('/event/' . $item->post_id) }}">
                     <h5 class="card-title ms-3">{{$item->title}}</h5>
                     <p class="card-text ms-3">{{ substr($item->content, 0, 185) . " ..." }}</p>
-                    <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{$item->formatted_date}}</small></p>
+                    <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{ $item->updated_at->format('d F Y') }}</small></p>
                     
                   </a>
                 </div>

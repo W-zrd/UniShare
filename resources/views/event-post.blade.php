@@ -17,7 +17,7 @@
       </nav>
 
       <!-- Content -->
-      <div class="header-info ">
+      <div class="container-flex">
           <h1 class="mb-3">{{$post -> title}}</h1>
           <div class="organizer">
             <img src="{{ asset('/assets/img/demonzz.jpg') }}" alt="Profile Picture" class="rounded-circle" width="50" height="50">
@@ -45,11 +45,11 @@
           <h5 class="mt-5 mb-3">Attachment</h5>
           <div class="tags mt-2">
             <a href="{{$post -> url_event}}">
-              <button type="button" class="btn btn-primary me-2" style="width: 200px">Link Pendaftaran</button>
+              <button type="button" class="btn btn-custom1 me-2" style="width: 200px">Link Pendaftaran</button>
             </a>
             
             <a href="{{ asset('/storage/' . $post -> guidebook) }} ">
-              <button type="button" class="btn btn-primary me-2" style="width: 200px">Guidebook</button>
+              <button type="button" class="btn btn-custom1 me-2" style="width: 200px">Guidebook</button>
             </a>
             
           </div>
