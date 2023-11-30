@@ -4,7 +4,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Middleware\AuthCheck;
+use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\ShareUserData;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('landing');
 });
 
 Route::controller(AuthController::class)->group(function () {

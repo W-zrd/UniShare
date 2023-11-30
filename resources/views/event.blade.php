@@ -1,83 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Acara</title>
-
-    <!-- BOOTSTRAP -->
-    <link href="{{ asset('/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
-
-    <!-- FAVICON -->
-    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/event.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
-
-    <!-- Magnific Popup core CSS file -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/magnific-popup.css') }}">
-</head>
-
-<body>
-
+@extends('layouts.generics')
+@section('navbar')
+  @include('layouts.parts.navbar')
+@endsection
+@section('banner')
     <section>
-        <nav class="navbar navbar-expand-lg" data-bs-theme="light">
-            <div class="container" data-bs-theme="light">
-              <a class="navbar-brand fs-4 fw-semibold" href="#">
-                <img src="{{ asset('assets/img/UniShare-logo.png') }}" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
-                UniShare
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-    
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav justify-content-end ms-auto">
-                  <li class="nav-item" id="navbar-item">
-                    <a class="nav-link" href="dashboard">Home</a>
-                  </li>
-                  <li class="nav-item" id="navbar-item">
-                    <a class="nav-link" href="#">Karir</a>
-                  </li>
-                  <li class="nav-item" id="navbar-item">
-                    <a class="nav-link" href="event">Acara</a>
-                  </li>
-                  <li class="nav-item" id="navbar-item">
-                    <a class="nav-link" href="beasiswa">Beasiswa</a>
-                  </li>
-
-                  <li class="dropdown navbar-item">
-                    <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Rafidhia Haikal
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="editprof">Profile</a></li>
-                      <li><a class="dropdown-item" href="/">Log Out</a></li>
-                    </ul>
-                  </li>
-          
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </section>   
-
-    <section>
-        <div class="banner" style="background-image: url({{ asset('assets/img/event-banner2.png') }})">
+        <div class="banner container-flex" style="background-image: url({{ asset('assets/img/event-banner2.png') }});">
             <div class="row">
 
                 <div class="col-3" id="header-thumbnail">
-                    <img src="{{ asset('assets/img/acara-logo.svg') }}" alt="" class="img-fluid mt-4">
+                    <img src="{{ asset('assets/img/acara-logo.svg') }}" alt="" class="img-fluid mt-5">
                 </div>
 
 
-                <div class="col-7 mt-4">
+                <div class="col-7 mt-5">
                     <h2 class="text-wrap" id="title-thumbnail">Eksplorasi peluang karir dan pendidikan yang sesuai dengan minatmu.</h2>
                     <h6 class="text-wrap text-white fw-normal mt-2">Temukan berbagai program pendidikan yang dapat membantu mengembangkan keterampilanmu!</h6>
-                    
-              
+    
                 </div>
 
             </div>
@@ -101,13 +39,13 @@
       </ul>
     </section>
 
-    <section>
+    <section style="height: 1000px">
       <div class="container-fluid mx-auto">
         <div class="row mx-auto">
 
           <!-- FILTERS -->
           
-            <div class="col-lg-3 m-3 mt-5 mx-auto" style="background-color: white">
+            <div class="col-lg-3 m-3 mt-5 mx-auto filter-box">
               <form action=/event method="GET" class="row g-3 search-bar mb-3">
                 <ul class="list-group" style="max-width: 400px;">
                   <h5 class="ms-3 mt-4">Filter</h5>
@@ -138,7 +76,7 @@
                 </ul>
                 
                 <div class="justify-items-center mx-auto">
-                  <button type="submit" class="btn btn-primary m-3 p-2 ps-5 pe-5">Apply!</button>
+                  <button type="submit" class="btn btn-custom1 m-3 mb-5 p-2 ps-5 pe-5">Apply!</button>
                 </div>
               </form>
             </div>
@@ -146,13 +84,16 @@
           
           <div class="col-lg-8 mt-5 mx-auto">
             <!-- Search Bar -->
-            <form action=/event method="GET" class="row g-3 search-bar mb-3">
-              <div class="mb-3 search-bar">
-                <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini" value="{{request('search')}}">
-                <button type="submit" class="btn btn-primary ms-4 ps-3 pe-3">Submit</button>
-              </div>
-              
-            </form>
+            <div class="container-flex">
+              <form action=/event method="GET" class="row g-3 search-bar mb-3">
+                <div class="mb-3 search-bar">
+                  <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini" value="{{request('search')}}" >
+                  <button type="submit" class="btn btn-custom1 ms-4 ps-3 pe-3">Search!</button>
+                </div>
+                
+              </form>
+            </div>
+
 
 
             <!-- CARDS -->
@@ -163,7 +104,7 @@
                 <div class="col-lg-4">
                            
                   <a class="image-popup-no-margins" href="{{ asset('/storage/' . $item->banner_img) }}" title="Caption. Can be aligned to any side and contain any HTML.">
-                    <img src="{{ asset('/storage/' . $item->banner_img) }}"  alt="thumbnail" style="width: 100%; height: 100%;" class="img-fluid rounded">
+                    <img src="{{ asset('/storage/' . $item->banner_img) }}"  alt="thumbnail" style="width: 100%; height: 100%; object-fit: cover;" class="img-fluid rounded">
                   </a>
  
                 </div>
@@ -172,7 +113,7 @@
                   <a class="card-body ms-2" href="{{ url('/event/' . $item->post_id) }}">
                     <h5 class="card-title ms-3">{{$item->title}}</h5>
                     <p class="card-text ms-3">{{ substr($item->content, 0, 185) . " ..." }}</p>
-                    <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{$item->updated_at->format('d F Y')}}</small></p>
+                    <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{ $item->updated_at->format('d F Y') }}</small></p>
                     
                   </a>
                 </div>
@@ -190,33 +131,9 @@
 
 
     </section>
+@endsection
 
     
 
-    <!-- JAVASCRIPT -->
-
-    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-    <!-- Magnific Popup core JS file -->
-    <script src="/assets/js/jquery-plugin/jquery.magnific-popup.min.js"></script>
-    <script src="/assets/js/script.js"></script>
-    
-    <script type="importmap">
-    {
-      "imports": {
-        "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
-        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.esm.min.js"
-      }
-    }
-    </script>
-    <script type="module">
-      import * as bootstrap from 'bootstrap'
-
-      new bootstrap.Popover(document.getElementById('popoverButton'))
-    </script>
-    
 
 
-  </body>
-</html>
