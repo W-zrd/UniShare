@@ -106,47 +106,49 @@
         <div class="row mx-auto">
 
           <!-- FILTERS -->
-          <div class="col-lg-3 m-3 mt-5 mx-auto" style="background-color: white">
-            <ul class="list-group" style="max-width: 400px;">
-              <h5 class="ms-3 mt-4">Filter</h5>
-              <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox1">
-                <label class="form-check-label" for="firstCheckbox">Sains</label>
-              </li>
-              <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox2">
-                <label class="form-check-label" for="secondCheckbox">Teknologi</label>
-              </li>
-              <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
-                <label class="form-check-label" for="thirdCheckbox">Bisnis</label>
-              </li>
-              <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
-                <label class="form-check-label" for="thirdCheckbox">Desain</label>
-              </li>
-              <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
-                <label class="form-check-label" for="thirdCheckbox">Fotografi</label>
-              </li>
-              <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
-                <label class="form-check-label" for="thirdCheckbox">Manajemen</label>
-              </li>
-            </ul>
-            
-            <div class="justify-items-center mx-auto">
-              <button type="button" class="btn btn-primary m-3 p-2 ps-5 pe-5">Apply!</button>
+          
+            <div class="col-lg-3 m-3 mt-5 mx-auto" style="background-color: white">
+              <form action=/event method="GET" class="row g-3 search-bar mb-3">
+                <ul class="list-group" style="max-width: 400px;">
+                  <h5 class="ms-3 mt-4">Filter</h5>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox1">
+                    <label class="form-check-label" for="firstCheckbox">Sains</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox2">
+                    <label class="form-check-label" for="secondCheckbox">Teknologi</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                    <label class="form-check-label" for="thirdCheckbox">Bisnis</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                    <label class="form-check-label" for="thirdCheckbox">Desain</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                    <label class="form-check-label" for="thirdCheckbox">Fotografi</label>
+                  </li>
+                  <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                    <label class="form-check-label" for="thirdCheckbox">Manajemen</label>
+                  </li>
+                </ul>
+                
+                <div class="justify-items-center mx-auto">
+                  <button type="submit" class="btn btn-primary m-3 p-2 ps-5 pe-5">Apply!</button>
+                </div>
+              </form>
             </div>
-
-          </div>
+          
           
           <div class="col-lg-8 mt-5 mx-auto">
             <!-- Search Bar -->
             <form action=/event method="GET" class="row g-3 search-bar mb-3">
               <div class="mb-3 search-bar">
-                <label for="exampleFormControlInput1" class="form-label">Search</label>
-                <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini ">
+                <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini" value="{{request('search')}}">
                 <button type="submit" class="btn btn-primary ms-4 ps-3 pe-3">Submit</button>
               </div>
               
@@ -170,7 +172,7 @@
                   <a class="card-body ms-2" href="{{ url('/event/' . $item->post_id) }}">
                     <h5 class="card-title ms-3">{{$item->title}}</h5>
                     <p class="card-text ms-3">{{ substr($item->content, 0, 185) . " ..." }}</p>
-                    <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{$item->formatted_date}}</small></p>
+                    <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{$item->updated_at->format('d F Y')}}</small></p>
                     
                   </a>
                 </div>

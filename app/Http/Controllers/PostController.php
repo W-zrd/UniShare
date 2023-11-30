@@ -8,17 +8,8 @@ use App\Models\Post;
 class PostController extends Controller
 {
     public function index(){
-        $data = Post::latest();
-        if (request('search')) {
-            $data->where('title', 'like', '%' . request('search') . '%');
-        }
-
-
-        foreach ($data as $event) {
-            $event->formatted_date = $event->updated_at->format('d F Y');
-        }
         return view('event', [
-            "data" => $data->get()
+            "data" => Post::latest()->filter(request(['search']))->get()
         ]);
     }
 
