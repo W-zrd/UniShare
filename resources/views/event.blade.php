@@ -1,83 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Acara</title>
-
-    <!-- BOOTSTRAP -->
-    <link href="{{ asset('/assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/assets/bootstrap/js/bootstrap.min.js') }}" rel="stylesheet" />
-
-    <!-- FAVICON -->
-    <link rel="shortcut icon" href="assets/img/favicon.png" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/event.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
-</head>
-
-<body>
-
+@extends('layouts.generics')
+@section('navbar')
+  @include('layouts.parts.navbar')
+@endsection
+@section('banner')
     <section>
-        <nav class="navbar fixed-top navbar-expand-lg" data-bs-theme="light">
-            <div class="container" data-bs-theme="light">
-              <a class="navbar-brand fs-4 fw-semibold" href="#">
-                <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
-                UniShare
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-    
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav justify-content-end ms-auto">
-                  <li class="nav-item" id="navbar-item">
-                    <a class="nav-link" href="dashboard">Home</a>
-                  </li>
-                  <li class="nav-item" id="navbar-item">
-                    <a class="nav-link" href="#">Karir</a>
-                  </li>
-                  <li class="nav-item" id="navbar-item">
-                    <a class="nav-link" href="event">Acara</a>
-                  </li>
-                  <li class="nav-item" id="navbar-item">
-                    <a class="nav-link" href="beasiswa">Beasiswa</a>
-                  </li>
-
-                  <li class="dropdown navbar-item">
-                    <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Rafidhia Haikal
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="editprof">Profile</a></li>
-                      <li><a class="dropdown-item" href="/">Log Out</a></li>
-                    </ul>
-                  </li>
-          
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </section>   
-
-    <section>
-        <div class="banner" style="background-image: url('assets/img/event-banner2.png')">
-
+        <div class="banner" style="background-image: url({{ asset('assets/img/event-banner2.png') }})">
             <div class="row">
 
-                <div class="col-4" id="header-thumbnail">
-                    <img src="assets/img/acara-logo.svg" alt="" class="img-fluid">
+                <div class="col-3" id="header-thumbnail">
+                    <img src="{{ asset('assets/img/acara-logo.svg') }}" alt="" class="img-fluid mt-4">
                 </div>
 
 
-                <div class="col me-xl-5">
-                    <h2 class="text-wrap" id="title-thumbnail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </h2>
-                    <h6 class="text-wrap text-white fw-normal mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo</h6>
-                    <form class="d-flex search-bar mt-3" role="search">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
+                <div class="col-7 mt-4">
+                    <h2 class="text-wrap" id="title-thumbnail">Eksplorasi peluang karir dan pendidikan yang sesuai dengan minatmu.</h2>
+                    <h6 class="text-wrap text-white fw-normal mt-2">Temukan berbagai program pendidikan yang dapat membantu mengembangkan keterampilanmu!</h6>
+                    
               
                 </div>
 
@@ -139,53 +77,59 @@
             <div class="justify-items-center mx-auto">
               <button type="button" class="btn btn-primary m-3 p-2 ps-5 pe-5">Apply!</button>
             </div>
-            
 
           </div>
+          
+          <div class="col-lg-8 mt-5 mx-auto">
+            <!-- Search Bar -->
+            <form action=/event method="GET" class="row g-3 search-bar mb-3">
+              <div class="mb-3 search-bar">
+                <label for="exampleFormControlInput1" class="form-label">Search</label>
+                <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini ">
+                <button type="submit" class="btn btn-primary ms-4 ps-3 pe-3">Submit</button>
+              </div>
+              
+            </form>
 
-          <!-- CARDS -->
 
-          <div class="col-lg-8 m-3 mt-5 mx-auto">
-            <div class="card" style="max-width: 1000px;">
+            <!-- CARDS -->
+            @foreach ($data as $item)
+            <!-- USER POST -->
+            <div class="card mb-4" style="max-width: 1000px;" >
               <div class="row g-0">
                 <div class="col-lg-4">
-                  <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
+                           
+                  <a class="image-popup-no-margins" href="{{ asset('/storage/' . $item->banner_img) }}" title="Caption. Can be aligned to any side and contain any HTML.">
+                    <img src="{{ asset('/storage/' . $item->banner_img) }}"  alt="thumbnail" style="width: 100%; height: 100%;" class="img-fluid rounded">
+                  </a>
+ 
                 </div>
+
                 <div class="col-lg-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                  </div>
+                  <a class="card-body ms-2" href="{{ url('/event/' . $item->post_id) }}">
+                    <h5 class="card-title ms-3">{{$item->title}}</h5>
+                    <p class="card-text ms-3">{{ substr($item->content, 0, 185) . " ..." }}</p>
+                    <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{$item->formatted_date}}</small></p>
+                    
+                  </a>
                 </div>
               </div>
             </div>
+            @endforeach
           </div>
-
+          
+          
         </div>
+
 
       </div>
 
 
 
     </section>
+@endsection
 
     
 
-    <!-- JAVASCRIPT -->
-    <script type="importmap">
-    {
-      "imports": {
-        "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
-        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.esm.min.js"
-      }
-    }
-    </script>
-    <script type="module">
-      import * as bootstrap from 'bootstrap'
 
-      new bootstrap.Popover(document.getElementById('popoverButton'))
-    </script>
 
-  </body>
-</html>

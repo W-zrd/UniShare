@@ -1,8 +1,12 @@
 @extends('layouts.generics')
+@section('navbar')
+    @include('layouts.parts.navbar')
+@endsection
+@section('content')
     <!-- EDIT PROF -->
     <section class="editprof-content">
         <div class="container">
-            <div class="row no-gutters">
+            <div class="row no-gutters mt-5 pt-5">
                 <div class="col-3">
                     <div class="row no-gutters">
                         <div class="col">
@@ -123,37 +127,5 @@
             </div>
         </div>
     </section>
-    <script>
-        const tabs = document.querySelectorAll('.nav-JS');
-        const tabContents = document.querySelectorAll('.tab-content');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                e.preventDefault();
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                const tabName = tab.getAttribute('data-tab');
-                tabContents.forEach(content => content.style.display = 'none');
-                document.getElementById(tabName).style.display = 'block';
-            });
-        });
-        // Remove active class from all tabs except the first one (Profil)
-        tabs.forEach((tab, index) => {
-            if (index !== 0) {
-                tab.classList.remove('active');
-            }
-        });
-        // Hide all tab contents except the first one (Profil)
-        tabContents.forEach((content, index) => {
-            if (index !== 0) {
-                content.style.display = 'none';
-            }
-        });
-
-    </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="assets/js/"></script>
-</body>
+@endsection
+  

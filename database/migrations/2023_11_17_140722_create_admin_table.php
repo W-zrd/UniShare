@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kegiatan_kemahasiswaan', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_kegiatan');
-            $table->string('jenis_kegiatan');
-            $table->dateTime('waktu_kegiatan');
-            $table->point('lokasi_kegiatan');
-            $table->text('deskripsi_kegiatan');
+        Schema::create('admin', function (Blueprint $table) {
+            $table->id('admin_id');
+            $table->string('username')->unique();
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('nama');
+            $table->binary('profile_pic')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_kegiatan_kemahasiswaan');
+        Schema::dropIfExists('admin');
     }
 };

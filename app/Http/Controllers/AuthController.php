@@ -26,7 +26,18 @@ class AuthController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-   
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->only('username', 'password');
+        $user = User::where('username', $credentials['username'])->first();
+
+        if ($user && Hash::check($credentials['password'], $user->password)) {
+            Auth::login($user);
+            return redirect()->route('dashboard');
+        } else {
+            return back()->with('error', 'Incorrect username or password');
+        }
+    }
 
 
     public function showRegisterForm(){
@@ -48,26 +59,20 @@ class AuthController extends Controller
     }
 }
 public function register(Request $request){
-
+    dd($request);
     if ($request->password != $request->password_confirmation) {
-        // Jika Anda ingin mengembalikan tampilan
-        if ($request->wantsJson()) {
-            return response()->json([
-                'message' => 'Password confirmation does not match'
-            ], 401);
-        } else {
             return view('tampilan_login_error');
-        }
+    }else {
+        $encryptedPassword = bcrypt($request->password);
+        $user = User::create([
+            'nama_lengkap' => $request->name,
+            'username' => $request->username,
+            'password' => $encryptedPassword,
+            'email' => $request->email,
+            
+        ]);
     }
-    $encryptedPassword = bcrypt($request->password);
-    $user = User::create([
-        'nama_lengkap' => $request->name,
-        'username' => $request->username,
-        'password' => $encryptedPassword,
-        'email' => $request->email,
-        
-    ]);
-
+    dd($user);
     if ($user) {
         $token = $user->createToken('auth_token')->plainTextToken;
         $data = [

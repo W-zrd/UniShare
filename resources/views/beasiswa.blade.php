@@ -1,4 +1,8 @@
 @extends('layouts.generics')
+@section('navbar')
+    @include('layouts.parts.navbar')
+@endsection
+@section('content')
     <!--content-->
     <div class="row" style="margin-top: 15px">
       <div class="col-2" style="text-align: right"></div>
@@ -24,5 +28,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="assets/js/"></script>
     <script src="assets/js/autocomplete.js"></script>
-  </body>
-</html>
+@endsection
