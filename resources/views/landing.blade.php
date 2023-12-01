@@ -74,9 +74,9 @@
 
       <!-- TITLE -->
       <div class="row m-2 justify-content-center">
-        <div class="col-7 mt-5">
+        <div class="col-7 mt-5 pt-5">
           <div class="content-box">
-            <h1 class="fw-bold">UniShare.</h1>
+            <h1 class="fw-bold pt-4">UniShare.</h1>
             <h3 class="fw-semibold">Unlock Your Opportunities Boost Your Career</h3>
             <p>Daftarkan dirimu sekarang dan temukan peluang menggapai cita-cita!</p>
 
@@ -89,7 +89,7 @@
 
         <!-- IMAGE -->
         <div class="col-5">
-          <img src="/assets/img/book2.png" class="img-fluid p-0" alt="s">
+          <img src="/assets/img/book2.png" class="img-fluid mt-5 pt-4" alt="s">
         </div>
       </div>
     </section>
