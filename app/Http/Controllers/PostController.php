@@ -13,6 +13,10 @@ class PostController extends Controller
         ]);
     }
 
+    public function userUploadedPosts(){
+        return view('admin.admin-dashboard', ["data" => Post::all()]);
+    }
+
     public function showCreateForm()
     {
         return view('admin.admin-create-event');

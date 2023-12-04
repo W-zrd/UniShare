@@ -40,7 +40,7 @@
           {{-- SUB-MENU 1: VIEW USER INFO --}}
           <div class="btn-group submenu ms-4 ps-2 mt-3 mb-3">
             <span class="material-symbols-outlined"> group </span>
-            <a href="{{ route('admin') }}" 
+            <a href="{{ route('view-users') }}" 
               onmouseover="this.style.color='#f75600'" 
               onmouseout="this.style.color='#7c7974'">View User Info
             </a>

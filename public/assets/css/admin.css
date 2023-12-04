@@ -125,6 +125,10 @@ body {
     padding-left: 200px; /* Add some padding to the content area */
 }
 
+.user-table {
+    padding-left: 250px;
+}
+
 .container {
     display: flex;
     justify-content: space-between;

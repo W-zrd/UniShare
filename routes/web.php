@@ -63,4 +63,4 @@ Route::get('/delete/user/{id}', [AdminController::class, 'delete'])->name('delet
 Route::view('admin/event', 'admin.admin-event');
 Route::get('/admin/event/add', [PostController::class, 'showCreateForm'])->name('create-event');
 Route::post('/admin/event/add', [PostController::class, 'storeNewPost']);
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin', [PostController::class, 'userUploadedPosts'])->name('admin');
