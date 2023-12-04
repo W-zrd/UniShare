@@ -9,10 +9,15 @@ use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
 {
-    public function index()
+
+    public function index(){
+        return view('admin.admin-dashboard');
+    }
+
+    public function viewusers()
     {
         $data = User::all();
-        return view('admin.admin', compact('data'));
+        return view('admin.view-users', compact('data'));
     }
 
     public function showdata($id){

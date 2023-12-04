@@ -24,7 +24,10 @@
         </div>
 
         <div class="dashboard">
-          <button class="btn-dashboard">Dashboard</button>
+          <a href="{{ route('admin') }}">
+            <button type="button" class="btn-dashboard">Dashboard</button>
+          </a>
+          
         </div>
         
         <div class="">
@@ -58,16 +61,7 @@
             <h6>Create New Post</h6>
           </div> <br>
 
-          {{-- SUB-MENU 1: YOUR POST --}}
-          <div class="btn-group submenu ms-4 ps-2 mt-3 mb-3">
-            <span class="material-symbols-outlined"> newspaper </span>
-            <a href="" 
-              onmouseover="this.style.color='#f75600'" 
-              onmouseout="this.style.color='#7c7974'">Your Posts
-            </a>
-          </div>
-
-          {{-- SUB-MENU 2: KARIR --}}
+          {{-- SUB-MENU 1: KARIR --}}
           <div class="btn-group submenu ms-4 ps-2 mb-3">
             <span class="material-symbols-outlined"> work </span>
             <a href=""
@@ -76,7 +70,7 @@
             </a>
           </div>
 
-          {{-- SUB-MENU 3: ACARA --}}
+          {{-- SUB-MENU 2: ACARA --}}
           <div class="btn-group submenu ms-4 ps-2 mb-3">
             <span class="material-symbols-outlined"> theater_comedy </span>
             <a href=""
@@ -85,7 +79,7 @@
             </a>
           </div>
 
-          {{-- SUB-MENU 4: BEASISWA --}}
+          {{-- SUB-MENU 3: BEASISWA --}}
           <div class="btn-group submenu ms-4 ps-2 mb-2">
             <span class="material-symbols-outlined"> school </span>
             <a href=""
@@ -129,18 +123,12 @@
 
       </div>
       
-      <div class="ms-5 content">
+      <div class="ms-5 mb-5 content">
 
         {{-- Welcoming Msg --}}
         <div class="row mt-5 ms-5 me-5">
-          <div class="col">
-            <h2>Welcome, Wzrd</h2>
-            <h6 class="mt-2 text-secondary fw-normal">Here's whats happening in your account today</h6>
-          </div>
-          <div class="col">
-            <input class="form-control" type="text" placeholder="Search" aria-label="default input example" style="border-radius: 30px;">
-            
-          </div>
+          <h2>Welcome, Wzrd</h2>
+          <h6 class="mt-2 text-secondary fw-normal">Here's whats happening in your account today</h6>
         </div>
 
         <section class="event-form p-5 me-5 ms-5 mt-4">
