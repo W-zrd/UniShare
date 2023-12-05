@@ -52,13 +52,7 @@ Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
 Route::view('/edit/user', 'edit-user')->name('edit-user');
 
 
-
-// EVENT PAGE
-Route::get('/event/{id}', [PostController::class, 'viewPost'])->name('post_id');
-Route::get('/event', [PostController::class, 'index']);
-
 // Admin Page
-
 
 Route::controller(AdminController::class)->group(function(){
     Route::get('/view-users', 'viewusers')->name('view-users');
@@ -70,6 +64,8 @@ Route::controller(AdminController::class)->group(function(){
 
 
 Route::controller(PostController::class)->group(function(){
+    Route::get('/event/{id}', 'viewPost')->name('post');
+    Route::get('/event',  'index');
     Route::get('/admin/event/add', 'showCreateForm')->name('create-event');
     Route::post('/admin/event/add', 'storeNewPost');
     Route::get('/admin','userUploadedPosts')->name('admin');
@@ -78,11 +74,10 @@ Route::controller(PostController::class)->group(function(){
     Route::get('/delete/post/{id}', 'deletePost')->name('delete-post');
 });
 
+Route::controller(KarirPostController::class)->group(function(){
+    Route::view('admin/karir', 'admin.admin-karir');
+    Route::get('/admin/karir/add', 'showCreateForm')->name('create-karir');
+    Route::post('/admin/karir/add', 'storeNewPost');
+    Route::get('/karir',  'index')->name('karir');
+});
 
-
-// KARIR PAGE
-Route::view('admin/karir', 'admin.admin-karir');
-Route::get('/admin/karir/add', [KarirPostController::class, 'showCreateForm'])->name('create-karir');
-Route::post('/admin/karir/add', [KarirPostController::class, 'storeNewPost']);
-
-Route::get('/karir', [KarirPostController::class, 'index'])->name('karir');
