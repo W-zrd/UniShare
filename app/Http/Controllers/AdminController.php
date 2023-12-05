@@ -36,4 +36,11 @@ class AdminController extends Controller
         $data -> delete();
         return redirect()->route('view-users');
     }
+
+    public function downloadUserInfo()
+    {
+        $userData = User::all();
+        $csvExporter = new \Laracsv\Export();
+        $csvExporter->build($userData, ['id', 'name', 'email', 'username', 'password', 'created_at', 'updated_at'])->download();
+    }
 }

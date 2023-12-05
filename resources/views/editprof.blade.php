@@ -115,7 +115,7 @@
                                         </div>
                                         <div class="col">
                                             <label class="ps-1 pb-1" for="formGroupExampleInput">No Telp</label>
-                                            <input type="text" class="form-control activecolor" value=No Telp>
+                                            <input type="text" class="form-control activecolor" value={{No}} Telp>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary m-3 mt-0 float-right">Apply</button>
