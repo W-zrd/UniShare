@@ -3,24 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\KarirPost;
 
-class PostController extends Controller
+class KarirPostController extends Controller
 {
     public function index(){
-        return view('event', [
-            "data" => Post::latest()->filter(request(['search']))->get()
+        return view('karir', [
+            "data" => KarirPost::latest()->filter(request(['search']))->get()
         ]);
     }
 
     public function showCreateForm()
     {
-        return view('admin.admin-create-event');
+        return view('admin.admin-create-karir');
     }
 
     public function showCreateForms()
     {
-        return view('admin.admin-event');
+        return view('admin.admin-karir');
     }
 
     public function storeNewPost(Request $request)
@@ -47,12 +47,14 @@ class PostController extends Controller
         }
         $incomingFields['admin_id'] = $adminId;
 
-        Post::create($incomingFields);
+        KarirPost::create($incomingFields);
     }
 
 
-    public function viewPost(Post $id){
-        $id->formatted_date = $id->updated_at->format('d F Y');
-        return view('event-post', ["post" => $id]);
+    public function viewPost(){
+        $post = KarirPost::find($id);
+        $post->formatted_date = $post->updated_at->format('d F Y');
+        return view('karir', ["data" => $post]);
     }
+    
 }
