@@ -8,6 +8,7 @@ use App\Http\Middleware\AuthCheck;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\ShareUserData;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KarirPostController;
 
 
 /*
@@ -44,7 +45,7 @@ Route::controller(UserController::class)->group(function(){
 });
 
 Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
-Route::view('/karir', 'karir')->name('karir');
+
 Route::view('/editprof', 'editprof')->name('editprof');
 Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
 Route::view('/edit/user', 'edit-user')->name('edit-user');
@@ -63,3 +64,10 @@ Route::post('/admin/event/add', [PostController::class, 'storeNewPost']);
 
 Route::get('/event/{id}', [PostController::class, 'viewPost'])->name('post_id');
 Route::get('/event', [PostController::class, 'index']);
+
+// KARIR PAGE
+Route::view('admin/karir', 'admin.admin-karir');
+Route::get('/admin/karir/add', [KarirPostController::class, 'showCreateForm'])->name('create-karir');
+Route::post('/admin/karir/add', [KarirPostController::class, 'storeNewPost']);
+
+Route::get('/karir', [KarirPostController::class, 'index'])->name('karir');

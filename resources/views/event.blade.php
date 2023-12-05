@@ -21,7 +21,8 @@
             </div>
         </div>
     </section>
-
+@endsection
+@section('content')
     <section class="second-navbar pt-3 pb-3">
       <ul class="nav justify-content-center">
         <li class="nav-item">
