@@ -13,6 +13,10 @@ class PostController extends Controller
         ]);
     }
 
+    public function userUploadedPosts(){
+        return view('admin.admin-dashboard', ["data" => Post::all()]);
+    }
+
     public function showCreateForm()
     {
         return view('admin.admin-create-event');
@@ -54,5 +58,22 @@ class PostController extends Controller
     public function viewPost(Post $id){
         $id->formatted_date = $id->updated_at->format('d F Y');
         return view('event-post', ["post" => $id]);
+    }
+
+    public function showPostId($id){
+        $data = Post::find($id);
+        return view('admin.update-post', compact('data'));
+    }
+    
+    public function deletePost($id){
+        $data = Post::find($id);
+        $data -> delete();
+        return redirect()->route('admin');
+    }
+
+    public function updatePost(Request $request, $id){
+        $data =  Post::find($id);
+        $data -> update($request->all());
+        return redirect()->route('admin');
     }
 }

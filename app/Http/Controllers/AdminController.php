@@ -9,26 +9,31 @@ use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
 {
-    public function index()
+
+    public function index(){
+        return view('admin.admin-dashboard');
+    }
+
+    public function viewusers()
     {
         $data = User::all();
-        return view('admin.admin', compact('data'));
+        return view('admin.view-users', compact('data'));
     }
 
     public function showdata($id){
         $data = User::find($id);
-        return view('edit-user', compact('data'));
+        return view('admin.update-user', compact('data'));
     }
 
     public function updatedata(Request $request, $id){
         $data = User::find($id);
         $data -> update($request -> all());
-        return redirect()->route('admin');
+        return redirect()->route('view-users');
     }
 
     public function delete($id){
         $data = User::find($id);
         $data -> delete();
-        return redirect()->route('admin');
+        return redirect()->route('view-users');
     }
 }

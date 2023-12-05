@@ -51,20 +51,24 @@ Route::get('/editprof', [ProfileController::class, 'showData'])->name('editprof'
 Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
 Route::view('/edit/user', 'edit-user')->name('edit-user');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
-Route::get('/user/{id}', [AdminController::class, 'showdata'])->name('showdata');
-Route::post('/update/user/{id}', [AdminController::class, 'updatedata'])->name('updatedata');
-Route::get('/delete/user/{id}', [AdminController::class, 'delete'])->name('delete');
 
 // EVENT PAGE
-Route::view('admin/event', 'admin.admin-event');
-Route::get('/admin/event/add', [PostController::class, 'showCreateForm'])->name('create-event');
-Route::post('/admin/event/add', [PostController::class, 'storeNewPost']);
-
-
 Route::get('/event/{id}', [PostController::class, 'viewPost'])->name('post_id');
 Route::get('/event', [PostController::class, 'index']);
+
+// Admin Page
+Route::get('/view-users', [AdminController::class, 'viewusers'])->name('view-users');
+Route::get('/user/{id}', [AdminController::class, 'showdata']);
+Route::post('/update/user/{id}', [AdminController::class, 'updatedata']);
+Route::get('/delete/user/{id}', [AdminController::class, 'delete']);
+Route::get('/admin/event/add', [PostController::class, 'showCreateForm'])->name('create-event');
+Route::post('/admin/event/add', [PostController::class, 'storeNewPost']);
+Route::get('/admin', [PostController::class, 'userUploadedPosts'])->name('admin');
+
+Route::get('/post/{id}', [PostController::class, 'showPostId']);
+Route::post('/update/post/{id}', [PostController::class, 'updatePost']);
+Route::get('/delete/post/{id}', [PostController::class, 'deletePost']);
 
 // KARIR PAGE
 Route::view('admin/karir', 'admin.admin-karir');

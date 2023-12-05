@@ -127,12 +127,12 @@
 
         {{-- Welcoming Msg --}}
         <div class="row mt-5 ms-5 me-5">
-          <h2>Welcome, Wzrd</h2>
-          <h6 class="mt-2 text-secondary fw-normal">Here's whats happening in your account today</h6>
+          <h2>Update Post</h2>
+          <h6 class="text-secondary fw-normal">Change and update your posts as you wish!</h6>
         </div>
 
         <section class="event-form p-5 me-5 ms-5 mt-4">
-          <form action="/admin/event/add" method="POST" enctype="multipart/form-data">
+          <form action="/update/post/{{ $data->post_id }}" method="POST" enctype="multipart/form-data">
             @csrf
             {{-- ROW 1 --}}
             <div class="row ">
@@ -140,7 +140,7 @@
               <div class="col">
                 <div class="mb-3">
                   <label for="title" class="form-label">Judul</label>
-                  <input value="{{old('title')}}" type="text" class="form-control" id="title" name="title" aria-describedby="judulPostHelp" style="border-radius: 20px">
+                  <input value="{{ $data->title }}" type="text" class="form-control" id="title" name="title" aria-describedby="judulPostHelp" style="border-radius: 20px">
                   @error('title')
                     <p class="alert alert-danger shadow-sm mt-2">{{$message}}</p>
                   @enderror
@@ -154,7 +154,7 @@
               <div class="col">
                 <div class="mb-3">
                   <label for="author" class="form-label">Penyelenggara</label>
-                  <input value="{{old('author')}}" type="text" class="form-control" id="author" name="author" aria-describedby="authorHelp" style="border-radius: 20px">
+                  <input value="{{ $data->author }}" type="text" class="form-control" id="author" name="author" aria-describedby="authorHelp" style="border-radius: 20px">
                   @error('author')
                     <p class="alert alert-danger shadow-sm mt-2">{{$message}}</p>
                   @enderror
@@ -165,7 +165,7 @@
               <div class="col">
                 <div class="mb-3">
                   <label for="url_event" class="form-label">Link Acara</label>
-                  <input value="{{old('url_event')}}" type="text" class="form-control" name="url_event" id="url_event" aria-describedby="urlHelp" style="border-radius: 20px">
+                  <input value="{{ $data->url_event }}" type="text" class="form-control" name="url_event" id="url_event" aria-describedby="urlHelp" style="border-radius: 20px">
                   @error('url_event')
                     <p class="alert alert-danger shadow-sm mt-2">{{$message}}</p>
                   @enderror
@@ -239,14 +239,14 @@
               {{-- CONTENT --}}
               <div class="mb-3">
                 <label for="content" class="form-label">Example textarea</label>
-                <textarea class="form-control" id="content" name="content" rows="3">{{old('content')}}</textarea>
+                <textarea class="form-control" id="content" name="content" rows="3">{{ $data->content }}</textarea>
                 @error('content')
                   <p class="alert alert-danger shadow-sm">{{$message}}</p>
                 @enderror
               </div>
             </div>
 
-            <button class="btn btn-primary" type="submit" style="background-color: #f75600; border-color: #f75600">Submit</button>
+            <button class="btn btn-primary" type="submit" style="background-color: #f75600; border-color: #f75600">Update</button>
   
           </form>
         </section>

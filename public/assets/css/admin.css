@@ -1,6 +1,5 @@
 html,
 body {
-    height: 1000px;
     margin: 0;
     padding: 0;
     background-color: #f6f7ff !important;
@@ -124,6 +123,10 @@ body {
 
 .content {
     padding-left: 200px; /* Add some padding to the content area */
+}
+
+.user-table {
+    padding-left: 250px;
 }
 
 .container {
