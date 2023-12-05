@@ -37,11 +37,14 @@
                     </li>   --}}
                     <div class="btn-group">
                         <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Wzrd.
+                            {{ auth()->user()->username}}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                           <li> <a class="dropdown-item fs-6" href="/editprof">Profile</a> </li>
-                          <li> <a class="dropdown-item fs-6" href="/">Log Out</a> </li>
+                          <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <li> <button class="dropdown-item fs-6">Log Out</button> </li>
+                          </form>
                         </ul>
                       </div>
                 </ul>

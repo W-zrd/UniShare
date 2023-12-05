@@ -33,9 +33,10 @@ class AuthController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function authenticate(Request $request)
+    public function login(Request $request)
     {
         $credentials = $request->only('username', 'password');
+
         $user = User::where('username', $credentials['username'])->first();
 
         if ($user && Hash::check($credentials['password'], $user->password)) {
@@ -46,61 +47,15 @@ class AuthController extends Controller
         }
     }
 
+    public function logout(){
+        Auth::logout();
+        return view('landing');
+    }
+
 
     public function showRegisterForm(){
         return view('auth.register');
     }
-
-    public function login(Request $request)
-{
-    $user = User::where('username', $request->username)->where('password', $request->password)->first();
-    if ($user) {
-        $token = $user->createToken('auth_token')->plainTextToken;
-        $data = [
-            'signature' => $user->createToken('JWT_SECRET')->accessToken,
-            'user' => $user,
-            'token' => $token,
-        ];
-
-        // Jika Anda ingin mengembalikan tampilan
-        if ($request->wantsJson()) {
-            return response()->json([
-                'message' => 'success',
-                'data' => $data,
-            ]);
-        } else {
-            if ($user) {
-                $token = $user->createToken('auth_token')->plainTextToken;
-                $data = [
-                    'signature' => $user->createToken('JWT_SECRET')->accessToken,
-                    'user' => $user,
-                    'token' => $token,
-                ];
-
-                // Jika Anda ingin mengembalikan tampilan
-                if ($request->wantsJson()) {
-                    return response()->json([
-                        'message' => 'success',
-                        'data' => $data,
-                    ]);
-                } else {
-
-                    return redirect()->route('dashboard')->with('success', 'Login successful. Welcome back, ' . $user->name)->with('user', $user)->with('data', $data);
-                }
-            } else {
-        // Jika Anda ingin mengembalikan tampilan
-        if ($request->wantsJson()) {
-            return response()->json([
-                'message' => 'Invalid credentials'
-            ], 401);
-        } else {
-            return view('tampilan_login_error');
-        }
-    }
-       
-    }
-    }
-}
 
 public function register(Request $request){
 

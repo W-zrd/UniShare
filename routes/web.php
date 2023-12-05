@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\AuthCheck;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\ShareUserData;
@@ -27,7 +28,7 @@ Route::get('/', function () {
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'showLoginForm')->name('tampilkan.login');
-    Route::post('/login', 'login')->name('login');
+    Route::post('/login',  'login')->name('login');
     Route::get('/register', 'showRegisterForm')->name('tampilkan.register');
     Route::post('/register', 'register')->name('register');
     Route::post('/logout', 'logout')->name('logout');
@@ -45,10 +46,10 @@ Route::controller(UserController::class)->group(function(){
 
 Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
 Route::view('/karir', 'karir')->name('karir');
-Route::view('/editprof', 'editprof')->name('editprof');
+Route::get('/editprof', [ProfileController::class, 'showData'])->name('editprof');
 Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
 Route::view('/edit/user', 'edit-user')->name('edit-user');
-Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
+
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 Route::get('/user/{id}', [AdminController::class, 'showdata'])->name('showdata');
@@ -63,3 +64,4 @@ Route::post('/admin/event/add', [PostController::class, 'storeNewPost']);
 
 Route::get('/event/{id}', [PostController::class, 'viewPost'])->name('post_id');
 Route::get('/event', [PostController::class, 'index']);
+
