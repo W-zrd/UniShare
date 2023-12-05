@@ -58,17 +58,27 @@ Route::get('/event/{id}', [PostController::class, 'viewPost'])->name('post_id');
 Route::get('/event', [PostController::class, 'index']);
 
 // Admin Page
-Route::get('/view-users', [AdminController::class, 'viewusers'])->name('view-users');
-Route::get('/user/{id}', [AdminController::class, 'showdata']);
-Route::post('/update/user/{id}', [AdminController::class, 'updatedata']);
-Route::get('/delete/user/{id}', [AdminController::class, 'delete']);
-Route::get('/admin/event/add', [PostController::class, 'showCreateForm'])->name('create-event');
-Route::post('/admin/event/add', [PostController::class, 'storeNewPost']);
-Route::get('/admin', [PostController::class, 'userUploadedPosts'])->name('admin');
 
-Route::get('/post/{id}', [PostController::class, 'showPostId']);
-Route::post('/update/post/{id}', [PostController::class, 'updatePost']);
-Route::get('/delete/post/{id}', [PostController::class, 'deletePost']);
+
+Route::controller(AdminController::class)->group(function(){
+    Route::get('/view-users', 'viewusers')->name('view-users');
+    Route::get('/user/{id}', 'showdata')->name('show-user');
+    Route::post('/update/user/{id}', 'updatedata')->name('update-user');
+    Route::get('/delete/user/{id}', 'delete')->name('delete-user');
+    Route::post('/download/user','downloadUserInfo')->name('download-user');
+});
+
+
+Route::controller(PostController::class)->group(function(){
+    Route::get('/admin/event/add', 'showCreateForm')->name('create-event');
+    Route::post('/admin/event/add', 'storeNewPost');
+    Route::get('/admin','userUploadedPosts')->name('admin');
+    Route::get('/post/{id}','showPostId')->name('post_id');
+    Route::post('/update/post/{id}', 'updatePost')->name('update-post');
+    Route::get('/delete/post/{id}', 'deletePost')->name('delete-post');
+});
+
+
 
 // KARIR PAGE
 Route::view('admin/karir', 'admin.admin-karir');
