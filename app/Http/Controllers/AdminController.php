@@ -22,18 +22,18 @@ class AdminController extends Controller
 
     public function showdata($id){
         $data = User::find($id);
-        return view('edit-user', compact('data'));
+        return view('admin.update-user', compact('data'));
     }
 
     public function updatedata(Request $request, $id){
         $data = User::find($id);
         $data -> update($request -> all());
-        return redirect()->route('admin');
+        return redirect()->route('view-users');
     }
 
     public function delete($id){
         $data = User::find($id);
         $data -> delete();
-        return redirect()->route('admin');
+        return redirect()->route('view-users');
     }
 }

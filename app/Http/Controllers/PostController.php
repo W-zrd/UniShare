@@ -59,4 +59,9 @@ class PostController extends Controller
         $id->formatted_date = $id->updated_at->format('d F Y');
         return view('event-post', ["post" => $id]);
     }
+
+    public function showPostId($id){
+        $data = Post::find($id);
+        return view('admin.update-post', compact('data'));
+    }
 }

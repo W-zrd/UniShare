@@ -57,10 +57,13 @@ Route::get('/event', [PostController::class, 'index']);
 
 // Admin Page
 Route::get('/view-users', [AdminController::class, 'viewusers'])->name('view-users');
-Route::get('/user/{id}', [AdminController::class, 'showdata'])->name('showdata');
-Route::post('/update/user/{id}', [AdminController::class, 'updatedata'])->name('updatedata');
-Route::get('/delete/user/{id}', [AdminController::class, 'delete'])->name('delete');
-Route::view('admin/event', 'admin.admin-event');
+Route::get('/user/{id}', [AdminController::class, 'showdata']);
+Route::post('/update/user/{id}', [AdminController::class, 'updatedata']);
+Route::get('/delete/user/{id}', [AdminController::class, 'delete']);
 Route::get('/admin/event/add', [PostController::class, 'showCreateForm'])->name('create-event');
 Route::post('/admin/event/add', [PostController::class, 'storeNewPost']);
 Route::get('/admin', [PostController::class, 'userUploadedPosts'])->name('admin');
+
+Route::get('/post/{id}', [PostController::class, 'showPostId']);
+Route::post('/update/post/{id}', [PostController::class, 'updatePost']);
+Route::get('/delete/post/{id}', [PostController::class, 'deletePost']);
