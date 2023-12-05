@@ -64,4 +64,16 @@ class PostController extends Controller
         $data = Post::find($id);
         return view('admin.update-post', compact('data'));
     }
+    
+    public function deletePost($id){
+        $data = Post::find($id);
+        $data -> delete();
+        return redirect()->route('admin');
+    }
+
+    public function updatePost(Request $request, $id){
+        $data =  Post::find($id);
+        $data -> update($request->all());
+        return redirect()->route('admin');
+    }
 }

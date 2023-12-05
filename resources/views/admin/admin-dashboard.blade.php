@@ -148,7 +148,7 @@
                   <td>{{ $item->updated_at->format('d F Y') }}</td>
                   <td>
                     <a href="/post/{{ $item->post_id }}" class="material-symbols-outlined me-2" href="">edit</a>
-                    <a href="" class="material-symbols-outlined"  id="delete-icon">delete_forever</a>
+                    <a href="/delete/post/{{ $item->post_id }}" class="material-symbols-outlined"  id="delete-icon">delete_forever</a>
                   </td>
               </tr>
             @endforeach

@@ -132,7 +132,7 @@
         </div>
 
         <section class="event-form p-5 me-5 ms-5 mt-4">
-          <form action="/admin/event/add" method="POST" enctype="multipart/form-data">
+          <form action="/update/post/{{ $data->post_id }}" method="POST" enctype="multipart/form-data">
             @csrf
             {{-- ROW 1 --}}
             <div class="row ">
@@ -246,7 +246,7 @@
               </div>
             </div>
 
-            <button class="btn btn-primary" type="submit" style="background-color: #f75600; border-color: #f75600">Submit</button>
+            <button class="btn btn-primary" type="submit" style="background-color: #f75600; border-color: #f75600">Update</button>
   
           </form>
         </section>
