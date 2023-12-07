@@ -33,7 +33,11 @@
         <span class="material-symbols-outlined"> file_save </span>
         <form action="{{ route('download-user') }}" method="POST">
           @csrf
-          <button type="submit" class="btn-download" onmouseover="this.style.color='#f75600'" onmouseout="this.style.color='#7c7974'">Download User Info</button>
+          <button type="submit" class="btn btn-link" style="text-decoration: none; color: #7c7974"
+            onmouseover="this.style.color='#f75600'"
+            onmouseout="this.style.color='#7c7974'">
+            Download User Info
+          </button>
         </form>
       </div>
 
