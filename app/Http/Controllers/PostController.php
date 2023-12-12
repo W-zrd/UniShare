@@ -43,11 +43,11 @@ class PostController extends Controller
 
         // Handle file uploads
         if ($request->hasFile('guidebook')) {
-            $incomingFields['guidebook'] = $request->file('guidebook')->store('guidebooks');
+            $incomingFields['guidebook'] = $request->file('guidebook')->store('guidebooks', 'public');
         }
 
         if ($request->hasFile('banner_img')) {
-            $incomingFields['banner_img'] = $request->file('banner_img')->store('banners');
+            $incomingFields['banner_img'] = $request->file('banner_img')->store('banners', 'public');
         }
         $incomingFields['admin_id'] = $adminId;
 
