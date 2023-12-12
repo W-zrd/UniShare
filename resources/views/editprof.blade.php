@@ -50,30 +50,32 @@
                         <div class="cell justify-content-center rounded bg-white"> 
                             <div class="m-3 h-25 text-center">
                                 <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1 pt-3" alt="Profile Picture" style="width: 125px">
-                                <h3 >Nama lengkap</h3>
+                                <h3 >{{auth()->user()->nama_lengkap}}</h3>
                                 <hr>
                             </div>
                             <div>
-                                <form>
+                                <form action="/editprofUpper/{{auth()->user()->id}}" method="POST">
+                                    @csrf
+                                    @method('PUT')
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Nama Lengkap</label>
-                                            <input type="text" class="form-control activecolor"value="{{ auth()->user()->nama_lengkap}}">
+                                            <label class="ps-1 pb-1">Nama Lengkap</label>
+                                            <input type="text" name="inNama" class="form-control activecolor"value="{{ auth()->user()->nama_lengkap}}">
                                         </div>
                                         <div class="col">
-                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Username</label>
-                                            <input type="text" class="form-control activecolor"value="{{ auth()->user()->username}}">
+                                            <label class="ps-1 pb-1">Username</label>
+                                            <input type="text" name="inUsername" class="form-control activecolor"value="{{ auth()->user()->username}}">
                                         </div>
                                     </div>
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Alamat</label>
-                                            <input type="text" class="form-control activecolor" value="{{ auth()->user()->alamat}}">
+                                            <label class="ps-1 pb-1">Alamat</label>
+                                            <input type="text" name="inAlamat" class="form-control activecolor" value="{{ auth()->user()->alamat}}">
                                         </div>
                                         <div class="col">
-                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Jenis Kelamin</label>
-                                            <select class="form-select activecolor" aria-label="Default select example">
-                                                <option selected value="1">Laki-Laki</option>
+                                            <label class="ps-1 pb-1">Jenis Kelamin</label>
+                                            <select class="form-select activecolor">
+                                                <option value="1">Laki-Laki</option>
                                                 <option value="2">Perempuan</option>
                                                 <option value="3">Rather not say</option>
                                             </select>
@@ -95,25 +97,27 @@
                                 <hr>
                             </div>
                             <div>
-                                <form>
+                                <form action="/editprofBelow/{{auth()->user()->id}}" method="POST">
+                                    @csrf
+                                    @method('PUT')
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Username</label>
-                                            <input type="text" class="form-control activecolor" value="{{ auth()->user()->username}}">
+                                            <label class="ps-1 pb-1">Username</label>
+                                            <input type="text" name="inUsername" class="form-control activecolor" value="{{ auth()->user()->username}}">
                                         </div>
                                         <div class="col">
-                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Email</label>
-                                            <input type="text"class="form-control activecolor" value="{{ auth()->user()->email}}">
+                                            <label class="ps-1 pb-1">Email</label>
+                                            <input type="text" name="inEmail" class="form-control activecolor" value="{{ auth()->user()->email}}">
                                         </div>
                                     </div>
                                     <div class="row p-3 pt-0">
                                         <div class="col">
-                                            <label class="ps-1 pb-1" for="formGroupExampleInput">Password</label>
-                                            <input type="password" class="form-control activecolor">
+                                            <label class="ps-1 pb-1">Password</label>
+                                            <input type="password" name="inPassword" class="form-control activecolor">
                                         </div>
                                         <div class="col">
-                                            <label class="ps-1 pb-1" for="formGroupExampleInput">No Telp</label>
-                                            <input type="text" class="form-control activecolor" value="{{ auth()->user()->telepon}}">
+                                            <label class="ps-1 pb-1">No Telp</label>
+                                            <input type="text" name="inNotelp" class="form-control activecolor" value="{{ auth()->user()->telepon}}">
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary m-3 mt-0 float-right">Apply</button>
