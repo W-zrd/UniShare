@@ -43,7 +43,7 @@ class AuthController extends Controller
             Auth::login($user);
             return redirect()->route('dashboard');
         } else {
-            return back()->with('error', 'Incorrect username or password');
+            return response()->back()->with('error', 'Incorrect username or password');
         }
     }
 

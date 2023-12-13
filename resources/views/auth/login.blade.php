@@ -23,6 +23,11 @@
                             <p class="text-center">Incorrect Username or Password</p>
                         </div>
                     @endif
+                    @if(session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     <button type="submit" class="btn btn-primary w-100 fw-medium pb-2">Login</button>
                 </form>
                 <div class="mt-1 text-secondary">
