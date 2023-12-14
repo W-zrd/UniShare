@@ -52,8 +52,8 @@ class PostController extends Controller
         $incomingFields['admin_id'] = $adminId;
 
         Post::create($incomingFields);
+        return redirect('/admin');
     }
-
 
     public function viewPost(Post $id){
         $id->formatted_date = $id->updated_at->format('d F Y');

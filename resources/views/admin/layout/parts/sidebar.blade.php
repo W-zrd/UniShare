@@ -50,7 +50,7 @@
       {{-- SUB-MENU 1: KARIR --}}
       <div class="btn-group submenu ms-4 ps-2 mt-2 mb-3">
         <span class="material-symbols-outlined"> work </span>
-        <a href=""
+        <a href="{{ route('create-karir') }}"
           onmouseover="this.style.color='#f75600'" 
           onmouseout="this.style.color='#7c7974'">Create New Career
         </a>

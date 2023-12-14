@@ -75,6 +75,7 @@ Route::controller(PostController::class)->group(function(){
 });
 
 Route::controller(KarirPostController::class)->group(function(){
+    Route::get('/karir/{id}', 'viewPost');
     Route::view('admin/karir', 'admin.admin-karir');
     Route::get('/admin/karir/add', 'showCreateForm')->name('create-karir');
     Route::post('/admin/karir/add', 'storeNewPost');

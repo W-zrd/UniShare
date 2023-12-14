@@ -48,13 +48,13 @@ class KarirPostController extends Controller
         $incomingFields['admin_id'] = $adminId;
 
         KarirPost::create($incomingFields);
+        return redirect('/admin');
     }
 
 
-    public function viewPost(){
-        $post = KarirPost::find($id);
-        $post->formatted_date = $post->updated_at->format('d F Y');
-        return view('karir', ["data" => $post]);
+    public function viewPost(KarirPost $id) {
+        $id->formatted_date = $id->updated_at->format('d F Y');
+        return view('event-post', ["post" => $id]);
     }
     
 }
