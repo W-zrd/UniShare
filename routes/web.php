@@ -29,6 +29,7 @@ Route::get('/', function () {
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'showLoginForm')->name('tampilkan.login');
+    Route::get('/login-admin', 'showLoginFormAdmin');
     Route::post('/login',  'login')->name('login');
     Route::get('/register', 'showRegisterForm')->name('tampilkan.register');
     Route::post('/register', 'register')->name('register');
