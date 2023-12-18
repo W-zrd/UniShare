@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="col-lg-8">
-                  <a class="card-body ms-2" action="{{ route('karir') }}">
+                  <a class="card-body ms-2" href="{{ url('/karir/' . $item->karir_post_id)}}">
                     <h5 class="card-title ms-3">{{$item->title}}</h5>
                     <p class="card-text ms-3">{{ substr($item->content, 0, 185) . " ..." }}</p>
                     <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{ $item->updated_at->format('d F Y') }}</small></p>

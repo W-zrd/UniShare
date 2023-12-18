@@ -55,7 +55,6 @@ class PostController extends Controller
 	return redirect()->route('admin');
     }
 
-
     public function viewPost(Post $id){
         $id->formatted_date = $id->updated_at->format('d F Y');
         return view('event-post', ["post" => $id]);

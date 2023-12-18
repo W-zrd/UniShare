@@ -29,6 +29,7 @@ Route::get('/', function () {
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'showLoginForm')->name('tampilkan.login');
+    Route::get('/login-admin', 'showLoginFormAdmin');
     Route::post('/login',  'login')->name('login');
     Route::get('/register', 'showRegisterForm')->name('tampilkan.register');
     Route::post('/register', 'register')->name('register');
@@ -48,6 +49,8 @@ Route::controller(UserController::class)->group(function(){
 Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
 Route::view('/karir', 'karir')->name('karir');
 Route::get('/editprof', [ProfileController::class, 'showData'])->name('editprof');
+Route::put('/editprofUpper/{id}',[ProfileController::class,'updateDataUpper']);
+Route::put('/editprofBelow/{id}',[ProfileController::class,'updateDataBelow']);
 Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
 Route::view('/edit/user', 'edit-user')->name('edit-user');
 
@@ -75,6 +78,7 @@ Route::controller(PostController::class)->group(function(){
 });
 
 Route::controller(KarirPostController::class)->group(function(){
+    Route::get('/karir/{id}', 'viewPost');
     Route::view('admin/karir', 'admin.admin-karir');
     Route::get('/admin/karir/add', 'showCreateForm')->name('create-karir');
     Route::post('/admin/karir/add', 'storeNewPost');
