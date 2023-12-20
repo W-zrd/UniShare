@@ -54,7 +54,7 @@ class KarirPostController extends Controller
 
     public function viewPost(KarirPost $id) {
         $id->formatted_date = $id->updated_at->format('d F Y');
-        return view('event-post', ["post" => $id]);
+        return view('karir-post', ["post" => $id]);
     }
     
 }
