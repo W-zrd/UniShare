@@ -10,6 +10,7 @@ use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\ShareUserData;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KarirPostController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -46,8 +47,12 @@ Route::controller(UserController::class)->group(function(){
     Route::delete('/users/{id}', 'destroy')->name('users.destroy');
 });
 
-Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
-Route::view('/karir', 'karir')->name('karir');
+Route::controller(DashboardController::class)->group(function(){
+    Route::get('/dashboard','showData')->name('dashboard');
+});
+
+
+
 Route::get('/editprof', [ProfileController::class, 'showData'])->name('editprof');
 Route::put('/editprofUpper/{id}',[ProfileController::class,'updateDataUpper']);
 Route::put('/editprofBelow/{id}',[ProfileController::class,'updateDataBelow']);
