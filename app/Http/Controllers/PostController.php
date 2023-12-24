@@ -13,7 +13,7 @@ class PostController extends Controller
         ]);
     }
 
-    public function userUploadedPosts(){
+    public function showAdminPage(){
         return view('admin.admin-dashboard', ["data" => Post::all()]);
     }
 

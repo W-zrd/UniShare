@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -15,7 +16,7 @@ class AuthController extends Controller
      * Show the form for creating a new resource.
      */
     public function showLoginForm(){
-
+        Session::put('login_admin_flag', false);
         return view('auth.login');
     }
 
@@ -33,31 +34,35 @@ class AuthController extends Controller
         return response()->view('auth.register');
     }
 
-    public function login(Request $request)
-{
-    $user = User::where('username', $request->username)->first();
-    if ($user && password_verify($request->password, $user->password)) {
-        Auth::login($user);
-        $token = $user->createToken('auth_token')->plainTextToken;
-        $data = [
-            'signature' => $user->createToken('JWT_SECRET')->accessToken,
-            'user' => $user,
-            'token' => $token,
-        ];
-        return redirect()->route('dashboard')->with('success', 'Login successful. Welcome back, '. $user->name)->with('user', $user)->with('data', $data)->with('refresh', true);
+    public function showLoginFormAdmin(){
+        return response()->view('auth.login-admin');
     }
-}
+
+    public function login(Request $request)
+    {
+   
+    if($request -> username == 'admin' && $request -> password == 'admin'){
+        Session::put('login_admin_flag', true);
+        return redirect()->route('admin');    
+    }
+    $user = User::where('username', $request->username)->first();
+        if ($user && password_verify($request->password, $user->password)) {
+            Auth::login($user);
+            $token = $user->createToken('auth_token')->plainTextToken;
+            $data = [
+                'signature' => $user->createToken('JWT_SECRET')->accessToken,
+                'user' => $user,
+                'token' => $token,
+            ];
+            return redirect()->route('dashboard')->with('success', 'Login successful. Welcome back, '. $user->name)->with('user', $user)->with('data', $data)->with('refresh', true);
+        }else {
+            return redirect()->route('login')->with('error', 'Invalid credentials');
+        }
+    }
 public function register(Request $request){
 
     if ($request->password != $request->password_confirmation) {
-        // Jika Anda ingin mengembalikan tampilan
-        if ($request->wantsJson()) {
-            return response()->json([
-                'message' => 'Password confirmation does not match'
-            ], 401);
-        } else {
             return view('tampilan_login_error');
-        }
     }
     $encryptedPassword = bcrypt($request->password);
     $user = User::create([
