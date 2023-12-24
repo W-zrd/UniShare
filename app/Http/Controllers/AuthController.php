@@ -47,7 +47,7 @@ class AuthController extends Controller
             Auth::login($user);
             return redirect()->route('dashboard');
         } else {
-            return back()->with('error', 'Incorrect username or password');
+            return response()->back()->with('error', 'Incorrect username or password');
         }
     }
 
@@ -61,55 +61,42 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-public function register(Request $request){
-
-    if ($request->password != $request->password_confirmation) {
-        // Jika Anda ingin mengembalikan tampilan
-        if ($request->wantsJson()) {
-            return response()->json([
-                'message' => 'Password confirmation does not match'
-            ], 401);
-        } else {
-            return view('tampilan_login_error');
+    public function register(Request $request){
+        $existingUser = User::where('username', $request->username)
+                            ->orWhere('email', $request->email)
+                            ->first();
+    
+        if ($existingUser) {
+            if ($request->wantsJson()) {
+                return response()->json([
+                    'message' => 'Duplicate data found. Please use different credentials.'
+                ], 422);
+            } else {
+                return redirect()->back()->with('error', 'Duplicate data found. Please use different credentials.');
+            }
         }
-    }
-    $encryptedPassword = bcrypt($request->password);
-    $user = User::create([
-        'nama_lengkap' => $request->name,
-        'username' => $request->username,
-        'password' => $request->password,
-        'email' => $request->email,
-        
-    ]);
-
-    if ($user) {
-        $token = $user->createToken('auth_token')->plainTextToken;
-        $data = [
-            'signature' => $user->createToken('JWT_SECRET')->accessToken,
-            'user' => $user,
-            'token' => $token,
-        ];
-
-        // Jika Anda ingin mengembalikan tampilan
-        if ($request->wantsJson()) {
-            return response()->json([
-                'message' => 'success',
-                'data' => $data,
-            ]);
-        } else {
+    
+        $user = User::create([
+            'nama_lengkap' => $request->name,
+            'username' => $request->username,
+            'password' => $request->password,
+            'email' => $request->email,
+        ]);
+    
+        if ($user) {
+            $token = $user->createToken('auth_token')->plainTextToken;
+            $data = [
+                'signature' => $user->createToken('JWT_SECRET')->accessToken,
+                'user' => $user,
+                'token' => $token,
+            ];
+            Auth::login($user);
             return redirect()->route('dashboard')->with('success', 'Register successful. Welcome, ' . $user->name)->with('user', $user)->with('data', $data);
-        }
-    } else {
-        // Jika Anda ingin mengembalikan tampilan
-        if ($request->wantsJson()) {
-            return response()->json([
-                'message' => 'Invalid credentials'
-            ], 401);
         } else {
-            return view('tampilan_login_error');
+            return redirect()->back()->with('error', 'Failed to register new account, please try again.');
         }
     }
-}
+    
 
 
 

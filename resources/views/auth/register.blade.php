@@ -28,6 +28,11 @@
                                         <label for="password_confirmation" class="form-label text-secondary">Confirm Password</label>
                                         <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
                                     </div>
+                                    @if(session('error'))
+                                        <div class="alert alert-danger">
+                                            {{ session('error') }}
+                                        </div>
+                                    @endif
                                     <button type="submit" class="btn btn-primary fw-medium w-100 mt-2 pb-2 pt-2">Register</button>
                                 </form>
                                 <div class="mt-1">
