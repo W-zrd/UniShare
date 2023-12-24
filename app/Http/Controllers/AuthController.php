@@ -72,7 +72,7 @@ public function register(Request $request){
         'email' => $request->email,
         
     ]);
-
+    Auth::login($user);
     if ($user) {
         $token = $user->createToken('auth_token')->plainTextToken;
         $data = [
