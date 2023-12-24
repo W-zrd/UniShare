@@ -8,7 +8,7 @@
                     @csrf
                     <div class="pb-3">
                         <label for="username" class="form-label text-secondary">Username</label>
-                        <input type="text" class="form-control id="username" name="username" aria-describedby="usernameHelp" required>
+                        <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" required>
                     </div>
                     <div class="pb-3">
                         <label for="password" class="form-label text-secondary">Password</label>
@@ -21,11 +21,6 @@
                     @if (session('error'))
                         <div class="alert alert-danger me-3 pb-0">
                             <p class="text-center">Incorrect Username or Password</p>
-                        </div>
-                    @endif
-                    @if(session('error'))
-                        <div class="alert alert-danger">
-                            {{ session('error') }}
                         </div>
                     @endif
                     <button type="submit" class="btn btn-primary w-100 fw-medium pb-2">Login</button>
