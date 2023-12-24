@@ -87,15 +87,16 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin','showAdminPage')->name('admin');
     });
 });
-
+Route::controller(KarirPostController::class)->group(function(){
+  Route::get('/karir/{id}', 'viewPost');
+  Route::get('/karir',  'index')->name('karir');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::controller(KarirPostController::class)->group(function(){
-        Route::get('/karir/{id}', 'viewPost');
         Route::view('admin/karir', 'admin.admin-karir');
         Route::get('/admin/karir/add', 'showCreateForm')->name('create-karir');
         Route::post('/admin/karir/add', 'storeNewPost');
-        Route::get('/karir',  'index')->name('karir');
     });
 });
 
