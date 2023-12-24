@@ -23,7 +23,6 @@ class Authenticate extends Middleware
     }
     public function handle($request, Closure $next, ...$guards)
     {
-        dd(Session::get('login_admin_flag', true));
     if (Session::get('login_admin_flag', true)) {
         return $next($request);
     }
