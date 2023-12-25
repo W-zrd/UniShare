@@ -68,7 +68,7 @@
       {{-- SUB-MENU 3: BEASISWA --}}
       <div class="btn-group submenu ms-4 ps-2 mb-2">
         <span class="material-symbols-outlined"> school </span>
-        <a href=""
+        <a href="{{ route('create-beasiswa') }}"
           onmouseover="this.style.color='#f75600'" 
           onmouseout="this.style.color='#7c7974'">Create New Beasiswa
         </a>
