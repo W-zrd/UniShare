@@ -10,11 +10,6 @@ body {
     background: #f6f7ff;
 }
 
-p,
-ul {
-    color: #403d39;
-}
-
 .page-title {
     background-color: #121415;
     height: 800px;
@@ -218,10 +213,6 @@ ul {
 .card-atas {
     background-color: #121415;
     color: #f6f7ff;
-}
-.card-bawah {
-    background-color: #f6f7ff;
-    color: #121415;
 }
 .card,
 .list-group-item {

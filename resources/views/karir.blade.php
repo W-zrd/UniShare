@@ -44,7 +44,7 @@
           <!-- FILTERS -->
           
             <div class="col-lg-3 m-3 mt-5 mx-auto filter-box">
-              <form action=/event method="GET" class="row g-3 search-bar mb-3">
+              <form action=/karir method="GET" class="row g-3 search-bar mb-3">
                 <ul class="list-group" style="max-width: 400px;">
                   <h5 class="ms-3 mt-4">Filter</h5>
                   <li class="list-group-item">
@@ -83,7 +83,7 @@
           <div class="col-lg-8 mt-5 mx-auto">
             <!-- Search Bar -->
             <div class="container-flex">
-              <form action=/event method="GET" class="row g-3 search-bar mb-3">
+              <form action=/karir method="GET" class="row g-3 search-bar mb-3">
                 <div class="mb-3 search-bar">
                   <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini" value="{{request('search')}}" >
                   <button type="submit" class="btn btn-custom1 ms-4 ps-3 pe-3">Search!</button>

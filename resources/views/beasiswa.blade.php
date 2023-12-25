@@ -32,11 +32,14 @@
       </ul>
     </section>
     <center>
-    <div class="col-6">
-      <div class="mt-5 search-bar">
-        <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini" value="{{request('search')}}" >
-        <button type="submit" class="btn btn-custom1 ms-4 ps-3 pe-3">Search!</button>
-      </div>
+    <!-- Search Bar -->
+    <div class="container-flex pt-5">
+      <form action=/beasiswa method="GET" class="row g-3 search-bar mb-3">
+        <div class="mb-3 search-bar">
+            <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini" value="{{request('search')}}" >
+            <button type="submit" class="btn btn-custom1 ms-4 ps-3 pe-3">Search!</button>
+        </div>
+      </form>
     </div>
     </center>
     @foreach ($data as $item)
@@ -48,7 +51,7 @@
           <h5 style="font-size: 17px">{{ \Carbon\Carbon::parse($item->due_date_beasiswa)->format('M Y') }}</h5>
         </div>
         <div class="col-7">
-          <h2>{{$item->nama_beasiswa}}</h2>
+          <h2>{{$item->title}}</h2>
           <div class="mb-4">
             <img src="assets/img/pembatas.png" class="mb-1" />
             <span style="font-style: italic; font-size: 19px; margin-left: 3px">{{$item->jenis_beasiswa}}</span>

@@ -8,9 +8,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\AuthCheck;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\ShareUserData;
+use Illuminate\Http\Middleware\CheckResponseForModifications;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KarirPostController;
 use App\Http\Controllers\BeasiswaController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -47,8 +49,12 @@ Route::controller(UserController::class)->group(function(){
     Route::delete('/users/{id}', 'destroy')->name('users.destroy');
 });
 
-Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
-Route::view('/karir', 'karir')->name('karir');
+Route::controller(DashboardController::class)->group(function(){
+    Route::get('/dashboard','showData')->name('dashboard');
+});
+
+
+
 Route::get('/editprof', [ProfileController::class, 'showData'])->name('editprof');
 Route::put('/editprofUpper/{id}',[ProfileController::class,'updateDataUpper']);
 Route::put('/editprofBelow/{id}',[ProfileController::class,'updateDataBelow']);
@@ -69,20 +75,29 @@ Route::controller(AdminController::class)->group(function(){
 Route::controller(PostController::class)->group(function(){
     Route::get('/event/{id}', 'viewPost')->name('post');
     Route::get('/event',  'index');
-    Route::get('/admin/event/add', 'showCreateForm')->name('create-event');
-    Route::post('/admin/event/add', 'storeNewPost');
-    Route::get('/admin','userUploadedPosts')->name('admin');
     Route::get('/post/{id}','showPostId')->name('post_id');
     Route::post('/update/post/{id}', 'updatePost')->name('update-post');
     Route::get('/delete/post/{id}', 'deletePost')->name('delete-post');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::controller(PostController::class)->group(function(){
+        Route::get('/admin/event/add', 'showCreateForm')->name('create-event');
+        Route::post('/admin/event/add', 'storeNewPost');
+        Route::get('/admin','showAdminPage')->name('admin');
+    });
+});
 Route::controller(KarirPostController::class)->group(function(){
-    Route::get('/karir/{id}', 'viewPost');
-    Route::view('admin/karir', 'admin.admin-karir');
-    Route::get('/admin/karir/add', 'showCreateForm')->name('create-karir');
-    Route::post('/admin/karir/add', 'storeNewPost');
-    Route::get('/karir',  'index')->name('karir');
+  Route::get('/karir/{id}', 'viewPost');
+  Route::get('/karir',  'index')->name('karir');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::controller(KarirPostController::class)->group(function(){
+        Route::view('admin/karir', 'admin.admin-karir');
+        Route::get('/admin/karir/add', 'showCreateForm')->name('create-karir');
+        Route::post('/admin/karir/add', 'storeNewPost');
+    });
 });
 
 Route::controller(BeasiswaController::class)->group(function(){

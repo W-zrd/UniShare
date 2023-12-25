@@ -20,9 +20,9 @@
               {{-- JUDUL --}}
               <div class="col">
                 <div class="mb-3">
-                  <label for="nama_beasiswa" class="form-label">Judul Beasiswa</label>
-                  <input value="{{old('nama_beasiswa')}}" type="text" class="form-control" id="nama_beasiswa" name="nama_beasiswa" aria-describedby="judulPostHelp" style="border-radius: 20px">
-                  @error('nama_beasiswa')
+                  <label for="title" class="form-label">Judul Beasiswa</label>
+                  <input value="{{old('title')}}" type="text" class="form-control" id="title" name="title" aria-describedby="judulPostHelp" style="border-radius: 20px">
+                  @error('title')
                     <p class="alert alert-danger shadow-sm mt-2">{{$message}}</p>
                   @enderror
                 </div>

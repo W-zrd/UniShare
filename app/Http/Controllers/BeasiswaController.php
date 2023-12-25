@@ -31,7 +31,7 @@ class BeasiswaController extends Controller
     {
         $adminId = 1;
         $incomingFields = $request->validate([
-            'nama_beasiswa' => 'required',
+            'title' => 'required',
             'jenis_beasiswa' => 'required',
             'due_date_beasiswa' => 'required',
             'penyelenggara_beasiswa' => 'required',

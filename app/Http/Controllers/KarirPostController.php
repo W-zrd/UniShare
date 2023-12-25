@@ -39,11 +39,11 @@ class KarirPostController extends Controller
 
         // Handle file uploads
         if ($request->hasFile('guidebook')) {
-            $incomingFields['guidebook'] = $request->file('guidebook')->store('guidebooks');
+            $incomingFields['guidebook'] = $request->file('guidebook')->store('guidebooks', 'public');
         }
 
         if ($request->hasFile('banner_img')) {
-            $incomingFields['banner_img'] = $request->file('banner_img')->store('banners');
+            $incomingFields['banner_img'] = $request->file('banner_img')->store('banners', 'public');
         }
         $incomingFields['admin_id'] = $adminId;
 
@@ -54,7 +54,7 @@ class KarirPostController extends Controller
 
     public function viewPost(KarirPost $id) {
         $id->formatted_date = $id->updated_at->format('d F Y');
-        return view('event-post', ["post" => $id]);
+        return view('karir-post', ["post" => $id]);
     }
     
 }

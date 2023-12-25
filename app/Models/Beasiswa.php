@@ -12,7 +12,7 @@ class Beasiswa extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'nama_beasiswa',
+        'title',
         'jenis_beasiswa',
         'due_date_beasiswa',
         'penyelenggara_beasiswa',

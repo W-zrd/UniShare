@@ -2,103 +2,81 @@
 @section('navbar')
     @include('layouts.parts.navbar')
 @endsection
-@section('content')   
-    <!-- SEARCH, CAPAIAN BELAJAR, dan NOTIFIKASI-->
-    <br><br>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-body card-atas">
-                        <h4 class="card-title">Temukan peluang yang tepat untuk mewujudkan impianmu bersama UniShare!</h4>
-                        <div class="container mt-4">
-                        <div class="input-group">
-                                <input type="text" class="form-control autocomplete" placeholder="Cari sesuatu...">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">Cari</button>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
+@section('banner')
+    <section>
+        <div class="banner container-flex" style="background-image: url({{ asset('assets/img/event-banner2.png') }});">
+            <div class="row">
+                <div class="col-3" id="header-thumbnail">
+                    <img src="{{ asset('assets/img/welcome-logo.svg') }}" alt="" class="img-fluid mt-5">
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card d-flex justify-content-center align-items-center card-atas">
-                    <img class="card-img-top img-fluid" src="assets/img/Bullseye.png" alt="Card image cap" style="width: 200px;">
-                    <div class="card-body">
-                        <h5 class="card-title ">Capaian Belajar</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card d-flex justify-content-center align-items-center card-atas">
-                    <img class="card-img-top img-fluid" src="assets/img/Bullseye.png" alt="Card image cap" style="width: 200px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Capaian Belajar</h5>
-                    </div>
+                <div class="col-7 mt-5">
+                    <h2 class="text-wrap" id="title-thumbnail">Eksplorasi peluang karir dan pendidikan yang sesuai dengan minatmu.</h2>
+                    <h6 class="text-wrap text-white fw-normal mt-2">Temukan berbagai program pendidikan yang dapat membantu mengembangkan keterampilanmu!</h6>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- EXPLORE-->
+    </section>
+@endsection
+@section('content')   
+    <!-- KARIR-->
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-11">
-                <h2>Explore</h2>
+                <h2>KARIR</h2>
             </div>
             <div class="col-lg-1">
-                <h6>More  <span style="font-size: 24px;">&#8594;</span></h6>
+                <a href="{{ url('/karir') }}" class="more-link">
+                    <h6>More <span style="font-size: 24px;">&#8594;</span></h6>
+                </a>
             </div>
         </div>
-        <div class="row">
+        
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+            @for ($i = 0; $i < 4 && $i < count($dataKarirPost); $i++)
             <div class="col-lg-3">
-                <div class="card h-100 d-flex align-items-center">
-                <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
-                    <div class="card-body flex-fill card-bawah">
-                        <h5 class="card-title">Nama Acara [Max 2 Baris]</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
+                <div class="card h-100 d-flex align-items-center ">
+                    <a class="image-popup-no-margins" href="{{ asset('/storage/' . $dataKarirPost[$i]->banner_img) }}" title="Caption. Can be aligned to any side and contain any HTML.">
+                        <img src="{{ asset('/storage/' . $dataKarirPost[$i]->banner_img) }}"  alt="thumbnail" style="width: 100%; height: 100%; object-fit: cover;" class="img-fluid rounded">
+                    </a>
+                    <a class="card-body flex-fill " href="{{ url('/karir/' . $dataKarirPost[$i]->karir_post_id)}}">
+                        <h5 class="card-title ms-3">{{ $dataKarirPost[$i]->title }}</h5>
+                        <p class="card-text ms-3">{{ substr($dataKarirPost[$i]->content, 0, 150) . " ..." }}</p>
+                        <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{ $dataKarirPost[$i]->updated_at->format('d F Y') }}</small></p>
+                    </a>
                 </div>
-            </div>            
-            <div class="col-lg-3">
-                <div class="card h-100 d-flex align-items-center">
-                <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
-                    <div class="card-body flex-fill card-bawah">
-                        <h5 class="card-title">Nama Acara [Max 2 Baris]</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>            
-            <div class="col-lg-3">
-                <div class="card h-100 d-flex align-items-center">
-                <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
-                    <div class="card-body flex-fill card-bawah">
-                        <h5 class="card-title">Nama Acara [Max 2 Baris]</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>            
-            <div class="col-lg-3">
-                <div class="card h-100 d-flex align-items-center">
-                <img src="assets/img/01.jpg" class="img-fluid rounded" alt="thumbnail">
-                    <div class="card-body flex-fill card-bawah">
-                        <h5 class="card-title">Nama Acara [Max 2 Baris]</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>            
-        </div>
-    </div>    
+            </div>
+            @endfor          
+        </div> 
+    </div>
 
-    <!-- JAVASCRIPT -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script> 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="assets/js/"></script>
-    <script src="assets/js/autocomplete.js"></script>
-</body>
-</html>
+    <!-- EVENT-->
+    <div class="container mt-5">
+    <div class="row">
+            <div class="col-lg-11">
+                <h2>ACARA</h2>
+            </div>
+            <div class="col-lg-1">
+                <a href="{{ url('/event') }}" class="more-link">
+                    <h6>More <span style="font-size: 24px;">&#8594;</span></h6>
+                </a>
+            </div>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+            @for ($i = 0; $i < 4 && $i < count($dataPost); $i++)
+            <div class="col-lg-3">
+                <div class="card h-100 d-flex align-items-center ">
+                    <a class="image-popup-no-margins" href="{{ asset('/storage/' . $dataPost[$i]->banner_img) }}" title="Caption. Can be aligned to any side and contain any HTML.">
+                        <img src="{{ asset('/storage/' . $dataPost[$i]->banner_img) }}"  alt="thumbnail" style="width: 100%; height: 100%; object-fit: cover;" class="img-fluid rounded">
+                    </a>
+                    <a class="card-body flex-fill " href="{{ url('/event/' . $dataPost[$i]->post_id) }}">
+                        <h5 class="card-title ms-3">{{$dataPost[$i]->title}}</h5>
+                        <p class="card-text ms-3">{{ substr($dataPost[$i]->content, 0, 150) . " ..." }}</p>
+                        <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{ $dataPost[$i]->updated_at->format('d F Y') }}</small></p>
+                    </a>
+                </div>
+            </div>
+            @endfor            
+        </div> 
+    </div>
+@endsection

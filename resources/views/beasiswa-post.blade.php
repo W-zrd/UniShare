@@ -10,14 +10,14 @@
       <nav aria-label="breadcrumb" class="mb-5">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-              <li class="breadcrumb-item"><a href="/event">Event</a></li>
-              <li class="breadcrumb-item active" aria-current="page">{{$post->nama_beasiswa}}</li>
+              <li class="breadcrumb-item"><a href="/beasiswa">Beasiswa</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{$post->title}}</li>
             </ol>
       </nav>
 
       <!-- Content -->
       <div class="container-flex">
-          <h1 class="mb-3">{{$post->nama_beasiswa}}</h1>
+          <h1 class="mb-3">{{$post->title}}</h1>
           <div class="organizer">
             <img src="https://c4.wallpaperflare.com/wallpaper/568/728/865/meme-nicolas-cage-you-don-t-say-wallpaper-preview.jpg" alt="Profile Picture" class="rounded-circle" width="50" height="50">
             <div class="organizer-info">
