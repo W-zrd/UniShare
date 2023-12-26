@@ -11,6 +11,7 @@ use App\Http\Middleware\ShareUserData;
 use Illuminate\Http\Middleware\CheckResponseForModifications;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KarirPostController;
+use App\Http\Controllers\BeasiswaController;
 use App\Http\Controllers\DashboardController;
 
 
@@ -57,7 +58,6 @@ Route::controller(DashboardController::class)->group(function(){
 Route::get('/editprof', [ProfileController::class, 'showData'])->name('editprof');
 Route::put('/editprofUpper/{id}',[ProfileController::class,'updateDataUpper']);
 Route::put('/editprofBelow/{id}',[ProfileController::class,'updateDataBelow']);
-Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
 Route::view('/edit/user', 'edit-user')->name('edit-user');
 
 
@@ -98,5 +98,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/karir/add', 'showCreateForm')->name('create-karir');
         Route::post('/admin/karir/add', 'storeNewPost');
     });
+});
+
+Route::controller(BeasiswaController::class)->group(function(){
+    Route::get('/beasiswa',  'index')->name('beasiswa');
+    Route::get('/beasiswa/{id}', 'viewPost');
+    Route::view('admin/beasiswa', 'admin.admin-karir');
+    Route::post('/admin/beasiswa/add', 'storeNewPost');
+    Route::get('/admin/beasiswa/add', 'showCreateForm')->name('create-beasiswa');
 });
 

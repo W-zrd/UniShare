@@ -36,7 +36,7 @@
         <div class="row mx-auto">
           <!-- FILTERS -->          
             <div class="col-lg-3 m-3 mt-5 mx-auto filter-box">
-              <form action=/event method="GET" class="row g-3 search-bar mb-3">
+              <form action=/karir method="GET" class="row g-3 search-bar mb-3">
                 <ul class="list-group" style="max-width: 400px;">
                   <h5 class="ms-3 mt-4">Filter</h5>
                   <li class="list-group-item">
