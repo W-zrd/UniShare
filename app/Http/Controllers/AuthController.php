@@ -70,8 +70,9 @@ public function register(Request $request){
         'username' => $request->username,
         'password' => $encryptedPassword,
         'email' => $request->email,
-        
+        'profile_img' => asset('storage/profile_pictures/blank_profile_picture.png'),
     ]);
+
     Auth::login($user);
     if ($user) {
         $token = $user->createToken('auth_token')->plainTextToken;
