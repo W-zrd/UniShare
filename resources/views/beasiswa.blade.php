@@ -63,8 +63,60 @@
           <img src="{{ asset('/storage/' . $item->beasiswa_img) }}" style="height: 200px" />
         </div>
       </div>
-</div>
+    </div>
     @endforeach
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        {{-- Previous Page Link --}}
+        @if ($data->onFirstPage())
+          <li class="page-item disabled">
+            <span class="page-link" tabindex="-1">Previous</span>
+          </li>
+        @else
+          <li class="page-item">
+            <a class="page-link" href="{{ $data->previousPageUrl() }}" tabindex="-1">Previous</a>
+          </li>
+        @endif
+
+        {{-- Ellipsis before current page --}}
+          @if($data->currentPage() > 3)
+            <li class="page-item disabled">
+              <span class="page-link">...</span>
+            </li>
+          @endif
+
+        {{-- Pagination Elements --}}
+        @php
+          $maxLinks = 4;
+          $start = max(1, $data->currentPage() - floor($maxLinks / 2));
+          $end = min($start + $maxLinks - 1, $data->lastPage());
+        @endphp
+
+        @for ($i = $start; $i <= $end; $i++)
+          <li class="page-item @if ($i == $data->currentPage()) active @endif">
+            <a class="page-link" href="{{ $data->url($i) }}">{{ $i }}</a>
+          </li>
+        @endfor
+
+        {{-- Ellipsis after current page --}}
+        @if ($end < $data->lastPage())
+          <li class="page-item disabled">
+            <span class="page-link">...</span>
+          </li>
+        @endif
+                
+        {{-- Next Page Link --}}
+          @if ($data->hasMorePages())
+            <li class="page-item">
+              <a class="page-link" href="{{ $data->nextPageUrl() }}">Next</a>
+            </li>
+          @else
+            <li class="page-item disabled">
+              <span class="page-link">Next</span>
+            </li>
+          @endif
+      </ul>
+    </nav>
     <!-- JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

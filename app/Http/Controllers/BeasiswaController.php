@@ -9,7 +9,7 @@ class BeasiswaController extends Controller
 {
     public function index(){
         return view('beasiswa', [
-            "data" => Beasiswa::latest()->filter(request(['search']))->get()
+            "data" => Beasiswa::latest()->filter(request(['search']))->paginate(2)
         ]);
     }
 

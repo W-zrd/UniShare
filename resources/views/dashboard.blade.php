@@ -79,4 +79,36 @@
             @endfor            
         </div> 
     </div>
+
+    <!-- Beasiswa-->
+    <div class="container mt-5">
+    <div class="row">
+            <div class="col-lg-11">
+                <h2>BEASISWA</h2>
+            </div>
+            <div class="col-lg-1">
+                <a href="{{ url('/beasiswa') }}" class="more-link">
+                    <h6>More <span style="font-size: 24px;">&#8594;</span></h6>
+                </a>
+            </div>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+            @for ($i = 0; $i < 4 && $i < count($dataBeasiswa); $i++)
+            <div class="col-lg-3">
+                <div class="card h-100 d-flex align-items-center ">
+                    <a class="image-popup-no-margins" href="{{ asset('/storage/' . $dataBeasiswa[$i]->beasiswa_img) }}" title="Caption. Can be aligned to any side and contain any HTML.">
+                        <img src="{{ asset('/storage/' . $dataBeasiswa[$i]->beasiswa_img) }}"  alt="thumbnail" style="width: 100%; height: 100%; object-fit: cover;" class="img-fluid rounded">
+                    </a>
+                    <a class="card-body flex-fill " href="{{ url('/beasiswa/' . $dataBeasiswa[$i]->id) }}">
+                        <h5 class="card-title ms-3">{{$dataBeasiswa[$i]->title}}</h5>
+                        <p class="card-text ms-3">{{ substr($dataBeasiswa[$i]->deskripsi_beasiswa, 0, 150) . " ..." }}</p>
+                        <p class="card-text ms-3"><small class="text-body-secondary">Last updated {{ $dataBeasiswa[$i]->updated_at->format('d F Y') }}</small></p>
+                    </a>
+                </div>
+            </div>
+            @endfor            
+        </div> 
+    </div>
+    <br><br><br><br><br><br>
 @endsection

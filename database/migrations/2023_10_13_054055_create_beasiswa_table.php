@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('beasiswa', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_beasiswa');
+            $table->string('title');
             $table->string('jenis_beasiswa');
-            $table->dateTime('waktu_registrasi_beasiswa');
-            $table->string('nama_penyelenggara_beasiswa');
+            $table->dateTime('due_date_beasiswa');
+            $table->string('penyelenggara_beasiswa');
             $table->text('deskripsi_beasiswa');
+            $table->text('beasiswa_img');
+            $table->text('beasiswa_url');
             $table->timestamps();
         });
     }
