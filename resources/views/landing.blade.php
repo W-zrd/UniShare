@@ -29,6 +29,7 @@
 
     .container a {
     color: #f6f7ff;
+  
     }
 
     .btn-primary:hover {
@@ -36,6 +37,7 @@
     background-color: #f6f7ff;
     border-color: #f6f7ff;
     }
+
   </style>
 
   </head>
@@ -43,8 +45,8 @@
   <body>
     <section class="page-title">
       <!-- NAVBAR -->
-      <nav class="navbar navbar-expand-lg bg-body-tertiary mt-3 border-danger navbar-login fixed-top" data-bs-theme="light" >
-        <div class="container" data-bs-theme="light">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary pt-3 border-danger navbar-login fixed-top" data-bs-theme="light" >
+        <div class="container" data-bs-theme="light" >
           <a class="navbar-brand fs-4 fw-semibold" href="#">
             <img src="assets/img/UniShare-logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
             UniShare

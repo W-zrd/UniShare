@@ -3,6 +3,7 @@
     @include('layouts.parts.navbar')
 @endsection
 @section('content')
+
     <!-- EDIT PROF -->
     <section class="editprof-content">
         <div class="container">
@@ -49,7 +50,8 @@
                     <div id="profil" class="tab-content">
                         <div class="cell justify-content-center rounded bg-white"> 
                             <div class="m-3 h-25 text-center">
-                                <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1 pt-3" alt="Profile Picture" style="width: 125px">
+                                <img src="{{ auth()->user()->profile_img}}" class="m-1 mt-3 rounded-circle" alt="Profile Picture" style="max-width: 125px; max-height: 125px;"><br>
+                                {{-- <a onclick="openModal()" style="font-size:16px; text-decoration: underline"=>Change</a> --}}
                                 <h3 >{{auth()->user()->nama_lengkap}}</h3>
                                 <hr>
                             </div>
@@ -60,11 +62,11 @@
                                     <div class="row p-3 pt-0">
                                         <div class="col">
                                             <label class="ps-1 pb-1">Nama Lengkap</label>
-                                            <input type="text" name="inNama" class="form-control activecolor"value="{{ auth()->user()->nama_lengkap}}">
+                                            <input type="text" name="inNama" class="form-control activecolor"value="{{auth()->user()->nama_lengkap}}">
                                         </div>
                                         <div class="col">
                                             <label class="ps-1 pb-1">Username</label>
-                                            <input type="text" name="inUsername" class="form-control activecolor"value="{{ auth()->user()->username}}">
+                                            <input type="text" name="inUsername" class="form-control activecolor" value="{{ auth()->user()->username}}">
                                         </div>
                                     </div>
                                     <div class="row p-3 pt-0">
@@ -74,10 +76,11 @@
                                         </div>
                                         <div class="col">
                                             <label class="ps-1 pb-1">Jenis Kelamin</label>
-                                            <select class="form-select activecolor">
-                                                <option value="1">Laki-Laki</option>
-                                                <option value="2">Perempuan</option>
-                                                <option value="3">Rather not say</option>
+                                            <select class="form-select activecolor" name="inKelamin">
+                                                <option selected>{{auth()->user()->jenis_kelamin}}</option>
+                                                <option value="Laki-Laki">Laki-Laki</option>
+                                                <option value="Perempuan">Perempuan</option>
+                                                <option value="Other">Rather not say</option>
                                             </select>
                                         </div>
                                     </div>
@@ -92,8 +95,8 @@
                     <div id="privasiii" class="tab-content">
                         <div class="cell justify-content-center rounded bg-white"> 
                             <div class="m-3 h-25 text-center">
-                                <img src="{{ asset('assets/img/demonzz.jpg') }}" class="rounded-circle m-1 pt-3" alt="Profile Picture" style="width: 125px">
-                                <h3 >Nama lengkap</h3>
+                                <img src="{{ auth()->user()->profile_img}}" class="m-1 mt-3 rounded-circle" alt="Profile Picture" style="max-width: 125px; max-height: 125px;"><br>
+                                <h3 >{{ auth()->user()->nama_lengkap}}</h3>
                                 <hr>
                             </div>
                             <div>
@@ -128,6 +131,25 @@
                 </div>
             </div>
         </div>
+        {{-- POPUP --}}
+        <div id="popupModal" class="popup">
+            <!-- Modal content -->
+            <div class="popup-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+      
+              <!-- Interactive content for the popup -->
+              <h4>Change Profile Picture</h4>
+      
+              <!-- Sample form inside the popup -->
+              <form action="updateProfilePicture/{{auth()->user()->id}}" method="post">
+                @csrf
+                @method('PUT')
+                <img style="max-width: 125px; max-height: 125px;" src="{{ auth()->user()->profile_img}}" alt="">
+                <input type="file" name="profile_image" accept="image/*" class="form-control activecolor mt-2 mb-2">
+                <button type="submit" class="btn btn-primary" style="max-width: 100px;">Apply</button>
+              </form>
+            </div>
+          </div>
     </section>
 @endsection
   

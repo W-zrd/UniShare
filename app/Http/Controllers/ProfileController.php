@@ -21,7 +21,9 @@ class ProfileController extends Controller
             'nama_lengkap' => $request['inNama'],
             'username' => $request['inUsername'],
             'alamat' => $request['inAlamat'],
+            'jenis_kelamin' => $request['inKelamin'],
         ]);
+
         return redirect('/editprof');
     }
 
@@ -36,4 +38,30 @@ class ProfileController extends Controller
         ]);
         return redirect('/editprof');
     }
+
+    public function updateProfilePicture(Request $request, string $id){
+        $updatedData = User::find($id);
+        
+        User::where('id',$updatedData->id)->update([
+            
+            'profile_img' => $request['profile_image'],
+        ]);
+        
+        // dd($request->id);
+        // $updatedData['profile_img'] = $request->profile_img;
+        // if($request->hasFile('profile_image')){
+        //     $destination = 'storage/profile_pictures'.$updatedData->profile_img;
+        //     if(User::exist($destination)){
+        //         User::delete($destination);
+        //     }
+        //     $file = $request->file('profile_image');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = time().'.'.$extension;
+        //     $file->move('storage/profile_pictures',$filename);
+        //     $updatedData->profile_img = $filename;
+        // }
+        // $updatedData->update();
+        return redirect('/editprof');
+    }
+
 }

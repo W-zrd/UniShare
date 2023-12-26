@@ -27,6 +27,7 @@ class User extends Authenticatable
         'jenis_kelamin',
         'universitas',
         'program_studi',
+        'profile_img',
     ];
 
     /**
