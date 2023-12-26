@@ -59,6 +59,7 @@ Route::put('/editprofUpper/{id}',[ProfileController::class,'updateDataUpper']);
 Route::put('/editprofBelow/{id}',[ProfileController::class,'updateDataBelow']);
 Route::view('/beasiswa', 'beasiswa')->name('beasiswa');
 Route::view('/edit/user', 'edit-user')->name('edit-user');
+Route::put('/updateProfilePicture/{id}', [ProfileController::class,'updateProfilePicture']);
 
 
 // Admin Page
