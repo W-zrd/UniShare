@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index(){
         return view('event', [
-            "data" => Post::latest()->filter(request(['search']))->get()
+            "data" => Post::latest()->filter(request(['search']))->paginate(2)
         ]);
     }
 

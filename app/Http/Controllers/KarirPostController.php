@@ -9,7 +9,7 @@ class KarirPostController extends Controller
 {
     public function index(){
         return view('karir', [
-            "data" => KarirPost::latest()->filter(request(['search']))->get()
+            "data" => KarirPost::latest()->filter(request(['search']))->paginate(2)
         ]);
     }
 
