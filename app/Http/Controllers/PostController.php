@@ -52,7 +52,7 @@ class PostController extends Controller
         $incomingFields['admin_id'] = $adminId;
 
         Post::create($incomingFields);
-	return redirect()->route('admin');
+	    return redirect()->route('admin');
     }
 
     public function viewPost(Post $id){

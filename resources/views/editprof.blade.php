@@ -50,10 +50,10 @@
                     <div id="profil" class="tab-content">
                         <div class="cell justify-content-center rounded bg-white"> 
                             <div class="m-3 h-25 text-center">
-                                <img src="{{ auth()->user()->profile_img}}" class="m-1 mt-3 rounded-circle" alt="Profile Picture" style="max-width: 125px; max-height: 125px;"><br>
-                                {{-- <a onclick="openModal()" style="font-size:16px; text-decoration: underline"=>Change</a> --}}
+                                <img src="{{ asset('assets/img/demonzz.jpg') }}" class="m-1 mt-3 rounded-circle" alt="Profile Picture" style="max-width: 125px; max-height: 125px;"><br>
+                                {{-- <a onclick="openModal()" style="font-size:16px; text-decoration: underline">Change</a> --}}
                                 <h3 >{{auth()->user()->nama_lengkap}}</h3>
-                                <hr>
+                                <br>
                             </div>
                             <div>
                                 <form action="/editprofUpper/{{auth()->user()->id}}" method="POST">
@@ -141,11 +141,11 @@
               <h4>Change Profile Picture</h4>
       
               <!-- Sample form inside the popup -->
-              <form action="updateProfilePicture/{{auth()->user()->id}}" method="post">
+              <form action="updateProfilePicture/{{auth()->user()->id}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <img style="max-width: 125px; max-height: 125px;" src="{{ auth()->user()->profile_img}}" alt="">
-                <input type="file" name="profile_image" accept="image/*" class="form-control activecolor mt-2 mb-2">
+                <input type="file" name="profile_img" accept="image/*" class="form-control activecolor mt-2 mb-2">
                 <button type="submit" class="btn btn-primary" style="max-width: 100px;">Apply</button>
               </form>
             </div>

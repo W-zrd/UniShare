@@ -24,7 +24,7 @@
                         <a class="nav-link fs-6" href="/beasiswa">Beasiswa</a>
                     </li>
                     <li class="nav-item">
-                        <img style="border-radius: 50%; max-width: 40px; max-height: 40px;" src= "{{ auth()->user()->profile_img}}" >
+                        <img style="border-radius: 50%; max-width: 38px; max-height: 38px;" src= "{{ asset('assets/img/demonzz.jpg') }}" >
                     </li>                             
                     {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

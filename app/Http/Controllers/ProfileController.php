@@ -39,29 +39,20 @@ class ProfileController extends Controller
         return redirect('/editprof');
     }
 
-    public function updateProfilePicture(Request $request, string $id){
-        $updatedData = User::find($id);
-        
-        User::where('id',$updatedData->id)->update([
-            
-            'profile_img' => $request['profile_image'],
-        ]);
-        
-        // dd($request->id);
-        // $updatedData['profile_img'] = $request->profile_img;
-        // if($request->hasFile('profile_image')){
-        //     $destination = 'storage/profile_pictures'.$updatedData->profile_img;
-        //     if(User::exist($destination)){
-        //         User::delete($destination);
-        //     }
-        //     $file = $request->file('profile_image');
-        //     $extension = $file->getClientOriginalExtension();
-        //     $filename = time().'.'.$extension;
-        //     $file->move('storage/profile_pictures',$filename);
-        //     $updatedData->profile_img = $filename;
-        // }
-        // $updatedData->update();
-        return redirect('/editprof');
+    public function updateProfilePicture(Request $request, $id)
+    {
+        //dd($id);
+
+        $rules = ['profile_img' => 'image|file|max:5060'];
+        $data = $request->validate($rules);
+
+        if($request->file('profile_img')) {
+            $data['profile_img'] = $request->file('profile_img')->store('profile_pict', 'public');
+        }
+        dd($request);
+        User::where('id', $id)->update($data);
+        return redirect()->route('editprof');
     }
+
 
 }
