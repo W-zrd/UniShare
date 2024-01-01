@@ -7,11 +7,24 @@ use App\Models\KarirPost;
 
 class KarirPostController extends Controller
 {
-    public function index(){
-        return view('karir', [
-            "data" => KarirPost::latest()->filter(request(['search']))->paginate(2)
-        ]);
+    public function index(Request $request){
+        $data = KarirPost::latest()->filter(request(['search']));
+    
+        if ($request->has('theme')) {
+            $themes = $request->theme;
+            $data->whereIn('tema', $themes);
+        }
+    
+        if ($request->has('category')) {
+            $category = $request->category;
+            $data->where('kategori', $category);
+        }
+    
+        $data = $data->paginate(2);
+    
+        return view('karir', compact('data'));
     }
+    
 
     public function showCreateForm()
     {
@@ -25,6 +38,7 @@ class KarirPostController extends Controller
 
     public function storeNewPost(Request $request)
     {
+        // TO DO : VALIDASI DISINI 
         $adminId = 1;
         $incomingFields = $request->validate([
             'title' => 'required',
@@ -36,8 +50,8 @@ class KarirPostController extends Controller
             'guidebook' => 'file', // Add file validation rule
             'banner_img' => 'image|file|max:5120', // Max uploaded img = 5MB
         ]);
-
-        // Handle file uploads
+         
+        // TO DO : INPUT FILE
         if ($request->hasFile('guidebook')) {
             $incomingFields['guidebook'] = $request->file('guidebook')->store('guidebooks', 'public');
         }

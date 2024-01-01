@@ -20,65 +20,57 @@
 @section('content')
     <section class="second-navbar pt-3 pb-3">
       <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Semua</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Lowongan Kerja</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Magang</a>
-        </li>
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ route('karir') }}">Semua</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('karir', ['category' => 'Lowongan']) }}">Lowongan Kerja</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('karir', ['category' => 'Magang']) }}">Magang</a>
+          </li>
       </ul>
     </section>
     <section style="height: 1000px">
       <div class="container-fluid mx-auto">
         <div class="row mx-auto">
           <!-- FILTERS -->          
-            <div class="col-lg-3 m-3 mt-5 mx-auto filter-box">
-              <form action=/karir method="GET" class="row g-3 search-bar mb-3">
-                <ul class="list-group" style="max-width: 400px;">
-                  <h5 class="ms-3 mt-4">Filter</h5>
-                  <li class="list-group-item">
-                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox1">
+          <div class="col-lg-3 m-3 mt-5 mx-auto filter-box">
+            <form action="/karir" method="GET" class="row g-3 search-bar mb-3">
+              <ul class="list-group" style="max-width: 400px;">
+                <h5 class="ms-3 mt-4">Filter</h5>
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" name="theme[]" value="Sains" id="checkbox1">
                     <label class="form-check-label" for="firstCheckbox">Sains</label>
-                  </li>
-                  <li class="list-group-item">
-                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox2">
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" name="theme[]" value="Teknologi" id="checkbox2">
                     <label class="form-check-label" for="secondCheckbox">Teknologi</label>
-                  </li>
-                  <li class="list-group-item">
-                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" name="theme[]" value="Bisnis" id="checkbox3">
                     <label class="form-check-label" for="thirdCheckbox">Bisnis</label>
-                  </li>
-                  <li class="list-group-item">
-                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
-                    <label class="form-check-label" for="thirdCheckbox">Desain</label>
-                  </li>
-                  <li class="list-group-item">
-                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
-                    <label class="form-check-label" for="thirdCheckbox">Fotografi</label>
-                  </li>
-                  <li class="list-group-item">
-                    <input class="form-check-input me-1" type="checkbox" value="" id="checkbox3">
-                    <label class="form-check-label" for="thirdCheckbox">Manajemen</label>
-                  </li>
-                </ul>                
-                <div class="justify-items-center mx-auto">
-                  <button type="submit" class="btn btn-custom1 m-3 mb-5 p-2 ps-5 pe-5">Apply!</button>
-                </div>
-              </form>
-            </div>                    
-          <div class="col-lg-8 mt-5 mx-auto">
-            <!-- Search Bar -->
-            <div class="container-flex">
-              <form action=/karir method="GET" class="row g-3 search-bar mb-3">
-                <div class="mb-3 search-bar">
-                  <input type="text" name="search" class="form-control ms-4" placeholder="Cari acara disini" value="{{request('search')}}" >
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" name="theme[]" value="Desain" id="checkbox3">
+                  <label class="form-check-label" for="thirdCheckbox">Desain</label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" name="theme[]" value="Fotografi" id="checkbox3">
+                  <label class="form-check-label" for="thirdCheckbox">Fotografi</label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" name="theme[]" value="Manajemen" id="checkbox3">
+                  <label class="form-check-label" for="thirdCheckbox">Manajemen</label>
+                </li>
+              </ul> 
+              <div class="mb-3 search-bar">
+                  <input type="text" name="search" class="form-control ms-4" placeholder="Cari kegiatan karir disini" value="{{request('search')}}" >
                   <button type="submit" class="btn btn-custom1 ms-4 ps-3 pe-3">Search!</button>
-                </div>                
-              </form>
-            </div>
+              </div>  
+            </form>
+          </div>             
+          <div class="col-lg-8 mt-5 mx-auto">
             <!-- CARDS -->
             @foreach ($data as $item)
             <!-- USER POST -->
@@ -108,7 +100,7 @@
                   </li>
                 @else
                   <li class="page-item">
-                      <a class="page-link" href="{{ $data->previousPageUrl() }}" tabindex="-1">Previous</a>
+                      <a class="page-link" href="{{ $data->previousPageUrl() . '&' . http_build_query(request()->except('page')) }}" tabindex="-1">Previous</a>
                   </li>
                 @endif
 
@@ -128,7 +120,7 @@
 
                 @for ($i = $start; $i <= $end; $i++)
                     <li class="page-item @if ($i == $data->currentPage()) active @endif">
-                        <a class="page-link" href="{{ $data->url($i) }}">{{ $i }}</a>
+                        <a class="page-link" href="{{ $data->url($i) . '&' . http_build_query(request()->except('page')) }}">{{ $i }}</a>
                     </li>
                 @endfor
 
@@ -142,7 +134,7 @@
                 {{-- Next Page Link --}}
                 @if ($data->hasMorePages())
                     <li class="page-item">
-                        <a class="page-link" href="{{ $data->nextPageUrl() }}">Next</a>
+                        <a class="page-link" href="{{ $data->nextPageUrl() . '&' . http_build_query(request()->except('page')) }}">Next</a>
                     </li>
                 @else
                     <li class="page-item disabled">
