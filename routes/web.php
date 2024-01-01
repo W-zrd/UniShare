@@ -84,7 +84,7 @@ Route::controller(PostController::class)->group(function(){
 Route::middleware(['auth'])->group(function () {
     Route::controller(PostController::class)->group(function(){
         Route::get('/admin/event/add', 'showCreateForm')->name('create-event');
-        Route::post('/admin/event/add', 'storeNewPost');
+        Route::post('/admin/event/add', 'storeNewPost')->name('storeNewPost');
         Route::get('/admin','showAdminPage')->name('admin');
     });
 });

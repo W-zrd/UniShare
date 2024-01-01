@@ -40,12 +40,11 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-   
-    if($request -> username == 'admin' && $request -> password == 'admin'){
-        Session::put('login_admin_flag', true);
-        return redirect()->route('admin');    
-    }
-    $user = User::where('username', $request->username)->first();
+        if($request -> username == 'admin' && $request -> password == 'admin'){
+            Session::put('login_admin_flag', true);
+            return redirect()->route('admin');    
+        }
+        $user = User::where('username', $request->username)->first();
         if ($user && password_verify($request->password, $user->password)) {
             Auth::login($user);
             $token = $user->createToken('auth_token')->plainTextToken;
