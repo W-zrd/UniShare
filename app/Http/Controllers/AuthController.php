@@ -62,7 +62,7 @@ class AuthController extends Controller
 public function register(Request $request){
 
     if ($request->password != $request->password_confirmation) {
-            return view('tampilan_login_error');
+            return view('auth.login');
     }
     $encryptedPassword = bcrypt($request->password);
     $user = User::create([
@@ -70,8 +70,8 @@ public function register(Request $request){
         'username' => $request->username,
         'password' => $encryptedPassword,
         'email' => $request->email,
-        
     ]);
+
     Auth::login($user);
     if ($user) {
         $token = $user->createToken('auth_token')->plainTextToken;
@@ -88,8 +88,12 @@ public function register(Request $request){
                 'data' => $data,
             ]);
         } else {
-            return view('tampilan_login_error');
+            return view('auth.login');
         }
     }
+}
+
+public function logout(){
+    return view('landing');
 }
 }

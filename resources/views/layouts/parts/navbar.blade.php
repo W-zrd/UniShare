@@ -1,7 +1,7 @@
 
     <nav class="navbar fixed-top navbar-expand-lg bg-light navbar-light border-danger h-21 shadow-sm" data-bs-theme="light" >
         <div class="container-fluid" data-bs-theme="light">
-            <a class="navbar-brand fs-4 fw-semibold" href="#" style="color: #121415;">
+            <a class="navbar-brand fs-4 fw-semibold" href="/dashboard" style="color: #121415;">
                 <img src="{{asset('assets/img/UniShare-logo.png')}}" alt="Logo" width="45" height="45" class="d-inline-block align-items-center" />
                 UniShare
             </a>
@@ -24,7 +24,7 @@
                         <a class="nav-link fs-6" href="/beasiswa">Beasiswa</a>
                     </li>
                     <li class="nav-item">
-                        <img src= {{ asset('assets/img/pp.png') }} >
+                        <img style="border-radius: 50%; max-width: 38px; max-height: 38px;" src= "{{ asset('assets/img/demonzz.jpg') }}" >
                     </li>                             
                     {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

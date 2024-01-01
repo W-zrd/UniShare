@@ -21,7 +21,9 @@ class ProfileController extends Controller
             'nama_lengkap' => $request['inNama'],
             'username' => $request['inUsername'],
             'alamat' => $request['inAlamat'],
+            'jenis_kelamin' => $request['inKelamin'],
         ]);
+
         return redirect('/editprof');
     }
 
@@ -36,4 +38,21 @@ class ProfileController extends Controller
         ]);
         return redirect('/editprof');
     }
+
+    public function updateProfilePicture(Request $request, $id)
+    {
+        //dd($id);
+
+        $rules = ['profile_img' => 'image|file|max:5060'];
+        $data = $request->validate($rules);
+
+        if($request->file('profile_img')) {
+            $data['profile_img'] = $request->file('profile_img')->store('profile_pict', 'public');
+        }
+        dd($request);
+        User::where('id', $id)->update($data);
+        return redirect()->route('editprof');
+    }
+
+
 }

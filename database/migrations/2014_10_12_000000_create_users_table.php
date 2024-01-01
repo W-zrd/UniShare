@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('jenis_kelamin')->nullable();
             $table->string('universitas')->nullable();
             $table->string('program_studi')->nullable();
+            $table->string('profile_img')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
