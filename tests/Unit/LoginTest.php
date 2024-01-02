@@ -2,12 +2,12 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase; // Gunakan TestCase dari Laravel
+use Tests\TestCase;
 use App\Models\User;
 use App\Models\Admin;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Http\Controllers\AuthController;
-use Illuminate\Http\Request; // Import kelas Request yang benar
+use Illuminate\Http\Request;
 
 class LoginTest extends TestCase
 {
@@ -20,17 +20,15 @@ class LoginTest extends TestCase
     {
         $controller = new AuthController();
 
-        // Membuat request palsu dengan kelas Request yang benar
         $request = Request::create('/login', 'POST', [
             'username' => 'admin',
             'password' => 'admin',
         ]);
 
-        // Memanggil metode login
+
         $response = $controller->login($request);
 
-        // Memeriksa apakah responsnya adalah redirect ke rute admin
-        $this->assertEquals(302, $response->getStatusCode()); // Redirect status code
+        $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals(route('admin'), $response->headers->get('Location'));
     }
 
@@ -51,10 +49,8 @@ class LoginTest extends TestCase
             'password' => 'password123',
         ]);
 
-        // Memanggil metode login
         $response = $controller->login($request);
 
-        // Memeriksa apakah responsnya adalah redirect ke dashboard atau halaman yang sesuai
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals(route('dashboard'), $response->headers->get('Location'));
     }
@@ -77,8 +73,7 @@ class LoginTest extends TestCase
         ]);
 
         $response = $controller->login($request);
-    
-        // Memeriksa apakah responsnya adalah redirect kembali ke halaman login dengan pesan error
+
         $this->assertEquals(302, $response->getStatusCode());
         $this->assertEquals(route('login'), $response->headers->get('Location'));
     }
@@ -96,7 +91,6 @@ public function login_fails_with_invalid_username()
 
     $response = $controller->login($request);
 
-    // Memeriksa apakah responsnya adalah redirect kembali ke halaman login dengan pesan error
     $this->assertEquals(302, $response->getStatusCode());
     $this->assertEquals(route('login'), $response->headers->get('Location'));
 }
