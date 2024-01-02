@@ -1,13 +1,22 @@
 <?php
 
 namespace Database\Factories;
-
+use Faker\Generator as Faker;
 use App\Models\KarirPost;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\KarirPost>
+ */
 class KarirPostFactory extends Factory
 {
-    protected $model = KarirPost::class;
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    protected $model = KarirPost::class; // Specify the model class
 
     public function definition()
     {
@@ -20,7 +29,7 @@ class KarirPostFactory extends Factory
             'url_event' => $this->faker->url,
             'guidebook' => $this->faker->url,
             'banner_img' => $this->faker->imageUrl,
-            'admin_id' => \App\Models\Admin::factory()->create()->id, // Jika 'admin_id' adalah foreign key, pastikan AdminFactory ada dan mengembalikan id admin yang valid
+            'admin_id' => 1,
         ];
     }
 }

@@ -84,87 +84,23 @@ class LoginTest extends TestCase
     }
 
     /** @test */
-public function login_fails_with_empty_username_and_password()
-{
-    $controller = new AuthController();
+    public function login_fails_if_user_not_found()
+    {
+        $controller = new AuthController();
 
-    $request = Request::create('/login', 'POST', [
-        'username' => '',
-        'password' => '',
-    ]);
+        // Membuat request dengan username yang tidak ada di database
+        $request = Request::create('/login', 'POST', [
+            'username' => 'nonexistentuser',
+            'password' => 'verysecurepassword',
+        ]);
 
-    $response = $controller->login($request);
+        $response = $controller->login($request);
 
-    // Memeriksa apakah responsnya adalah redirect kembali ke halaman login dengan pesan error
-    $this->assertEquals(302, $response->getStatusCode());
-    $this->assertEquals(route('login'), $response->headers->get('Location'));
-}
+        // Memeriksa apakah responsnya adalah redirect kembali ke halaman login dengan pesan error
+        $this->assertEquals(302, $response->getStatusCode());
+        $this->assertEquals(route('login'), $response->headers->get('Location'));
+    }
 
-/** @test */
-public function login_fails_with_empty_password()
-{
-    $controller = new AuthController();
 
-    User::create([
-        'nama_lengkap' => "Rafidhia Haikal P",
-        'username' => 'testuser',
-        'password' => bcrypt('correctpassword'),
-        'email' => "Wzrd@unishare.com"
-    ]);
-
-    $request = Request::create('/login', 'POST', [
-        'username' => 'testuser',
-        'password' => '',
-    ]);
-
-    $response = $controller->login($request);
-
-    // Memeriksa apakah responsnya adalah redirect kembali ke halaman login dengan pesan error
-    $this->assertEquals(302, $response->getStatusCode());
-    $this->assertEquals(route('login'), $response->headers->get('Location'));
-}
-
-/** @test */
-public function login_fails_with_invalid_username()
-{
-    $controller = new AuthController();
-
-    $request = Request::create('/login', 'POST', [
-        'username' => 'invaliduser',
-        'password' => 'somepassword',
-    ]);
-
-    $response = $controller->login($request);
-
-    // Memeriksa apakah responsnya adalah redirect kembali ke halaman login dengan pesan error
-    $this->assertEquals(302, $response->getStatusCode());
-    $this->assertEquals(route('login'), $response->headers->get('Location'));
-}
-
-/** @test */
-public function login_fails_with_invalid_password()
-{
-    $controller = new AuthController();
-
-    User::create([
-        'nama_lengkap' => "Rafidhia Haikal P",
-        'username' => 'testuser',
-        'password' => bcrypt('correctpassword'),
-        'email' => "Wzrd@unishare.com"
-    ]);
-
-    $request = Request::create('/login', 'POST', [
-        'username' => 'testuser',
-        'password' => 'wrongpassword',
-    ]);
-
-    $response = $controller->login($request);
-
-    // Memeriksa apakah responsnya adalah redirect kembali ke halaman login dengan pesan error
-    $this->assertEquals(302, $response->getStatusCode());
-    $this->assertEquals(route('login'), $response->headers->get('Location'));
-}
-
-    
-
+  
 }

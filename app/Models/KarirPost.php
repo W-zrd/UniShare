@@ -22,7 +22,7 @@ class KarirPost extends Model
         'banner_img',
         'admin_id',
     ];
-
+    // TO DO : ADMIN 
     public function admin()
     {
         return $this->belongsTo(Admin::class, 'admin_id');
