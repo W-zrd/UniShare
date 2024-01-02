@@ -29,11 +29,13 @@ class ProfileController extends Controller
 
     public function updateDataBelow(Request $request, string $id){
         $updatedData = User::find($id);
+        $kriptpass = $request['inPassword'];
+        $encryptedPassword = bcrypt($kriptpass);
 
         User::where('id',$updatedData->id)->update([
             'username' => $request['inUsername'],
             'email' => $request['inEmail'],
-            'password' => $request['inPassword'],
+            'password' => $encryptedPassword,
             'telepon' => $request['inNotelp'],
         ]);
         return redirect('/editprof');

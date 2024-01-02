@@ -95,7 +95,7 @@
                     <div id="privasiii" class="tab-content">
                         <div class="cell justify-content-center rounded bg-white"> 
                             <div class="m-3 h-25 text-center">
-                                <img src="{{ auth()->user()->profile_img}}" class="m-1 mt-3 rounded-circle" alt="Profile Picture" style="max-width: 125px; max-height: 125px;"><br>
+                                <img src="{{ asset('assets/img/demonzz.jpg') }}" class="m-1 mt-3 rounded-circle" alt="Profile Picture" style="max-width: 125px; max-height: 125px;"><br>
                                 <h3 >{{ auth()->user()->nama_lengkap}}</h3>
                                 <hr>
                             </div>
