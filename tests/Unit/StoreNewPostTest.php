@@ -21,6 +21,13 @@ class StoreNewPostTest extends TestCase
      {
          Storage::fake('public');
  
+         Admin::create([
+            'username' => 'your_username',
+            'email' => 'your_email@example.com',
+            'password' => bcrypt('your_password'), // Make sure to hash the password
+            'nama' => 'Admin Name',
+        ]);
+        
          // Fetch the existing admin
          $admin = Admin::find(1); // Assuming admin with ID 1 exists
  

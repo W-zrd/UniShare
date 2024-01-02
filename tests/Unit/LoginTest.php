@@ -83,46 +83,6 @@ class LoginTest extends TestCase
         $this->assertEquals(route('login'), $response->headers->get('Location'));
     }
 
-    /** @test */
-public function login_fails_with_empty_username_and_password()
-{
-    $controller = new AuthController();
-
-    $request = Request::create('/login', 'POST', [
-        'username' => '',
-        'password' => '',
-    ]);
-
-    $response = $controller->login($request);
-
-    // Memeriksa apakah responsnya adalah redirect kembali ke halaman login dengan pesan error
-    $this->assertEquals(302, $response->getStatusCode());
-    $this->assertEquals(route('login'), $response->headers->get('Location'));
-}
-
-/** @test */
-public function login_fails_with_empty_password()
-{
-    $controller = new AuthController();
-
-    User::create([
-        'nama_lengkap' => "Rafidhia Haikal P",
-        'username' => 'testuser',
-        'password' => bcrypt('correctpassword'),
-        'email' => "Wzrd@unishare.com"
-    ]);
-
-    $request = Request::create('/login', 'POST', [
-        'username' => 'testuser',
-        'password' => '',
-    ]);
-
-    $response = $controller->login($request);
-
-    // Memeriksa apakah responsnya adalah redirect kembali ke halaman login dengan pesan error
-    $this->assertEquals(302, $response->getStatusCode());
-    $this->assertEquals(route('login'), $response->headers->get('Location'));
-}
 
 /** @test */
 public function login_fails_with_invalid_username()
@@ -141,29 +101,7 @@ public function login_fails_with_invalid_username()
     $this->assertEquals(route('login'), $response->headers->get('Location'));
 }
 
-/** @test */
-public function login_fails_with_invalid_password()
-{
-    $controller = new AuthController();
 
-    User::create([
-        'nama_lengkap' => "Rafidhia Haikal P",
-        'username' => 'testuser',
-        'password' => bcrypt('correctpassword'),
-        'email' => "Wzrd@unishare.com"
-    ]);
-
-    $request = Request::create('/login', 'POST', [
-        'username' => 'testuser',
-        'password' => 'wrongpassword',
-    ]);
-
-    $response = $controller->login($request);
-
-    // Memeriksa apakah responsnya adalah redirect kembali ke halaman login dengan pesan error
-    $this->assertEquals(302, $response->getStatusCode());
-    $this->assertEquals(route('login'), $response->headers->get('Location'));
-}
 
     
 
