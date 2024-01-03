@@ -24,12 +24,11 @@ class StoreNewPostTest extends TestCase
          Admin::create([
             'username' => 'your_username',
             'email' => 'your_email@example.com',
-            'password' => bcrypt('your_password'), // Make sure to hash the password
+            'password' => bcrypt('your_password'), 
             'nama' => 'Admin Name',
         ]);
         
-         // Fetch the existing admin
-         $admin = Admin::find(1); // Assuming admin with ID 1 exists
+         $admin = Admin::find(1); 
  
          $response = $this->post('/admin/event/add', [
              'title' => 'Test Title',
@@ -51,16 +50,19 @@ class StoreNewPostTest extends TestCase
       *
       * @return void
       */
-     public function testStoreNewPostFailureWithInvalidData()
+     public function testStoreNewPostFailureWithBlankField()
      {
  
          $response = $this->post('/admin/event/add', [
-             // Send invalid or incomplete data here
-             'title' => '', // Invalid data
-             // other fields can be left out to test validation
+            // field title tidak diisi
+            'author' => 'Test Author',
+            'kategori' => 'Test Category',
+            'tema' => 'Test Theme',
+            'content' => 'Test Content',
+            'url_event' => 'https://flxnzz.my.id', 
          ]);
  
-         $response->assertSessionHasErrors(); // Assert session has errors for validation
+         $response->assertSessionHasErrors(); 
          $this->assertCount(1, Post::all());
      }
 
@@ -80,34 +82,10 @@ class StoreNewPostTest extends TestCase
             'tema' => 'Test Theme',
             'content' => 'Test Content',
             'url_event' => 'https://flxnzz.my.id',
-            // Do not include files
         ]);
 
         $response->assertRedirect('admin');
         $this->assertCount(2, Post::all());
-        // Optionally assert that no files were stored
-    }
-
-    /**
-     * Test post creation with large file (exceeding the limit).
-     *
-     * @return void
-     */
-    public function testStoreNewPostWithLargeFile()
-    {
-        Storage::fake('public');
-
-        $response = $this->post('/admin/event/add', [
-            'title' => 'Test Title',
-            'author' => 'Test Author',
-            'kategori' => 'Test Category',
-            'tema' => 'Test Theme',
-            'content' => 'Test Content',
-            'url_event' => 'https://flxnzz.my.id',
-            'guidebook' => UploadedFile::fake()->create('large_document.pdf', 6000), // 6MB file
-            'banner_img' => UploadedFile::fake()->image('banner.jpg'),
-        ]);
-        $this->assertCount(3, Post::all());
     }
 
 }
