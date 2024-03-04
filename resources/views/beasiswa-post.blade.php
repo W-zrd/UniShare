@@ -19,7 +19,7 @@
       <div class="container-flex">
           <h1 class="mb-3">{{$post->title}}</h1>
           <div class="organizer">
-            <img src="https://c4.wallpaperflare.com/wallpaper/568/728/865/meme-nicolas-cage-you-don-t-say-wallpaper-preview.jpg" alt="Profile Picture" class="rounded-circle" width="50" height="50">
+            <img src="{{ asset('assets/img/demonzz.jpg') }}" alt="Profile Picture" class="rounded-circle" width="50" height="50">
             <div class="organizer-info">
                 <p>{{$post -> penyelenggara_beasiswa}}</p>
                 <p style="font-size: small">{{$post->formatted_date}}</p>
